@@ -1,0 +1,27 @@
+ALEX MORGAN
+alex.morgan.dev@example.com | +91 98765 43210 | Bangalore, India | linkedin.com/in/alexmorgan-dev | github.com/alexmorgan-dev
+
+PROFILE: STAFF SOFTWARE ENGINEER & DISTRIBUTED SYSTEMS ARCHITECT
+10+ years equivalent technical leadership driving core architectural roadmaps, high-scale distributed systems, and cross-functional engineering teams for tier-1 tech products.
+
+CORE COMPETENCIES & ARCHITECTURE
+Architecture: Distributed Systems Design, High-Throughput / Low-Latency Systems, Event-Driven Architecture, Multi-Tenant Cloud Platforms
+Technologies: Go, Java, Python, Apache Kafka, gRPC, Kubernetes, Redis, Cassandra, PostgreSQL, AWS Cloud
+Leadership: Technical Strategy, RFCs / System Design Reviews, Cross-Team Mentorship, Engineering Hiring, Incident Management & Postmortems
+
+PROFESSIONAL EXPERIENCE
+
+Staff Software Engineer / Tech Lead — Apex Core Platforms (2021 – Present)
+• Technical owner for core distributed transaction processing backbone handling 1.2 Billion requests/month.
+• Authored comprehensive architectural RFCs for migrating mission-critical monolith to 40+ decoupled microservices.
+• Mentored and guided 18+ senior engineers; established code quality and architectural standards across org.
+• Partnered with Product and Executive leadership to deliver roadmap initiatives generating $14M ARR.
+• Reduced enterprise infrastructure overhead by $240K/year through capacity planning and resource rightsizing.
+
+Lead Software Engineer — Stratum Distributed Technologies (2018 – 2021)
+• Led engineering pod of 8 backend engineers building global inventory distribution systems.
+• Championed adoption of Apache Kafka and event sourcing, reducing cross-service synchronization delay from 5s to 80ms.
+• Built automated chaos engineering and disaster recovery drills to validate multi-region failover resilience.
+
+EDUCATION
+B.Tech in Computer Science — Indian Institute of Technology (IIT) / NIT (2014 – 2018)

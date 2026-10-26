@@ -1,0 +1,28 @@
+ALEX MORGAN
+alex.morgan.dev@example.com | +91 98765 43210 | Bangalore, India | linkedin.com/in/alexmorgan-dev | github.com/alexmorgan-dev
+
+PROFILE: SENIOR DISTRIBUTED SYSTEMS & BACKEND INFRASTRUCTURE ENGINEER
+Targeting Senior/Staff Backend Engineer roles in high-throughput distributed systems.
+Expert in low-latency backend architectures, Apache Kafka event streaming, concurrency, and resilient microservices in Go, Java, and C++.
+
+CORE TECHNICAL SKILLS
+Languages: Java, Go (Golang), C++, SQL, Bash, Python
+Distributed Systems & Messaging: Apache Kafka, gRPC, RabbitMQ, Redis, Distributed Transactions, Event-Driven Architecture, Microservices
+Databases & Storage: PostgreSQL, Cassandra, DynamoDB, Redis Cluster, Elasticsearch
+Cloud & Infrastructure: AWS (EC2, ECS, S3, RDS), Docker, Kubernetes, CI/CD, Prometheus, Grafana
+
+PROFESSIONAL EXPERIENCE
+
+Senior Backend Infrastructure Engineer — Nexus Cloud Technologies (2022 – Present)
+• Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.
+• Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.
+• Designed distributed caching layer with Redis Cluster, offloading PostgreSQL reads by 68% during peak load.
+• Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL.
+
+Backend Software Engineer — Stratum Data Solutions (2019 – 2022)
+• Developed mission-critical REST and gRPC financial fraud microservices in Java and Spring Boot.
+• Optimized multi-threaded Kafka consumer group rebalances, eliminating partition lag across 100+ topics.
+• Implemented distributed tracing with OpenTelemetry and Jaeger to monitor inter-service latency bottlenecks.
+
+EDUCATION
+B.Tech in Computer Science — Indian Institute of Technology (IIT) / NIT (2015 – 2019) | CGPA: 8.8/10

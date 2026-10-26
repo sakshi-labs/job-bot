@@ -1,0 +1,22 @@
+Senior Backend Infrastructure Engineer
+Company: CloudScale AI
+Location: San Francisco, CA / Remote
+
+About the Role:
+CloudScale AI is building the next-generation real-time ML feature serving platform. We are looking for an experienced Senior Backend Infrastructure Engineer to lead the design and implementation of our distributed streaming architecture.
+
+Responsibilities:
+- Architect and scale low-latency event-driven microservices processing billions of events per day.
+- Manage and optimize large-scale Apache Kafka clusters, schema registries, and consumer group rebalances.
+- Design resilient storage backends using PostgreSQL, Redis, and DynamoDB.
+- Deploy and orchestrate services on AWS (EKS / Kubernetes) using Terraform and CI/CD automation.
+- Drive observability improvements across microservices using OpenTelemetry, Prometheus, and Grafana.
+- Collaborate with Machine Learning Platform teams to reduce end-to-end inference latencies.
+
+Qualifications:
+- 5+ years of software engineering experience in Go, Java, or Python.
+- Deep hands-on experience with Apache Kafka, distributed systems, and stream processing.
+- Proven experience deploying containerized applications with Docker and Kubernetes in AWS.
+- Strong knowledge of relational and NoSQL databases (PostgreSQL, Redis).
+- Experience with infrastructure as code (Terraform) and modern CI/CD pipelines.
+- Bachelor's degree in Computer Science or equivalent practical experience.

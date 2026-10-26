@@ -1,0 +1,115 @@
+{
+  "personal": {
+    "first_name": "Alex",
+    "last_name": "Morgan",
+    "full_name": "Alex Morgan",
+    "email": "alex.morgan.dev@example.com",
+    "phone": "+1 (555) 234-5678",
+    "location": "San Francisco, CA",
+    "city": "San Francisco",
+    "state": "CA",
+    "country": "United States",
+    "postal_code": "94107",
+    "linkedin": "https://linkedin.com/in/alexmorgan-dev",
+    "github": "https://github.com/alexmorgan-dev",
+    "portfolio": "https://alexmorgandev.io"
+  },
+  "headline": "Senior Software Engineer | Distributed Systems & Backend Infrastructure",
+  "base_summary": "Results-driven Software Engineer with 5+ years of experience designing, scaling, and maintaining low-latency distributed systems, microservices, and event-driven data pipelines. Expert in Java, Python, Go, and cloud-native architecture.",
+  "master_skills": {
+    "Languages": ["Java", "Python", "Go", "SQL", "TypeScript", "Bash"],
+    "Distributed Systems & Messaging": ["Apache Kafka", "gRPC", "RabbitMQ", "Redis", "Event-Driven Architecture", "Microservices"],
+    "Cloud & Infrastructure": ["AWS (EC2, S3, ECS, Lambda)", "Kubernetes", "Docker", "Terraform", "CI/CD (GitHub Actions)"],
+    "Databases & Storage": ["PostgreSQL", "MySQL", "MongoDB", "DynamoDB", "Elasticsearch"],
+    "Engineering Practices": ["System Design", "REST APIs", "Unit/Integration Testing", "Distributed Tracing", "Agile/Scrum"]
+  },
+  "master_experiences": [
+    {
+      "company": "Nexus Cloud Technologies",
+      "role": "Senior Software Engineer",
+      "location": "San Francisco, CA (Remote)",
+      "start_date": "Jan 2022",
+      "end_date": "Present",
+      "is_current": true,
+      "bullets": [
+        "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+        "Refactored monolithic ingestion service into Go-based microservices, slashing p99 API response latencies from 320ms to 42ms.",
+        "Engineered distributed caching layer with Redis Cluster, reducing RDS database read loads by 68% during peak traffic spikes.",
+        "Led team of 5 engineers in migrating core Kubernetes services across AWS regions using Terraform and zero-downtime blue/green deployments.",
+        "Designed comprehensive observability stack using OpenTelemetry, Prometheus, and Grafana, reducing Mean Time to Detection (MTTD) by 40%."
+      ],
+      "keywords": ["kafka", "go", "microservices", "kubernetes", "aws", "redis", "terraform", "distributed systems", "opentelemetry", "sql"]
+    },
+    {
+      "company": "Stratum Data Solutions",
+      "role": "Software Engineer",
+      "location": "Austin, TX",
+      "start_date": "Jun 2019",
+      "end_date": "Dec 2021",
+      "is_current": false,
+      "bullets": [
+        "Developed high-throughput REST and gRPC microservices in Java and Spring Boot for financial fraud detection pipelines.",
+        "Optimized complex PostgreSQL query execution plans and partitioned database tables, decreasing batch processing times by 55%.",
+        "Automated CI/CD workflows using GitHub Actions and Docker, reducing team deployment cycle duration from 2 hours to 15 minutes.",
+        "Implemented real-time transaction validation system with 99.95% accuracy using Apache Flink and Kafka Streams."
+      ],
+      "keywords": ["java", "spring boot", "grpc", "postgresql", "docker", "ci/cd", "rest api", "kafka streams", "flink"]
+    },
+    {
+      "company": "Apex Fintech Labs",
+      "role": "Associate Software Engineer",
+      "location": "Austin, TX",
+      "start_date": "Jul 2018",
+      "end_date": "May 2019",
+      "is_current": false,
+      "bullets": [
+        "Built internal developer portal and API monitoring dashboards using Python (Flask) and React.",
+        "Created end-to-end integration and load testing suites with Locust and PyTest, discovering critical concurrency bottlenecks before production.",
+        "Collaborated with cross-functional product and security teams to resolve OWASP Top 10 vulnerabilities across legacy web applications."
+      ],
+      "keywords": ["python", "flask", "react", "pytest", "rest", "api", "security", "testing"]
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Texas at Austin",
+      "degree": "B.S. in Computer Science",
+      "location": "Austin, TX",
+      "graduation_date": "May 2018",
+      "gpa": "3.8/4.0",
+      "highlights": "Dean's Honor List, Distributed Systems Lab"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Distributed Key-Value Store (Raft)",
+      "description": "Implemented a fault-tolerant, replicated key-value storage engine in Go using the Raft consensus algorithm with log compaction and snapshotting.",
+      "technologies": ["Go", "Raft", "Distributed Consensus", "gRPC"],
+      "link": "https://github.com/alexmorgan-dev/raft-kv"
+    },
+    {
+      "name": "High-Throughput Log Aggregator",
+      "description": "Built an asynchronous log aggregation agent in Rust and Kafka delivering sub-second log indexing into Elasticsearch.",
+      "technologies": ["Kafka", "Rust", "Elasticsearch", "Docker"],
+      "link": "https://github.com/alexmorgan-dev/log-sink"
+    }
+  ],
+  "certifications": [
+    "AWS Certified Solutions Architect – Associate",
+    "Certified Kubernetes Application Developer (CKAD)"
+  ],
+  "screening_answers": {
+    "authorized_to_work": "Yes",
+    "require_sponsorship": "No",
+    "future_sponsorship": "No",
+    "notice_period": "2 weeks",
+    "years_of_experience": "6",
+    "desired_salary": "175,000",
+    "currency": "USD",
+    "gender": "Prefer not to disclose",
+    "race_ethnicity": "Prefer not to disclose",
+    "veteran_status": "Not a veteran",
+    "disability_status": "No",
+    "hear_about_us": "Company Careers Page / Professional Network"
+  }
+}

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Application Bot — 40-50 LPA Multi-Resume Optimizer & 1-Click Apply</title>
+<style>
+    :root {
+        --primary: #2563eb;
+        --primary-dark: #1d4ed8;
+        --bg: #0f172a;
+        --card-bg: #1e293b;
+        --border: #334155;
+        --text: #f8fafc;
+        --text-muted: #94a3b8;
+        --success: #10b981;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --accent: #8b5cf6;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 24px; }
+    .container { max-width: 1380px; margin: 0 auto; }
+    header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 20px; }
+    h1 { font-size: 22px; font-weight: 700; color: #fff; }
+    .subtitle { color: var(--text-muted); font-size: 13px; margin-top: 4px; }
+    .header-badges { display: flex; gap: 10px; align-items: center; }
+    .badge { background: #334155; padding: 6px 12px; border-radius: 20px; font-size: 12px; color: #cbd5e1; font-weight: 500; }
+    .badge-ctc { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    /* Tabs */
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+    .tab-btn { background: transparent; border: none; color: var(--text-muted); padding: 8px 16px; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; transition: 0.2s; }
+    .tab-btn.active { background: var(--card-bg); color: #fff; border: 1px solid var(--border); }
+    .tab-btn:hover { color: #fff; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+    .card-title { font-size: 15px; font-weight: 600; margin-bottom: 14px; color: #e2e8f0; display: flex; align-items: center; justify-content: space-between; }
+
+    .btn { background: var(--primary); color: #fff; border: none; padding: 8px 16px; border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 6px; }
+    .btn:hover { background: var(--primary-dark); }
+    .btn-success { background: #059669; }
+    .btn-success:hover { background: #047857; }
+    .btn-secondary { background: #334155; }
+    .btn-secondary:hover { background: #475569; }
+    .btn-sm { padding: 5px 10px; font-size: 12px; border-radius: 6px; }
+
+    .input-row { display: flex; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .input-group { flex: 1; min-width: 200px; }
+    label { display: block; font-size: 12px; color: var(--text-muted); margin-bottom: 6px; font-weight: 500; }
+    input[type="text"], textarea, select { width: 100%; background: #0f172a; border: 1px solid var(--border); border-radius: 8px; color: #fff; padding: 9px 12px; font-size: 13px; }
+    input[type="text"]:focus, textarea:focus, select:focus { border-color: var(--primary); outline: none; }
+
+    /* Bulk Actions Toolbar */
+    .toolbar { display: flex; justify-content: space-between; align-items: center; background: #0f172a; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin-bottom: 14px; }
+    .bulk-progress-box { display: none; background: rgba(37, 99, 235, 0.15); border: 1px solid rgba(37, 99, 235, 0.4); border-radius: 8px; padding: 12px; margin-bottom: 14px; }
+
+    /* Table */
+    .table-container { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; text-align: left; }
+    th { background: #0f172a; color: var(--text-muted); padding: 12px; font-weight: 600; border-bottom: 1px solid var(--border); }
+    td { padding: 12px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    tr:hover { background: rgba(255, 255, 255, 0.02); }
+
+    .portal-tag { padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 600; }
+    .portal-hirist { background: #ffebd8; color: #b45309; }
+    .portal-naukri { background: #e0f2fe; color: #0369a1; }
+    .portal-linkedin { background: #dbeafe; color: #1d4ed8; }
+    .portal-careerpages { background: #ede9fe; color: #6d28d9; }
+
+    .score-badge { font-weight: 700; padding: 4px 8px; border-radius: 6px; font-size: 12px; text-align: center; display: inline-block; }
+    .score-high { background: rgba(16, 185, 129, 0.2); color: #34d399; }
+    .score-med { background: rgba(245, 158, 11, 0.2); color: #fbbf24; }
+    .score-low { background: rgba(239, 68, 68, 0.2); color: #f87171; }
+
+    .resume-selected-tag { font-size: 11px; background: #334155; color: #e2e8f0; padding: 3px 8px; border-radius: 6px; font-family: monospace; }
+
+    /* Modal */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
+    .modal-box { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; width: 100%; max-width: 850px; max-height: 90vh; overflow-y: auto; padding: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 16px; }
+    .modal-close { font-size: 20px; color: var(--text-muted); cursor: pointer; background: transparent; border: none; }
+    .modal-close:hover { color: #fff; }
+
+    .pills { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+    .pill { font-size: 11px; padding: 2px 7px; border-radius: 10px; background: #1e293b; color: #94a3b8; border: 1px solid var(--border); }
+    .pill-green { background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4); }
+
+    .resume-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+    .resume-card { background: #0f172a; border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .resume-card-title { font-weight: 600; font-size: 14px; color: #60a5fa; margin-bottom: 6px; }
+    .resume-card-file { font-size: 12px; color: var(--text-muted); font-family: monospace; margin-bottom: 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div>
+            <h1>Automated Application & Multi-Resume Optimizer</h1>
+            <div class="subtitle">Autonomous 40–50 LPA Hunter across Hirist, Naukri, LinkedIn & Career Portals</div>
+        </div>
+        <div class="header-badges">
+            <span class="badge badge-ctc">💰 Target CTC: 40 - 50+ LPA</span>
+            <span class="badge">👤 {{ profile.personal.full_name }}</span>
+        </div>
+    </header>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="switchTab('hunt-tab')">🎯 40-50L Job Hunter & Queue ({{ queue|length }})</button>
+        <button class="tab-btn" onclick="switchTab('resumes-tab')">📁 My 5 Resumes Bank ({{ resumes|length }})</button>
+        <button class="tab-btn" onclick="switchTab('tailor-tab')">⚡ Manual URL / Single JD Tailor</button>
+    </div>
+
+    <!-- TAB 1: 40-50L Autonomous Job Hunter & Review Queue -->
+    <div id="hunt-tab" class="tab-content active">
+        <!-- Scan Portals Card -->
+        <div class="card">
+            <div class="card-title">
+                <span>Autonomous Portal Discovery</span>
+                <span style="font-size: 12px; color: var(--text-muted);">Hirist &bull; Naukri &bull; LinkedIn &bull; Google/Uber/Stripe Careers</span>
+            </div>
+
+            <div class="input-row">
+                <div class="input-group">
+                    <label>Role / Skill Keywords</label>
+                    <input type="text" id="hunt-query" value="Backend" placeholder="e.g. Backend, Distributed Systems, Data Platform">
+                </div>
+                <div class="input-group">
+                    <label>Location Hub</label>
+                    <input type="text" id="hunt-loc" value="Bangalore" placeholder="e.g. Bangalore, Remote, Hyderabad">
+                </div>
+                <div class="input-group" style="flex: 0 0 160px;">
+                    <label>Compensation Filter</label>
+                    <input type="text" value="40 - 50 LPA" disabled style="background:#1e293b; color:#34d399; font-weight:600;">
+                </div>
+                <div style="display:flex; align-items:flex-end; gap:8px;">
+                    <button class="btn" onclick="triggerHunt()">🔍 Scan Portals</button>
+                    <button class="btn btn-secondary" onclick="openAddJobModal()">➕ Add Custom Job</button>
+                </div>
+            </div>
+            <div id="hunt-status" style="font-size:13px; color:var(--text-muted);"></div>
+        </div>
+
+        <!-- Bulk Actions & Queue Toolbar -->
+        <div class="toolbar">
+            <div style="display:flex; align-items:center; gap:12px;">
+                <input type="checkbox" id="select-all-checkbox" onchange="toggleSelectAll(this)" style="width:16px; height:16px; cursor:pointer;">
+                <label for="select-all-checkbox" style="margin:0; font-size:13px; cursor:pointer; color:#e2e8f0;">Select All Jobs</label>
+                <span id="selected-count-badge" class="badge" style="display:none;">0 selected</span>
+            </div>
+            <div style="display:flex; gap:8px;">
+                <button class="btn btn-success" id="btn-bulk-apply" onclick="triggerBulkApply()" disabled>⚡ Bulk Apply Selected</button>
+            </div>
+        </div>
+
+        <!-- Live Bulk Progress Banner -->
+        <div id="bulk-progress-banner" class="bulk-progress-box">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <strong id="bulk-progress-title">⏳ Bulk Application in Progress...</strong>
+                <span id="bulk-progress-ratio" style="font-size:12px; font-weight:600;">0 / 0 Completed</span>
+            </div>
+            <div id="bulk-progress-msg" style="font-size:13px; color:#93c5fd;">Initializing background application worker...</div>
+        </div>
+
+        <!-- Discovered Jobs Review Queue Table -->
+        <div class="card">
+            <div class="card-title">
+                <span>Discovered High-CTC Opportunities & Resume Match Ranking</span>
+                <span class="badge">{{ queue|length }} Opportunities</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th style="width:30px;"></th>
+                            <th>Portal</th>
+                            <th>Company</th>
+                            <th>Role Title</th>
+                            <th>Offered CTC</th>
+                            <th>Selected Resume Profile</th>
+                            <th>ATS Match</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="queue-table-body">
+                        {% for j in queue %}
+                        <tr id="row-{{ j.id }}">
+                            <td>
+                                <input type="checkbox" class="job-checkbox" value="{{ j.id }}" onchange="updateSelectedCount()" style="width:16px; height:16px; cursor:pointer;">
+                            </td>
+                            <td>
+                                {% if j.portal == 'Hirist' %}<span class="portal-tag portal-hirist">Hirist</span>
+                                {% elif j.portal == 'Naukri' %}<span class="portal-tag portal-naukri">Naukri</span>
+                                {% elif j.portal == 'LinkedIn' %}<span class="portal-tag portal-linkedin">LinkedIn</span>
+                                {% else %}<span class="portal-tag portal-careerpages">{{ j.portal }}</span>{% endif %}
+                            </td>
+                            <td><strong>{{ j.company }}</strong><br><span style="font-size:11px; color:var(--text-muted);">{{ j.location }}</span></td>
+                            <td>
+                                <a href="{{ j.url }}" target="_blank" style="color:#60a5fa; text-decoration:none; font-weight:500;" title="Click to view live job posting">{{ j.title }} ↗</a>
+                                <div style="font-size:11px; color:var(--text-muted); margin-top:2px;">{{ j.selection_reason }}</div>
+                            </td>
+                            <td><span style="color:#34d399; font-weight:600;">{{ j.salary }}</span></td>
+                            <td>
+                                <span class="resume-selected-tag">📄 {{ j.selected_resume_file }}</span>
+                            </td>
+                            <td>
+                                {% if j.match_score >= 80 %}
+                                <span class="score-badge score-high">{{ j.match_score }}%</span>
+                                {% elif j.match_score >= 60 %}
+                                <span class="score-badge score-med">{{ j.match_score }}%</span>
+                                {% else %}
+                                <span class="score-badge score-low">{{ j.match_score }}%</span>
+                                {% endif %}
+                            </td>
+                            <td style="white-space:nowrap;">
+                                {% if j.status == 'applied' %}
+                                <span style="color:#34d399; font-size:12px; font-weight:600; margin-right:8px;">✓ Applied</span>
+                                {% endif %}
+                                <button class="btn btn-sm btn-secondary" onclick="openCustomizeModal('{{ j.id }}')">🎨 Customize & Apply</button>
+                                <button class="btn btn-sm btn-success" onclick="singleClickApply('{{ j.id }}')">⚡ 1-Click Apply</button>
+                            </td>
+                        </tr>
+                        {% else %}
+                        <tr>
+                            <td colspan="8" style="text-align:center; padding:30px; color:var(--text-muted);">
+                                Queue is empty! Click <strong>"Scan Portals"</strong> above to discover 40-50 LPA jobs across Hirist, Naukri, LinkedIn, and Career Pages.
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 2: My 5 Resumes Bank -->
+    <div id="resumes-tab" class="tab-content">
+        <div class="card">
+            <div class="card-title">
+                <span>Loaded Resume Personas (Folder: <code>resumes/</code>)</span>
+                <span class="badge">Drop your custom PDF or DOCX files into <code>resumes/</code> anytime</span>
+            </div>
+            <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">
+                The bot evaluates incoming job descriptions against all these profiles simultaneously and picks the one that maximizes your ATS score <strong>without distorting your authentic core skills</strong>.
+            </p>
+
+            <div class="resume-grid">
+                {% for r in resumes %}
+                <div class="resume-card">
+                    <div class="resume-card-title">{{ r.title }}</div>
+                    <div class="resume-card-file">📄 {{ r.file_name }}</div>
+                    <div style="font-size:12px; color:var(--text-muted); margin-bottom:6px;">Signature Skills:</div>
+                    <div class="pills">
+                        {% for s in r.skills[:8] %}
+                        <span class="pill pill-green">{{ s }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- TAB 3: Manual Single JD Tailor -->
+    <div id="tailor-tab" class="tab-content">
+        <div class="card">
+            <div class="card-title">Manual Job Description Tailor</div>
+            <label>Job Posting URL</label>
+            <input type="text" id="manual-jd-url" placeholder="https://boards.greenhouse.io/... or https://jobs.lever.co/...">
+
+            <label style="margin-top:12px;">Or Paste Job Description Text</label>
+            <textarea id="manual-jd-text" style="height:140px;" placeholder="Paste requirements, responsibilities..."></textarea>
+
+            <button class="btn" style="margin-top:12px;" onclick="tailorManual()">⚡ Tailor & Compare Profiles</button>
+            <div id="manual-status" style="margin-top:10px; font-size:13px;"></div>
+            <div id="manual-output" style="margin-top:12px; color:var(--text-muted); font-size:13px;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL 1: Per-Job Resume Customization & 1-Click Apply -->
+<div id="customize-modal" class="modal-overlay">
+    <div class="modal-box">
+        <div class="modal-header">
+            <div>
+                <h3 id="modal-title" style="color:#fff; font-size:18px;">Customize Resume for Role</h3>
+                <div id="modal-subtitle" style="font-size:13px; color:var(--text-muted); margin-top:2px;"></div>
+            </div>
+            <button class="modal-close" onclick="closeCustomizeModal()">&times;</button>
+        </div>
+
+        <input type="hidden" id="modal-job-id">
+
+        <div class="input-row">
+            <div class="input-group">
+                <label>Target Application Link</label>
+                <div style="display:flex; gap:6px;">
+                    <input type="text" id="modal-job-url">
+                    <a id="modal-open-url" href="#" target="_blank" class="btn btn-secondary btn-sm" style="text-decoration:none; white-space:nowrap;">Open Link ↗</a>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Selected Baseline Resume Persona</label>
+                <select id="modal-resume-select" onchange="onModalResumeChange()">
+                </select>
+            </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+            <label>Targeted Professional Summary (Auto-tailored for this company & role)</label>
+            <textarea id="modal-summary" style="height:90px;"></textarea>
+        </div>
+
+        <div style="margin-bottom:14px;">
+            <label>Key Bullet Points / Highlights for this Application (One per line)</label>
+            <textarea id="modal-bullets" style="height:120px;"></textarea>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid var(--border); padding-top:16px;">
+            <div id="modal-match-badge" class="score-badge score-high">ATS Match: --%</div>
+            <div style="display:flex; gap:10px;">
+                <button class="btn btn-secondary" onclick="saveAndPreviewCustomization()">💾 Save & Preview PDF</button>
+                <a id="modal-download-pdf-btn" href="#" target="_blank" class="btn btn-secondary" style="display:none; text-decoration:none;">📥 Download PDF</a>
+                <button class="btn btn-success" onclick="modalSingleClickApply()">⚡ 1-Click Apply Now</button>
+            </div>
+        </div>
+        <div id="modal-status-msg" style="margin-top:10px; font-size:13px;"></div>
+    </div>
+</div>
+
+<!-- MODAL 2: Add Custom Job Opening -->
+<div id="add-job-modal" class="modal-overlay">
+    <div class="modal-box" style="max-width:600px;">
+        <div class="modal-header">
+            <h3 style="color:#fff; font-size:18px;">➕ Add Custom Job Opening</h3>
+            <button class="modal-close" onclick="closeAddJobModal()">&times;</button>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label>Company Name *</label>
+                <input type="text" id="add-company" placeholder="e.g. Stripe, Uber, Atlassian">
+            </div>
+            <div class="input-group">
+                <label>Role Title *</label>
+                <input type="text" id="add-title" placeholder="e.g. Staff Backend Engineer">
+            </div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group">
+                <label>Application / Careers URL *</label>
+                <input type="text" id="add-url" placeholder="https://boards.greenhouse.io/... or https://jobs.lever.co/...">
+            </div>
+            <div class="input-group" style="flex:0 0 160px;">
+                <label>CTC Band</label>
+                <input type="text" id="add-salary" value="40 - 50 LPA">
+            </div>
+        </div>
+
+        <div style="margin-bottom:14px;">
+            <label>Job Description / Key Requirements Text</label>
+            <textarea id="add-desc" style="height:100px;" placeholder="Paste qualifications, tech stack, and responsibilities..."></textarea>
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; gap:10px; border-top:1px solid var(--border); padding-top:14px;">
+            <button class="btn btn-secondary" onclick="closeAddJobModal()">Cancel</button>
+            <button class="btn btn-success" onclick="submitAddJob()">Add & Auto-Select Resume</button>
+        </div>
+        <div id="add-job-status" style="margin-top:10px; font-size:13px;"></div>
+    </div>
+</div>
+
+<script>
+function switchTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+
+/* Checkboxes and Bulk Selection */
+function toggleSelectAll(master) {
+    const checkboxes = document.querySelectorAll('.job-checkbox');
+    checkboxes.forEach(cb => cb.checked = master.checked);
+    updateSelectedCount();
+}
+
+function updateSelectedCount() {
+    const checked = document.querySelectorAll('.job-checkbox:checked');
+    const badge = document.getElementById("selected-count-badge");
+    const bulkBtn = document.getElementById("btn-bulk-apply");
+
+    if (checked.length > 0) {
+        badge.style.display = "inline-block";
+        badge.innerText = `${checked.length} selected`;
+        bulkBtn.disabled = false;
+        bulkBtn.innerText = `⚡ Bulk Apply Selected (${checked.length})`;
+    } else {
+        badge.style.display = "none";
+        bulkBtn.disabled = true;
+        bulkBtn.innerText = "⚡ Bulk Apply Selected";
+    }
+}
+
+/* Bulk Apply with Async Polling */
+async function triggerBulkApply() {
+    const checked = document.querySelectorAll('.job-checkbox:checked');
+    const jobIds = Array.from(checked).map(cb => cb.value);
+
+    if (jobIds.length === 0) {
+        alert("Please select at least one job to bulk apply.");
+        return;
+    }
+
+    if (!confirm(`Are you sure you want to bulk-apply to ${jobIds.length} companies? Each opening will use its customized or best-aligned resume.`)) return;
+
+    const banner = document.getElementById("bulk-progress-banner");
+    const msg = document.getElementById("bulk-progress-msg");
+    const ratio = document.getElementById("bulk-progress-ratio");
+    banner.style.display = "block";
+    msg.innerText = "Starting background bulk application worker...";
+
+    try {
+        const resp = await fetch("/api/hunter/bulk-apply", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({job_ids: jobIds})
+        });
+        const data = await resp.json();
+
+        // Start polling bulk status every 2 seconds
+        pollBulkStatus();
+    } catch(e) {
+        msg.innerHTML = `<span style='color:var(--danger);'>Error: ${e.message}</span>`;
+    }
+}
+
+function pollBulkStatus() {
+    const interval = setInterval(async () => {
+        try {
+            const resp = await fetch("/api/hunter/bulk-status");
+            const state = await resp.json();
+
+            const msg = document.getElementById("bulk-progress-msg");
+            const ratio = document.getElementById("bulk-progress-ratio");
+
+            ratio.innerText = `${state.completed} / ${state.total} Completed`;
+            if (state.current_company) {
+                msg.innerText = `Applying to ${state.current_company}...`;
+            }
+
+            if (!state.is_running) {
+                clearInterval(interval);
+                msg.innerHTML = `<span style='color:var(--success); font-weight:600;'>✓ Bulk apply complete! Processed ${state.completed} applications.</span>`;
+                setTimeout(() => { window.location.reload(); }, 2000);
+            }
+        } catch(e) {
+            clearInterval(interval);
+        }
+    }, 2000);
+}
+
+/* Single-Click Apply from Queue Row */
+async function singleClickApply(jobId) {
+    const row = document.getElementById(`row-${jobId}`);
+    const originalContent = row.innerHTML;
+
+    if (!confirm("Apply for this opening now with its selected resume?")) return;
+
+    const statusEl = document.getElementById("hunt-status");
+    statusEl.innerHTML = `<span style='color:#60a5fa;'>⏳ Auto-filling application for job ${jobId}...</span>`;
+
+    try {
+        const resp = await fetch("/api/hunter/apply", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({job_id: jobId})
+        });
+        const data = await resp.json();
+        if (data.success) {
+            statusEl.innerHTML = `<span style='color:var(--success); font-weight:600;'>✓ Applied successfully! Check your queue status.</span>`;
+            setTimeout(() => { window.location.reload(); }, 1200);
+        } else {
+            statusEl.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error || data.report?.message}</span>`;
+        }
+    } catch(e) {
+        statusEl.innerHTML = `<span style='color:var(--danger);'>Error: ${e.message}</span>`;
+    }
+}
+
+/* Per-Job Customization Modal */
+async function openCustomizeModal(jobId) {
+    document.getElementById("modal-job-id").value = jobId;
+    const modal = document.getElementById("customize-modal");
+    modal.style.display = "flex";
+
+    try {
+        const resp = await fetch(`/api/hunter/customize/${jobId}`);
+        const data = await resp.json();
+        const job = data.job;
+
+        document.getElementById("modal-title").innerText = `Customize Resume for ${job.title}`;
+        document.getElementById("modal-subtitle").innerText = `${job.company} • ${job.salary} • Portal: ${job.portal}`;
+        document.getElementById("modal-job-url").value = job.url;
+        document.getElementById("modal-open-url").href = job.url;
+
+        // Populate resumes dropdown
+        const select = document.getElementById("modal-resume-select");
+        select.innerHTML = "";
+        data.available_resumes.forEach(r => {
+            const opt = document.createElement("option");
+            opt.value = r.file_name;
+            opt.innerText = `${r.file_name} (${r.title})`;
+            if (r.file_name === job.selected_resume_file) {
+                opt.selected = true;
+            }
+            select.appendChild(opt);
+        });
+
+        document.getElementById("modal-summary").value = job.custom_summary || "";
+        document.getElementById("modal-bullets").value = (job.custom_bullets || []).join("\n");
+        document.getElementById("modal-match-badge").innerText = `ATS Match: ${job.match_score}%`;
+
+        const dlBtn = document.getElementById("modal-download-pdf-btn");
+        if (data.pdf_url) {
+            dlBtn.style.display = "inline-flex";
+            dlBtn.href = data.pdf_url;
+        } else {
+            dlBtn.style.display = "none";
+        }
+    } catch(e) {
+        alert("Failed to load job details: " + e.message);
+    }
+}
+
+function closeCustomizeModal() {
+    document.getElementById("customize-modal").style.display = "none";
+}
+
+async function saveAndPreviewCustomization() {
+    const jobId = document.getElementById("modal-job-id").value;
+    const url = document.getElementById("modal-job-url").value.trim();
+    const resumeFile = document.getElementById("modal-resume-select").value;
+    const summary = document.getElementById("modal-summary").value.trim();
+    const bullets = document.getElementById("modal-bullets").value.split("\n").filter(b => b.trim());
+    const statusMsg = document.getElementById("modal-status-msg");
+
+    statusMsg.innerHTML = "<span style='color:#60a5fa;'>⏳ Saving customizations and compiling ATS PDF...</span>";
+
+    try {
+        const resp = await fetch(`/api/hunter/customize/${jobId}`, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+                url: url,
+                selected_resume_file: resumeFile,
+                custom_summary: summary,
+                custom_bullets: bullets
+            })
+        });
+        const data = await resp.json();
+        if (data.success) {
+            statusMsg.innerHTML = `<span style='color:var(--success);'>✓ Saved! PDF updated. ATS Score: ${data.job.match_score}%</span>`;
+            document.getElementById("modal-match-badge").innerText = `ATS Match: ${data.job.match_score}%`;
+            const dlBtn = document.getElementById("modal-download-pdf-btn");
+            dlBtn.style.display = "inline-flex";
+            dlBtn.href = data.pdf_url;
+        } else {
+            statusMsg.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error}</span>`;
+        }
+    } catch(e) {
+        statusMsg.innerHTML = `<span style='color:var(--danger);'>Error: ${e.message}</span>`;
+    }
+}
+
+async function modalSingleClickApply() {
+    await saveAndPreviewCustomization();
+    const jobId = document.getElementById("modal-job-id").value;
+    closeCustomizeModal();
+    singleClickApply(jobId);
+}
+
+/* Add Custom Job Modal */
+function openAddJobModal() {
+    document.getElementById("add-job-modal").style.display = "flex";
+}
+function closeAddJobModal() {
+    document.getElementById("add-job-modal").style.display = "none";
+}
+
+async function submitAddJob() {
+    const company = document.getElementById("add-company").value.trim();
+    const title = document.getElementById("add-title").value.trim();
+    const url = document.getElementById("add-url").value.trim();
+    const salary = document.getElementById("add-salary").value.trim();
+    const desc = document.getElementById("add-desc").value.trim();
+    const status = document.getElementById("add-job-status");
+
+    if (!company || !title) {
+        status.innerHTML = "<span style='color:var(--warning);'>Company and Role Title are required.</span>";
+        return;
+    }
+
+    status.innerHTML = "<span style='color:#60a5fa;'>⏳ Evaluating against 5 resumes and adding to queue...</span>";
+
+    try {
+        const resp = await fetch("/api/hunter/add-job", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({company, title, url, salary, description: desc})
+        });
+        const data = await resp.json();
+        if (data.success) {
+            status.innerHTML = "<span style='color:var(--success);'>✓ Added to queue! Refreshing...</span>";
+            setTimeout(() => { window.location.reload(); }, 1000);
+        } else {
+            status.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error}</span>`;
+        }
+    } catch(e) {
+        status.innerHTML = `<span style='color:var(--danger);'>Error: ${e.message}</span>`;
+    }
+}
+
+/* Portal Hunt */
+async function triggerHunt() {
+    const query = document.getElementById("hunt-query").value.trim();
+    const loc = document.getElementById("hunt-loc").value.trim();
+    const status = document.getElementById("hunt-status");
+
+    status.innerHTML = "<span style='color:#60a5fa;'>⏳ Scanning Hirist, Naukri, LinkedIn, and Tier-1 Career Portals for 40-50 LPA openings...</span>";
+
+    try {
+        const resp = await fetch("/api/hunter/hunt", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({query, location: loc, limit: 3})
+        });
+        const data = await resp.json();
+        if (data.success) {
+            status.innerHTML = `<span style='color:var(--success);'>✓ Discovered and evaluated ${data.count} jobs!</span>`;
+            setTimeout(() => { window.location.reload(); }, 1200);
+        } else {
+            status.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error}</span>`;
+        }
+    } catch (e) {
+        status.innerHTML = `<span style='color:var(--danger);'>Network error: ${e.message}</span>`;
+    }
+}
+
+/* Manual Tab Tailor */
+async function tailorManual() {
+    const jd_url = document.getElementById("manual-jd-url").value.trim();
+    const jd_text = document.getElementById("manual-jd-text").value.trim();
+    const status = document.getElementById("manual-status");
+    const output = document.getElementById("manual-output");
+
+    if (!jd_url && !jd_text) {
+        status.innerHTML = "<span style='color:var(--warning);'>Please provide a URL or paste text.</span>";
+        return;
+    }
+
+    status.innerHTML = "<span style='color:#60a5fa;'>⏳ Tailoring resume and computing ATS score...</span>";
+
+    try {
+        const resp = await fetch("/api/tailor", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({jd_url, jd_text})
+        });
+        const data = await resp.json();
+        if (data.success) {
+            status.innerHTML = `<span style='color:var(--success);'>✓ Done! ATS Match: ${data.ats_score}%</span>`;
+            output.innerHTML = `
+                <div style="font-size:16px; font-weight:700; color:#34d399; margin-bottom:8px;">ATS Match Score: ${data.ats_score}%</div>
+                <div style="font-weight:600; color:#fff; margin-bottom:8px;">${data.target_role} @ ${data.target_company}</div>
+                <div style="margin-bottom:12px;"><strong>Tailored Summary:</strong><br>${data.tailored_summary}</div>
+                <a href="${data.pdf_url}" target="_blank" class="btn btn-sm" style="text-decoration:none;">📥 Download ATS PDF</a>
+            `;
+        } else {
+            status.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error}</span>`;
+        }
+    } catch(e) {
+        status.innerHTML = `<span style='color:var(--danger);'>Error: ${e.message}</span>`;
+    }
+}
+</script>
+</body>
+</html>

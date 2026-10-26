@@ -1,0 +1,777 @@
+[
+  {
+    "id": "custom_job_1792755695586",
+    "portal": "Direct Application",
+    "company": "Stripe",
+    "title": "Staff Distributed Infrastructure Engineer",
+    "salary": "50 - 70 LPA",
+    "location": "India / Remote",
+    "url": "https://stripe.com/jobs/search?query=software",
+    "description": "Apache Kafka, Go, Java, low-latency microservices, distributed payments.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 95.5,
+    "matched_skills": [
+      "apache kafka",
+      "java",
+      "microservices",
+      "kafka",
+      "go"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: apache kafka, java, microservices, kafka.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Staff Distributed Infrastructure Engineer position at Stripe.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL reads by 68% during peak load.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "file_name": "backend_distributed_systems.txt",
+        "score": 95.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "file_name": "tech_lead_staff_architect.txt",
+        "score": 81.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "file_name": "data_engineering_streaming.txt",
+        "score": 54.5
+      },
+      {
+        "name": "fullstack_systems",
+        "file_name": "fullstack_systems.txt",
+        "score": 54.5
+      },
+      {
+        "name": "cloud_devops_platform",
+        "file_name": "cloud_devops_platform.txt",
+        "score": 48.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 17:11:35"
+  },
+  {
+    "id": "custom_job_1792755571891",
+    "portal": "Direct Application",
+    "company": "Atlassian Test",
+    "title": "Staff Distributed Systems Engineer",
+    "salary": "50 - 65 LPA",
+    "location": "India / Remote",
+    "url": "https://www.atlassian.com/company/careers",
+    "description": "Apache Kafka, Java, distributed consensus, microservices, cloud platforms.",
+    "selected_resume_file": "cloud_devops_platform.txt",
+    "selected_profile_name": "cloud_devops_platform",
+    "detected_title": "Senior Data Platform Engineer",
+    "match_score": 92,
+    "matched_skills": [
+      "apache kafka",
+      "java",
+      "microservices"
+    ],
+    "missing_skills": [
+      "kafka"
+    ],
+    "selection_reason": "Aligned with score 78.2% based on high overlap in: apache kafka, java, microservices.",
+    "custom_summary": "Specially tailored summary for Cloud & Platform Infrastructure.",
+    "custom_bullets": [
+      "Architected Kubernetes EKS across 3 AZs",
+      "Automated CI/CD with ArgoCD"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "master_backend_profile",
+        "file_name": "master_profile.json",
+        "score": 78.2
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 17:09:31",
+    "custom_pdf_path": "/Users/sakshimalik/Project/kafka/output/resume_hiring_company_apache_kafka__java__distributed_consensus__microservices__cloud_platforms__staff_distributed_systems_engineer.pdf",
+    "custom_html_path": "/Users/sakshimalik/Project/kafka/output/resume_hiring_company_apache_kafka__java__distributed_consensus__microservices__cloud_platforms__staff_distributed_systems_engineer.html"
+  },
+  {
+    "id": "job_1792753744217_0",
+    "portal": "Hirist",
+    "company": "Zepto (Kiranakart)",
+    "title": "Staff Backend Infrastructure Engineer",
+    "salary": "45 - 55 LPA",
+    "location": "Bangalore",
+    "url": "https://jobs.ashbyhq.com/zepto",
+    "description": "Looking for a Staff Backend Engineer to own distributed checkout infrastructure processing 1M orders/day. Must have deep Kafka, Go/Java, Redis, and high-throughput microservices experience.",
+    "selected_resume_file": "tech_lead_staff_architect.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 92,
+    "matched_skills": [
+      "kafka",
+      "go",
+      "redis",
+      "java",
+      "microservices"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: kafka, go, redis, java.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 95.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 81.5
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 63.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 54.5
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 48.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04",
+    "custom_summary": "Specially tailored summary for executive leadership and distributed systems.",
+    "custom_bullets": [
+      "Led 15+ senior engineers",
+      "Scaled Kafka to 1B messages/day"
+    ],
+    "custom_pdf_path": "/Users/sakshimalik/Project/kafka/output/resume_hiring_company_looking_for_a_staff_backend_engineer_to_own_distributed_checkout_infrastructure_processing_1m_orders_day__must_have_deep_kafka__go_java__redis__and_high_throughput_microservices_experience__staff_backend_infrastructure_engineer.pdf",
+    "custom_html_path": "/Users/sakshimalik/Project/kafka/output/resume_hiring_company_looking_for_a_staff_backend_engineer_to_own_distributed_checkout_infrastructure_processing_1m_orders_day__must_have_deep_kafka__go_java__redis__and_high_throughput_microservices_experience__staff_backend_infrastructure_engineer.html"
+  },
+  {
+    "id": "job_1792753744220_2",
+    "portal": "Hirist",
+    "company": "PhonePe",
+    "title": "Senior Staff Backend Systems Engineer",
+    "salary": "48 - 60 LPA",
+    "location": "Bangalore",
+    "url": "https://www.phonepe.com/careers/job-openings/",
+    "description": "Architect high-scale event streaming pipelines for UPI payments. Apache Kafka, Java, HBase, Redis, multi-datacenter active-active setup.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 95.5,
+    "matched_skills": [
+      "apache kafka",
+      "kafka",
+      "java",
+      "redis"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: apache kafka, kafka, java, redis.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 95.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 81.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 59.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 47.8
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744224_4",
+    "portal": "Naukri",
+    "company": "Cred",
+    "title": "Staff Backend Architect",
+    "salary": "48 - 60 Lacs P.A.",
+    "location": "Bangalore",
+    "url": "https://cred.club/careers",
+    "description": "Lead the financial backend core platforms. Strong distributed systems design, gRPC, Kafka, AWS, DynamoDB, resilient microservices.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 95.5,
+    "matched_skills": [
+      "dynamodb",
+      "grpc",
+      "kafka",
+      "distributed systems",
+      "aws",
+      "microservices"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: dynamodb, grpc, kafka, distributed systems.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 95.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 74.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 51.5
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 51.5
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 45.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744224_5",
+    "portal": "Naukri",
+    "company": "InMobi",
+    "title": "Lead Backend Infrastructure Engineer",
+    "salary": "40 - 50 Lacs P.A.",
+    "location": "Bangalore",
+    "url": "https://www.inmobi.com/company/careers",
+    "description": "Scale ad-serving bidding engine serving 500K QPS with sub-10ms latency. C++, Java, distributed caching, Kafka, and Linux kernel optimization.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 95.5,
+    "matched_skills": [
+      "kafka",
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: kafka, java.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 95.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 81.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 81.5
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 36.5
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744230_11",
+    "portal": "Zepto Careers",
+    "company": "Zepto",
+    "title": "Staff Software Engineer (Core Systems)",
+    "salary": "45 - 55 LPA",
+    "location": "Bengaluru",
+    "url": "https://jobs.ashbyhq.com/zepto",
+    "description": "Scale quick-commerce order delivery engine. Apache Kafka, Go, PostgreSQL, Redis, Kubernetes, high concurrency.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 95.5,
+    "matched_skills": [
+      "apache kafka",
+      "kafka",
+      "postgresql",
+      "concurrency",
+      "go",
+      "kubernetes",
+      "redis"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 95.5% based on high overlap in: apache kafka, kafka, postgresql, concurrency.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 95.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 75.1
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 55.8
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 55.8
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 43.4
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744227_9",
+    "portal": "Google Careers",
+    "company": "Google",
+    "title": "Senior Software Engineer, Core Infrastructure",
+    "salary": "50 - 70 LPA (L5/Senior Band)",
+    "location": "Bengaluru / Hyderabad",
+    "url": "https://www.google.com/about/careers/applications/jobs/results/?q=software%20engineer&location=India",
+    "description": "Design and build large-scale distributed systems and data processing infrastructure at Google scale. C++, Java, Go, distributed consensus, Spanner, Bigtable.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 92.5,
+    "matched_skills": [
+      "distributed systems",
+      "go",
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 92.5% based on high overlap in: distributed systems, go, java.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 92.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 78.5
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 50.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 48.5
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 48.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744222_3",
+    "portal": "Naukri",
+    "company": "Swiggy",
+    "title": "Principal Backend Engineer (Distributed Systems)",
+    "salary": "45 - 52 Lacs P.A.",
+    "location": "Bangalore / Remote",
+    "url": "https://careers.swiggy.com",
+    "description": "Architect core order routing & delivery dispatch engine. High-throughput distributed systems in Java/Go, Kafka, Redis, low latency microservices.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 89.1,
+    "matched_skills": [
+      "kafka",
+      "distributed systems",
+      "go",
+      "redis",
+      "java",
+      "microservices"
+    ],
+    "missing_skills": [
+      "low latency"
+    ],
+    "selection_reason": "Aligned with score 89.1% based on high overlap in: kafka, distributed systems, go, redis.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 89.1
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 75.1
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 55.8
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 49.4
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 43.4
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744219_1",
+    "portal": "Hirist",
+    "company": "Razorpay",
+    "title": "Lead Backend Platform Engineer",
+    "salary": "42 - 50 LPA",
+    "location": "Bangalore / Hybrid",
+    "url": "https://jobs.lever.co/razorpay",
+    "description": "Lead Platform Engineer to drive core payments routing engine. Deep knowledge of concurrency, low latency, distributed transactions, PostgreSQL, and AWS.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 84.2,
+    "matched_skills": [
+      "concurrency",
+      "aws",
+      "postgresql"
+    ],
+    "missing_skills": [
+      "low latency"
+    ],
+    "selection_reason": "Aligned with score 84.2% based on high overlap in: concurrency, aws, postgresql.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 84.2
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 59.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 59.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 59.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 41.8
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792755411205_0",
+    "portal": "LinkedIn",
+    "company": "Walmart Global Tech India",
+    "title": "(IND) STAFF, SOFTWARE ENGINEER",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/ind-staff-software-engineer-at-walmart-global-tech-india-4480044183?position=1&pageNum=0&refId=29pERqgcjWVHp8w3SWfFZg%3D%3D&trackingId=cxj%2FT2avQtFK1K%2BJlrRCZg%3D%3D",
+    "description": "Staff level role for (IND) STAFF, SOFTWARE ENGINEER at Walmart Global Tech India. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 17:06:51"
+  },
+  {
+    "id": "job_1792755411206_1",
+    "portal": "LinkedIn",
+    "company": "Rippling",
+    "title": "Staff Software Engineer",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/staff-software-engineer-at-rippling-4480815945?position=2&pageNum=0&refId=29pERqgcjWVHp8w3SWfFZg%3D%3D&trackingId=ZXHTY326drP51D4uedkqug%3D%3D",
+    "description": "Staff level role for Staff Software Engineer at Rippling. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 17:06:51"
+  },
+  {
+    "id": "job_1792755411206_2",
+    "portal": "LinkedIn",
+    "company": "Ping Identity",
+    "title": "Staff Software Engineer",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/staff-software-engineer-at-ping-identity-4473085546?position=3&pageNum=0&refId=29pERqgcjWVHp8w3SWfFZg%3D%3D&trackingId=pbr%2FT7KpA7aKj3KAIVbk2w%3D%3D",
+    "description": "Staff level role for Staff Software Engineer at Ping Identity. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 17:06:51"
+  },
+  {
+    "id": "job_1792753744225_6",
+    "portal": "LinkedIn",
+    "company": "Walmart Global Tech India",
+    "title": "(IND) STAFF, SOFTWARE ENGINEER",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/ind-staff-software-engineer-at-walmart-global-tech-india-4480044183?position=1&pageNum=0&refId=6zmZL%2FE6RAf7y9RtbkbJLQ%3D%3D&trackingId=gh8l66yCZgFisATMU24TPg%3D%3D",
+    "description": "Staff level role for (IND) STAFF, SOFTWARE ENGINEER at Walmart Global Tech India. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744225_7",
+    "portal": "LinkedIn",
+    "company": "Rippling",
+    "title": "Staff Software Engineer",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/staff-software-engineer-at-rippling-4480815945?position=2&pageNum=0&refId=6zmZL%2FE6RAf7y9RtbkbJLQ%3D%3D&trackingId=UvgCNyAcJ7eKKAFiwggjeg%3D%3D",
+    "description": "Staff level role for Staff Software Engineer at Rippling. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744226_8",
+    "portal": "LinkedIn",
+    "company": "Ping Identity",
+    "title": "Staff Software Engineer",
+    "salary": "40 - 50+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/staff-software-engineer-at-ping-identity-4473085546?position=3&pageNum=0&refId=6zmZL%2FE6RAf7y9RtbkbJLQ%3D%3D&trackingId=tFNHbm%2F7qEHnV%2BUr6cZvxQ%3D%3D",
+    "description": "Staff level role for Staff Software Engineer at Ping Identity. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_distributed_systems.txt",
+    "selected_profile_name": "backend_distributed_systems",
+    "detected_title": "Staff / Lead Software Engineer",
+    "match_score": 73.0,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.0% based on high overlap in: general engineering principles.",
+    "all_evaluations_summary": [
+      {
+        "name": "backend_distributed_systems",
+        "score": 73.0
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 73.0
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 73.0
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 73.0
+      },
+      {
+        "name": "cloud_devops_platform",
+        "score": 53.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  },
+  {
+    "id": "job_1792753744229_10",
+    "portal": "Microsoft Careers",
+    "company": "Microsoft",
+    "title": "Principal Software Engineer, Azure Platforms",
+    "salary": "48 - 65 LPA (L64+ Band)",
+    "location": "Bengaluru / Hyderabad",
+    "url": "https://jobs.careers.microsoft.com/global/en/search?q=software%20engineer&lc=India",
+    "description": "Architect Azure distributed cloud platform, microservices orchestration, low latency networking, C#, Go, Kubernetes, high availability.",
+    "selected_resume_file": "cloud_devops_platform.txt",
+    "selected_profile_name": "cloud_devops_platform",
+    "detected_title": "Senior Data Platform Engineer",
+    "match_score": 71.5,
+    "matched_skills": [
+      "go",
+      "kubernetes",
+      "microservices"
+    ],
+    "missing_skills": [
+      "low latency",
+      "azure"
+    ],
+    "selection_reason": "Aligned with score 71.5% based on high overlap in: go, kubernetes, microservices.",
+    "all_evaluations_summary": [
+      {
+        "name": "cloud_devops_platform",
+        "score": 71.5
+      },
+      {
+        "name": "backend_distributed_systems",
+        "score": 63.5
+      },
+      {
+        "name": "tech_lead_staff_architect",
+        "score": 63.5
+      },
+      {
+        "name": "fullstack_systems",
+        "score": 54.5
+      },
+      {
+        "name": "data_engineering_streaming",
+        "score": 45.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-23 16:39:04"
+  }
+]

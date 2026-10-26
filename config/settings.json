@@ -1,0 +1,52 @@
+{
+  "tailoring": {
+    "engine": "auto",
+    "gemini_api_key_env": "GEMINI_API_KEY",
+    "openai_api_key_env": "OPENAI_API_KEY",
+    "model_name": "gemini-1.5-flash",
+    "max_bullets_per_job": 4,
+    "highlight_keywords": true,
+    "min_match_score_to_apply": 50
+  },
+  "job_search": {
+    "min_ctc_lakhs": 40,
+    "max_ctc_lakhs": 50,
+    "target_roles": [
+      "Staff Software Engineer",
+      "Principal Engineer",
+      "Senior Distributed Systems Engineer",
+      "Lead Backend Engineer"
+    ],
+    "target_locations": [
+      "Bangalore",
+      "Remote",
+      "Hyderabad",
+      "Gurgaon",
+      "Delhi NCR",
+      "Pune"
+    ],
+    "portals": [
+      "Hirist",
+      "Naukri",
+      "LinkedIn",
+      "CareerPages"
+    ],
+    "application_mode": "review_queue",
+    "min_match_score_to_auto_apply": 80,
+    "use_chrome_profile": true
+  },
+  "browser": {
+    "headless": false,
+    "review_mode": true,
+    "timeout_ms": 30000,
+    "auto_submit": false,
+    "window_size": [1280, 900]
+  },
+  "ats_support": [
+    "greenhouse",
+    "lever",
+    "ashby",
+    "generic"
+  ],
+  "output_dir": "output"
+}

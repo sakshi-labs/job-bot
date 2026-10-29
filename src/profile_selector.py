@@ -85,31 +85,44 @@ class ProfileSelector:
         score = 50.0
         p_name = profile_name.lower() + " " + p_title.lower()
 
-        # Domain keywords mapping
+        # Domain keywords mapping for the 4 core developer personas
         domains = {
-            "data": ["data", "spark", "flink", "etl", "lakehouse", "snowflake", "bigquery", "airflow", "analytics", "pipeline"],
-            "devops": ["devops", "cloud", "platform", "kubernetes", "k8s", "terraform", "sre", "infrastructure", "argocd", "helm"],
-            "fullstack": ["full stack", "fullstack", "react", "next.js", "frontend", "typescript", "node.js", "graphql", "ui"],
-            "backend": ["backend", "distributed systems", "kafka", "microservices", "low latency", "concurrency", "golang", "java"],
-            "staff": ["staff", "principal", "architect", "tech lead", "engineering leadership", "system design", "rfc"]
+            "llm": ["llm", "large language model", "generative ai", "genai", "langchain", "langgraph", "llamaindex", "rag", "retrieval augmented", "vector database", "pinecone", "chromadb", "chroma", "milvus", "qdrant", "weaviate", "embeddings", "openai", "claude", "gemini", "ai agent", "prompt engineering", "fine-tuning"],
+            "frontend": ["frontend", "front-end", "react", "next.js", "nextjs", "vue", "angular", "ui", "ux", "css", "tailwind", "redux", "zustand", "web vitals", "client-side", "responsive design", "micro-frontend", "html5", "css3"],
+            "backend": ["backend", "back-end", "distributed systems", "kafka", "microservices", "java", "golang", "go", "spring", "spring boot", "grpc", "low latency", "concurrency", "redis", "postgresql", "mysql", "rabbitmq"],
+            "fullstack": ["full stack", "fullstack", "full-stack", "mern", "pern", "end-to-end", "react and node", "node and react", "full-cycle", "api and ui"],
+            "data": ["spark", "flink", "etl", "lakehouse", "snowflake", "bigquery", "airflow", "analytics pipeline"],
+            "devops": ["kubernetes", "k8s", "terraform", "sre", "infrastructure as code", "argocd", "helm", "cloud platform"]
         }
 
-        # Identify JD primary domain
-        jd_combined = jd_title + " " + jd_text[:1200]
+        # Weight title more heavily than body
+        jd_combined = (jd_title * 3) + " " + jd_text[:1500]
         domain_counts = {}
         for d, keywords in domains.items():
-            count = sum(1 for kw in keywords if kw in jd_combined)
+            count = sum(1 for kw in keywords if re.search(r'\b' + re.escape(kw) + r'\b', jd_combined))
             domain_counts[d] = count
 
-        top_jd_domain = max(domain_counts, key=domain_counts.get) if domain_counts else "backend"
+        # If LLM keywords are present, prioritize LLM specialization
+        if domain_counts.get("llm", 0) >= 2:
+            top_jd_domain = "llm"
+        else:
+            top_jd_domain = max(domain_counts, key=domain_counts.get) if any(domain_counts.values()) else "backend"
 
-        # Check if profile matches the top JD domain
-        if top_jd_domain in p_name:
-            score += 40.0
+        # Check profile match against identified domain
+        if top_jd_domain == "llm" and ("llm" in p_name or "ai" in p_name):
+            score += 45.0
+        elif top_jd_domain == "frontend" and "frontend" in p_name:
+            score += 45.0
+        elif top_jd_domain == "backend" and "backend" in p_name:
+            score += 45.0
+        elif top_jd_domain == "fullstack" and "fullstack" in p_name and "llm" not in p_name:
+            score += 45.0
+        elif top_jd_domain in p_name:
+            score += 35.0
         else:
             # Partial overlaps
             overlap = sum(1 for kw in domains.get(top_jd_domain, []) if kw in p_name)
-            score += min(overlap * 10, 20)
+            score += min(overlap * 8, 15)
 
         return min(score, 100.0)
 

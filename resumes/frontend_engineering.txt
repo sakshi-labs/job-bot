@@ -1,0 +1,32 @@
+ALEX MORGAN
+alex.morgan.dev@example.com | +91 98765 43210 | Bangalore, India | linkedin.com/in/alexmorgan-dev | github.com/alexmorgan-dev | alexmorgandev.io
+
+PROFILE: SENIOR FRONTEND & UI/UX ARCHITECT
+Senior Frontend Engineer with 6+ years of experience crafting high-performance, accessible, and responsive enterprise web applications.
+Expert in React, Next.js, TypeScript, modern CSS architectures (Tailwind CSS), state management (Redux Toolkit, Zustand), micro-frontends, and Core Web Vitals optimization.
+
+CORE TECHNICAL SKILLS
+Frontend & Core: React.js, Next.js (App Router, Server Components), TypeScript, JavaScript (ES6+), HTML5, CSS3, SCSS
+UI & Styling: Tailwind CSS, CSS Modules, Radix UI, Shadcn/UI, Material UI, Framer Motion, Responsive Web Design
+State Management & Data Fetching: Redux Toolkit, Zustand, React Query (TanStack Query), Context API, SWR, GraphQL (Apollo Client)
+Build Tools & Performance: Webpack, Vite, Turbopack, Core Web Vitals (LCP, FID, CLS), Code Splitting, Bundle Optimization
+Testing & Quality: Jest, React Testing Library, Cypress, Playwright, Storybook, ESLint, Prettier, WCAG / Accessibility
+Backend Familiarity: Node.js, Express, RESTful APIs, WebSockets, Git, CI/CD, Docker
+
+PROFESSIONAL EXPERIENCE
+
+Senior Frontend Engineer — Veloce Cloud Platform (2022 – Present)
+• Spearheaded the frontend redesign of customer analytics portal using Next.js 14, React, and TypeScript, serving 400K+ monthly active users.
+• Optimized Core Web Vitals across 80+ dynamic web pages, reducing Largest Contentful Paint (LCP) from 3.8s to 1.1s and boosting Lighthouse score from 58 to 96.
+• Architected a unified, accessible Design System component library using Tailwind CSS and Radix UI adopted by 4 distinct engineering squads.
+• Migrated client-side Redux store to Zustand and TanStack Query, reducing frontend boilerplate code by 42% and eliminating unnecessary component re-renders.
+• Designed and implemented micro-frontend architecture with Module Federation, enabling independent deployments across 5 product teams.
+
+Frontend Software Engineer — PixelCraft Digital (2019 – 2022)
+• Developed responsive SaaS dashboard features in React, TypeScript, and Redux Toolkit with interactive charts using D3.js and Recharts.
+• Built end-to-end component testing suites using Jest and React Testing Library, achieving 90%+ code coverage on critical user payment journeys.
+• Implemented WebSocket real-time notification feeds and live chat widget handling 10K+ concurrent user sessions with sub-50ms render latency.
+• Collaborated closely with Product Designers in Figma to translate complex design specs into pixel-perfect, accessible UI components.
+
+EDUCATION
+B.Tech in Computer Science & Engineering — Indian Institute of Technology (IIT) / NIT (2015 – 2019) | CGPA: 8.8/10

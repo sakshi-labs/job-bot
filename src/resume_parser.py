@@ -262,29 +262,38 @@ class ResumeDocumentParser:
 
     @classmethod
     def _detect_title(cls, base_name: str, text: str) -> str:
-        name_lower = (base_name + " " + text[:500]).lower()
-        if "lead" in name_lower or "staff" in name_lower or "architect" in name_lower:
-            return "Staff / Lead Software Engineer"
-        elif "data" in name_lower or "spark" in name_lower or "pipeline" in name_lower:
-            return "Senior Data Platform Engineer"
-        elif "devops" in name_lower or "cloud" in name_lower or "kubernetes" in name_lower:
-            return "Senior Cloud & Platform Engineer"
-        elif "fullstack" in name_lower or "frontend" in name_lower or "react" in name_lower:
+        # Check filename and header first for primary designation
+        header = (base_name + " " + "\n".join(text.split("\n")[:5])).lower()
+        if any(k in header for k in ["llm", "generative ai", "genai", "ai engineer"]):
+            return "Senior Full Stack AI & LLM Systems Engineer"
+        elif any(k in header for k in ["fullstack", "full stack", "full-stack"]):
             return "Senior Full Stack Engineer"
-        elif "backend" in name_lower or "distributed" in name_lower or "kafka" in name_lower:
-            return "Senior Distributed Systems Backend Engineer"
+        elif any(k in header for k in ["frontend", "front-end", "ui/ux", "ui engineer"]):
+            return "Senior Frontend Engineer"
+        elif any(k in header for k in ["backend", "back-end", "distributed systems"]):
+            return "Senior Backend Engineer"
+        elif "lead" in header or "staff" in header or "architect" in header:
+            return "Staff / Lead Software Engineer"
         return "Senior Software Engineer"
 
     @classmethod
     def _extract_skills(cls, text: str) -> List[str]:
         common_skills = [
-            "python", "java", "go", "golang", "c++", "rust", "scala", "sql", "typescript", "javascript",
-            "kafka", "apache kafka", "redis", "rabbitmq", "grpc", "microservices", "distributed systems",
-            "aws", "gcp", "azure", "kubernetes", "docker", "terraform", "ci/cd",
-            "spark", "apache spark", "flink", "hadoop", "airflow", "snowflake", "bigquery",
-            "postgresql", "postgres", "mysql", "mongodb", "dynamodb", "elasticsearch", "cassandra",
-            "react", "node.js", "next.js", "system design", "rest api", "graphql", "observability",
-            "opentelemetry", "prometheus", "grafana"
+            # Languages
+            "python", "java", "go", "golang", "c++", "c#", "rust", "scala", "sql", "typescript", "javascript", "bash", "html5", "css3",
+            # AI, GenAI & LLM
+            "llm", "large language models", "generative ai", "genai", "langchain", "langgraph", "llamaindex", "rag", "retrieval augmented generation",
+            "openai", "gpt-4o", "claude", "gemini", "llama 3", "vector database", "pinecone", "chromadb", "chroma", "milvus", "qdrant", "weaviate", "pgvector",
+            "embeddings", "prompt engineering", "fine-tuning", "pytorch", "hugging face", "transformers", "vllm", "ai agents", "tool calling", "ragas",
+            # Frontend
+            "react", "react.js", "next.js", "nextjs", "vue", "angular", "tailwind", "tailwind css", "redux", "redux toolkit", "zustand", "react query",
+            "radix ui", "shadcn", "material ui", "webpack", "vite", "turbopack", "core web vitals", "responsive design", "micro-frontends", "storybook", "jest", "cypress",
+            # Backend & Systems
+            "node.js", "nodejs", "express", "fastapi", "django", "spring", "spring boot", "kafka", "apache kafka", "redis", "rabbitmq", "grpc", "microservices",
+            "distributed systems", "event-driven", "concurrency", "multithreading", "low latency", "high throughput", "system design", "rest api", "rest", "graphql",
+            # Databases & Cloud
+            "postgresql", "postgres", "mysql", "mongodb", "dynamodb", "elasticsearch", "cassandra", "snowflake", "bigquery",
+            "aws", "amazon web services", "gcp", "azure", "kubernetes", "docker", "terraform", "ci/cd", "github actions", "observability", "opentelemetry", "prometheus", "grafana"
         ]
         text_lower = text.lower()
         found = []

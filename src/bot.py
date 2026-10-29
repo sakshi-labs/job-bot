@@ -16,6 +16,7 @@ from .html_generator import generate_html_resume
 from .forms.greenhouse import GreenhouseFormFiller
 from .forms.lever import LeverFormFiller
 from .forms.ashby import AshbyFormFiller
+from .forms.workday import WorkdayFormFiller
 from .forms.generic import GenericFormFiller
 
 class JobApplicationBot:
@@ -111,7 +112,10 @@ class JobApplicationBot:
 
             # Select appropriate ATS filler
             filler = None
-            if GreenhouseFormFiller.is_match(current_url, page_source):
+            if WorkdayFormFiller.is_match(current_url, page_source):
+                print("[*] Detected Workday Enterprise ATS portal.")
+                filler = WorkdayFormFiller()
+            elif GreenhouseFormFiller.is_match(current_url, page_source):
                 print("[*] Detected Greenhouse ATS portal.")
                 filler = GreenhouseFormFiller()
             elif LeverFormFiller.is_match(current_url, page_source):

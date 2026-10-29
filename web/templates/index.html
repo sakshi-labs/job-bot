@@ -69,6 +69,9 @@
     .portal-hirist { background: #ffebd8; color: #b45309; }
     .portal-naukri { background: #e0f2fe; color: #0369a1; }
     .portal-linkedin { background: #dbeafe; color: #1d4ed8; }
+    .portal-instahyre { background: #dcfce7; color: #15803d; }
+    .portal-wellfound { background: #fee2e2; color: #b91c1c; }
+    .portal-workday { background: #e0e7ff; color: #4338ca; }
     .portal-careerpages { background: #ede9fe; color: #6d28d9; }
 
     .score-badge { font-weight: 700; padding: 4px 8px; border-radius: 6px; font-size: 12px; text-align: center; display: inline-block; }
@@ -100,34 +103,34 @@
     <header>
         <div>
             <h1>Automated Application & Multi-Resume Optimizer</h1>
-            <div class="subtitle">Autonomous 40–50 LPA Hunter across Hirist, Naukri, LinkedIn & Career Portals</div>
+            <div class="subtitle">Autonomous 30–40 LPA Hunter across Instahyre, Wellfound, Workday, Hirist, Naukri & LinkedIn</div>
         </div>
         <div class="header-badges">
-            <span class="badge badge-ctc">💰 Target CTC: 40 - 50+ LPA</span>
+            <span class="badge badge-ctc">💰 Target CTC: 30 - 40+ Lakhs P.A.</span>
             <span class="badge">👤 {{ profile.personal.full_name }}</span>
         </div>
     </header>
 
     <!-- Navigation Tabs -->
     <div class="tabs">
-        <button class="tab-btn active" onclick="switchTab('hunt-tab')">🎯 40-50L Job Hunter & Queue ({{ queue|length }})</button>
-        <button class="tab-btn" onclick="switchTab('resumes-tab')">📁 My 5 Resumes Bank ({{ resumes|length }})</button>
+        <button class="tab-btn active" onclick="switchTab('hunt-tab')">🎯 30-40L Job Hunter & Queue ({{ queue|length }})</button>
+        <button class="tab-btn" onclick="switchTab('resumes-tab')">📁 My 4 Resumes Bank ({{ resumes|length }})</button>
         <button class="tab-btn" onclick="switchTab('tailor-tab')">⚡ Manual URL / Single JD Tailor</button>
     </div>
 
-    <!-- TAB 1: 40-50L Autonomous Job Hunter & Review Queue -->
+    <!-- TAB 1: 30-40L Autonomous Job Hunter & Review Queue -->
     <div id="hunt-tab" class="tab-content active">
         <!-- Scan Portals Card -->
         <div class="card">
             <div class="card-title">
                 <span>Autonomous Portal Discovery</span>
-                <span style="font-size: 12px; color: var(--text-muted);">Hirist &bull; Naukri &bull; LinkedIn &bull; Google/Uber/Stripe Careers</span>
+                <span style="font-size: 12px; color: var(--text-muted);">Instahyre &bull; Wellfound &bull; Workday (BigTech) &bull; Hirist &bull; Naukri &bull; LinkedIn</span>
             </div>
 
             <div class="input-row">
                 <div class="input-group">
                     <label>Role / Skill Keywords</label>
-                    <input type="text" id="hunt-query" value="Backend" placeholder="e.g. Backend, Distributed Systems, Data Platform">
+                    <input type="text" id="hunt-query" value="Full Stack" placeholder="e.g. Frontend, Backend, Full Stack, LLM / AI">
                 </div>
                 <div class="input-group">
                     <label>Location Hub</label>
@@ -135,7 +138,7 @@
                 </div>
                 <div class="input-group" style="flex: 0 0 160px;">
                     <label>Compensation Filter</label>
-                    <input type="text" value="40 - 50 LPA" disabled style="background:#1e293b; color:#34d399; font-weight:600;">
+                    <input type="text" value="30 - 40 LPA" disabled style="background:#1e293b; color:#34d399; font-weight:600;">
                 </div>
                 <div style="display:flex; align-items:flex-end; gap:8px;">
                     <button class="btn" onclick="triggerHunt()">🔍 Scan Portals</button>
@@ -197,6 +200,9 @@
                                 {% if j.portal == 'Hirist' %}<span class="portal-tag portal-hirist">Hirist</span>
                                 {% elif j.portal == 'Naukri' %}<span class="portal-tag portal-naukri">Naukri</span>
                                 {% elif j.portal == 'LinkedIn' %}<span class="portal-tag portal-linkedin">LinkedIn</span>
+                                {% elif 'Instahyre' in j.portal %}<span class="portal-tag portal-instahyre">Instahyre</span>
+                                {% elif 'Wellfound' in j.portal %}<span class="portal-tag portal-wellfound">Wellfound</span>
+                                {% elif 'Workday' in j.portal %}<span class="portal-tag portal-workday">Workday</span>
                                 {% else %}<span class="portal-tag portal-careerpages">{{ j.portal }}</span>{% endif %}
                             </td>
                             <td><strong>{{ j.company }}</strong><br><span style="font-size:11px; color:var(--text-muted);">{{ j.location }}</span></td>

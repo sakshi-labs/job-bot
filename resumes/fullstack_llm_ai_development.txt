@@ -1,0 +1,33 @@
+ALEX MORGAN
+alex.morgan.dev@example.com | +91 98765 43210 | Bangalore, India | linkedin.com/in/alexmorgan-dev | github.com/alexmorgan-dev | alexmorgandev.io
+
+PROFILE: SENIOR FULL STACK AI & LLM SYSTEMS ENGINEER
+Senior Full Stack Engineer with 6+ years of software engineering experience, including 3+ years specializing in Generative AI, Large Language Models (LLMs), RAG architectures, and AI agent platforms.
+Expert in building end-to-end AI products: React/Next.js and Vercel AI SDK on the frontend, Python (FastAPI) and LangChain/LlamaIndex on the backend, Vector Databases (Pinecone, Chroma, pgvector), and cloud deployment.
+
+CORE TECHNICAL SKILLS
+LLM & Generative AI: Large Language Models (OpenAI GPT-4o, Claude 3.5, Gemini 1.5, Llama 3), LangChain, LangGraph, LlamaIndex, RAG (Retrieval Augmented Generation)
+Vector Databases & Embeddings: Pinecone, ChromaDB, Milvus, Qdrant, Weaviate, PostgreSQL (pgvector), Text Embeddings, Hybrid Search, Reranking (Cohere)
+AI Agents & Prompt Engineering: Multi-Agent Workflows, Function Calling / Tool Use, ReAct Pattern, Structured Outputs, Prompt Optimization, Guardrails (NeMo), Ragas Evaluation
+Frontend AI Stack: React.js, Next.js (App Router, Server Actions), TypeScript, Vercel AI SDK, Tailwind CSS, Streaming UI (Server-Sent Events), WebSocket Feeds
+Backend & APIs: Python (FastAPI, Asyncio), Node.js, RESTful APIs, GraphQL, gRPC, Celery, Redis, PyTorch, Hugging Face Transformers, vLLM
+Databases & Cloud: PostgreSQL (pgvector), MongoDB, Redis (Vector Cache), AWS (Bedrock, SageMaker, ECS, S3), Docker, Kubernetes, CI/CD
+
+PROFESSIONAL EXPERIENCE
+
+Senior Full Stack AI Engineer — Cortex Generative Labs (2022 – Present)
+• Architected and deployed enterprise-grade RAG platform using LangChain, Next.js, and Pinecone, enabling 80K+ enterprise users to query 10M+ internal documents with sub-2s latency.
+• Built low-latency generative chat interface in Next.js 14 utilizing the Vercel AI SDK and Server-Sent Events (SSE) for token-by-token streaming responses.
+• Engineered hybrid retrieval pipeline combining BM25 keyword search with dense vector embeddings and Cohere cross-encoder reranking, improving RAG answer accuracy from 71% to 94%.
+• Developed autonomous multi-agent research workflow using LangGraph and tool calling to synthesize automated market intelligence reports.
+• Implemented semantic caching using Redis Vector Store, reducing third-party OpenAI/Anthropic API compute costs by 46% while accelerating cached query responses to under 80ms.
+• Built continuous evaluation pipeline using Ragas to measure faithfulness, answer relevancy, and context recall across production LLM outputs.
+
+Full Stack Software Engineer — TensorWave Systems (2019 – 2022)
+• Developed predictive analytics dashboards and data workflows using React, TypeScript, Python (FastAPI), and PostgreSQL.
+• Built real-time inference microservices deploying NLP classification and sentiment models with Docker on AWS ECS.
+• Integrated GraphQL APIs and WebSocket subscriptions to deliver live data updates to 50K+ daily active platform users.
+• Designed automated CI/CD deployment pipelines on GitHub Actions with automated linting, unit tests, and Docker container security scanning.
+
+EDUCATION
+B.Tech in Computer Science & Engineering — Indian Institute of Technology (IIT) / NIT (2015 – 2019) | CGPA: 8.8/10

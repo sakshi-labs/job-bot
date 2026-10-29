@@ -9,13 +9,13 @@
     "min_match_score_to_apply": 50
   },
   "job_search": {
-    "min_ctc_lakhs": 40,
-    "max_ctc_lakhs": 50,
+    "min_ctc_lakhs": 30,
+    "max_ctc_lakhs": 40,
     "target_roles": [
-      "Staff Software Engineer",
-      "Principal Engineer",
-      "Senior Distributed Systems Engineer",
-      "Lead Backend Engineer"
+      "Senior Frontend Engineer",
+      "Senior Backend Engineer",
+      "Senior Full Stack Engineer",
+      "Full Stack AI & LLM Systems Engineer"
     ],
     "target_locations": [
       "Bangalore",
@@ -23,13 +23,16 @@
       "Hyderabad",
       "Gurgaon",
       "Delhi NCR",
-      "Pune"
+      "Pune",
+      "Mumbai"
     ],
     "portals": [
+      "Instahyre",
+      "Wellfound",
+      "Workday_BigTech",
       "Hirist",
       "Naukri",
-      "LinkedIn",
-      "CareerPages"
+      "LinkedIn"
     ],
     "application_mode": "review_queue",
     "min_match_score_to_auto_apply": 80,
@@ -43,6 +46,7 @@
     "window_size": [1280, 900]
   },
   "ats_support": [
+    "workday",
     "greenhouse",
     "lever",
     "ashby",

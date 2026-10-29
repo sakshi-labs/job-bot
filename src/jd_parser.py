@@ -11,13 +11,19 @@ from .models import JobDescription
 
 COMMON_TECH_KEYWORDS = {
     # Languages
-    "python", "java", "golang", "go", "c++", "c#", "rust", "javascript", "typescript", "ruby", "scala", "swift", "kotlin", "sql", "bash",
-    # Frameworks & Libraries
-    "react", "angular", "vue", "django", "flask", "fastapi", "spring", "spring boot", "node.js", "nodejs", "express", "next.js", "graphql",
-    # Distributed Systems & Cloud
+    "python", "java", "golang", "go", "c++", "c#", "rust", "javascript", "typescript", "ruby", "scala", "sql", "bash", "html5", "css3",
+    # AI, LLM & GenAI
+    "llm", "large language models", "generative ai", "genai", "langchain", "langgraph", "llamaindex", "rag", "retrieval augmented generation",
+    "openai", "gpt-4o", "claude", "gemini", "llama", "vector database", "pinecone", "chromadb", "chroma", "milvus", "qdrant", "weaviate", "pgvector",
+    "embeddings", "prompt engineering", "fine-tuning", "pytorch", "hugging face", "transformers", "vllm", "ai agents", "tool calling",
+    # Frontend & UI
+    "react", "react.js", "next.js", "nextjs", "vue", "angular", "tailwind", "tailwind css", "redux", "redux toolkit", "zustand", "react query",
+    "radix ui", "shadcn", "webpack", "vite", "core web vitals", "responsive design", "micro-frontends", "ui/ux", "frontend",
+    # Backend, Frameworks & Distributed Systems
+    "django", "flask", "fastapi", "spring", "spring boot", "node.js", "nodejs", "express", "graphql",
     "kafka", "apache kafka", "rabbitmq", "redis", "grpc", "microservices", "distributed systems", "event-driven",
+    # Cloud, DevOps & Databases
     "aws", "amazon web services", "gcp", "google cloud", "azure", "kubernetes", "k8s", "docker", "terraform", "ci/cd",
-    # Databases & Storage
     "postgresql", "postgres", "mysql", "mongodb", "dynamodb", "elasticsearch", "cassandra", "snowflake", "bigquery",
     # Practices & Concepts
     "rest", "restful", "system design", "multithreading", "concurrency", "low latency", "high throughput", "observability",

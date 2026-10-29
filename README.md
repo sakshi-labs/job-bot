@@ -1,41 +1,58 @@
-# 🤖 40–50 LPA Autonomous Job Application Bot & Multi-Resume Optimizer
+# 🤖 Multi-Platform Job Application Bot & 4-Resume Optimizer (30–40 LPA)
 
-An autonomous job hunter and intelligent multi-resume selector specialized in **40–50+ LPA compensation brackets** across **Hirist, Naukri, LinkedIn, and Tier-1 Company Career Pages** (Google, Uber, Microsoft, Atlassian, Stripe, Razorpay, Swiggy, Zepto, Cred, PhonePe).
+An intelligent multi-resume job hunting and application automation platform specialized in **₹30 – ₹40+ Lakhs P.A.** software engineering opportunities across:
+- **Instahyre** (Curated AI invite platform in India)
+- **Wellfound / AngelList** (Top startup & AI/LLM platform)
+- **Workday & Enterprise Career Portals** (Walmart, Adobe, Salesforce, Nvidia, Cisco, Google, Microsoft)
+- **Hirist & Naukri** (30–40 LPA tech filters)
+- **LinkedIn Jobs** (Senior/Lead/Staff software engineer roles)
 
 ---
 
-## 🌟 Architecture & Key Features
+## 🌟 The 4 Developer Resumes (`resumes/`)
 
-### 1. 5-Resume Bank (`resumes/`) & Profile Intelligence
-- Store up to **5 distinct baseline resumes** (supporting `.pdf`, `.docx`, `.txt`, `.md`, `.json`):
-  1. `backend_distributed_systems.txt` (Kafka, Go, Java, gRPC, Redis, Microservices)
-  2. `data_engineering_streaming.txt` (Apache Spark, Flink, Kafka Streams, Snowflake, Airflow)
-  3. `cloud_devops_platform.txt` (Kubernetes, Terraform, AWS/GCP, Docker, ArgoCD, CI/CD)
-  4. `fullstack_systems.txt` (TypeScript, React, Next.js, Node.js, GraphQL, PostgreSQL)
-  5. `tech_lead_staff_architect.txt` (System Architecture, RFCs, Leadership, 40–50L+ Staff Scope)
-- **Core Skill Integrity Rule**: Evaluates every discovered job against all 5 resumes and picks the single best-aligned resume **without distorting or fabricating core skills**.
+The bot manages **four specialized developer personas**, dynamically selecting the highest-scoring ATS resume without distorting your authentic skills:
 
-### 2. Per-Application Resume Customization & 1-Click Apply
-- For any job in the queue, click **"🎨 Customize & Apply"**:
-  - View the company, role, salary, and verified live application URL.
-  - **Resume Persona Switcher**: Switch to any of your other 4 resumes on the fly—the ATS score updates in real time.
-  - **Editable Targeted Summary**: Fine-tune the executive summary generated for that specific company.
-  - **Editable Experience Bullets**: Add, reorder, or delete bullet points specifically for this application.
+1. **`frontend_engineering.txt` (Frontend Specialist)**:
+   - React 18/19, Next.js (App Router, Server Actions), TypeScript, Tailwind CSS, Redux Toolkit, Zustand, React Query, Webpack/Vite, Core Web Vitals, Micro-frontends, UI/UX Component Architecture.
+2. **`backend_development.txt` (Backend Specialist)**:
+   - Java (Spring Boot), Go (Golang), Python, Microservices, Apache Kafka, gRPC, Redis, PostgreSQL, MySQL, Distributed Systems, Concurrency, Low-Latency / High-Throughput systems, Docker, AWS.
+3. **`fullstack_development.txt` (Full Stack Generalist)**:
+   - End-to-end web applications: React/Next.js on frontend, Node.js/Go/Python on backend, REST & GraphQL APIs, PostgreSQL, MongoDB, Redis, Docker, AWS, CI/CD, full-cycle product engineering.
+4. **`fullstack_llm_ai_development.txt` (Full Stack AI & LLM Specialist)**:
+   - Generative AI & Large Language Models: LangChain, LangGraph, LlamaIndex, RAG (Retrieval Augmented Generation), OpenAI/Claude/Gemini APIs, Vector DBs (Pinecone, ChromaDB, pgvector), Vercel AI SDK, Streaming UI, Prompt Engineering, FastAPI, Next.js.
+
+---
+
+## 🚀 Key Features
+
+### 1. Workday Enterprise ATS Automation (`src/forms/workday.py`)
+- Detects `*.myworkdayjobs.com` and Workday multi-step application wizards.
+- Automates initial "Apply" / "Autofill with Resume" triggers.
+- Uploads the dynamically compiled vector PDF to Workday dropzones.
+- Fills Legal Name, Contact Information, Address, City, Postal Code, Phone, and Email.
+- Answers standard Workday questionnaires (work authorization, sponsorship, notice period).
+- Advances through pagination (`bottom-navigation-next-button`) to the review screen.
+
+### 2. Multi-Platform Coverage (30–40 LPA)
+- **Instahyre**: The #1 recruiter reach-out platform in India for 30–40L roles.
+- **Wellfound**: Global startups and remote GenAI / LLM teams paying $50k–$85k (₹30L–₹40L+).
+- **Workday (BigTech)**: Direct integration with Fortune 500 portals (Walmart, Adobe, Salesforce, Nvidia, Cisco).
+- **Naukri & Hirist**: Search algorithms tuned for 30–40 Lakhs salary brackets.
+- **LinkedIn**: Staff & Senior engineering searches using persistent session cookies.
+
+### 3. Per-Application Customization & 1-Click Apply
+- In the dashboard, click **"🎨 Customize & Apply"** on any job:
+  - **Resume Switcher**: Seamlessly switch between the 4 resumes on the fly—the ATS match score recomputes in real time.
+  - **Editable Targeted Summary**: Tailored specifically for that company & role.
+  - **Editable Bullet Points**: Add, delete, or refine prioritized bullet points for that application.
   - **"⚡ 1-Click Apply Now"**: Generates the custom PDF on the fly and auto-fills the application immediately.
 
-### 3. Bulk Apply Engine
-- Checkbox on each row + "Select All Jobs" toolbar.
+### 4. Background Bulk Apply Engine
+- Select multiple jobs via row checkboxes or "Select All".
 - Click **"⚡ Bulk Apply Selected"**:
-  - Runs in a non-blocking background worker.
-  - Live progress tracking bar (`Applying 2/5: Zepto [Success], Razorpay [Success]...`).
-  - Automatically submits using each opening's customized or best-selected resume.
-
-### 4. Verified Live Working URLs & "Add Custom Job"
-- All portal entries feature real, working, verified links (no 404s).
-- Click **"➕ Add Custom Job"** in the dashboard to paste any real Greenhouse, Lever, Ashby, or company careers link; the bot evaluates it against your 5 resumes, selects the winner, and queues it instantly.
-
-### 5. Persistent Chrome Session (Pre-Authenticated)
-- Uses a persistent Chrome profile (`~/.job_bot_chrome_profile`). Log in once to Naukri, Hirist, and LinkedIn in Chrome, and the bot automatically inherits your active session and cookies without entering passwords or triggering CAPTCHAs.
+  - Executes in a non-blocking background worker (`threading.Thread`).
+  - Displays live progress: `Applying 2/4: Zepto [Success], Razorpay [Success]...`
 
 ---
 
@@ -43,59 +60,70 @@ An autonomous job hunter and intelligent multi-resume selector specialized in **
 
 ```
 job-application-bot/
-├── resumes/                           # 📂 Drop your 5 distinct resumes here (.pdf, .docx, .txt)
-│   ├── backend_distributed_systems.txt
-│   ├── data_engineering_streaming.txt
-│   ├── cloud_devops_platform.txt
-│   ├── fullstack_systems.txt
-│   └── tech_lead_staff_architect.txt
+├── resumes/                           # 📂 4 Core Resumes (.txt, .pdf, .docx)
+│   ├── frontend_engineering.txt       # React, Next.js, TypeScript, UI/UX
+│   ├── backend_development.txt        # Java, Go, Kafka, Distributed Systems
+│   ├── fullstack_development.txt      # React, Node.js, Python, Databases, AWS
+│   └── fullstack_llm_ai_development.txt # GenAI, LLMs, LangChain, RAG, Vector DBs
 ├── src/
-│   ├── resume_parser.py               # Universal parser (PDF streams, DOCX XML, JSON, TXT)
+│   ├── resume_parser.py               # Ingests PDF streams, DOCX XML, and TXT
 │   ├── resume_bank.py                 # Multi-profile manager
-│   ├── profile_selector.py            # AI & heuristic selector with core-skill integrity check
-│   ├── job_hunter.py                  # Master 40–50 LPA hunter, customization & bulk-apply
-│   ├── chrome_session.py              # Persistent authenticated Chrome profile manager
-│   ├── scrapers/                      # Hirist, Naukri, LinkedIn, and Career Pages scrapers
-│   ├── ats_pdf.py                     # Zero-dependency ATS-compliant vector PDF compiler
-│   └── bot.py                         # Automated application & form filler
+│   ├── profile_selector.py            # AI selector matching Frontend, Backend, Full Stack & LLM
+│   ├── job_hunter.py                  # Master hunter across Instahyre, Wellfound, Workday, etc.
+│   ├── chrome_session.py              # Persistent authenticated Chrome profile
+│   ├── scrapers/
+│   │   ├── instahyre.py               # Instahyre 30-40L portal
+│   │   ├── wellfound.py               # Wellfound startup & AI portal
+│   │   ├── career_pages.py            # Workday (Walmart, Adobe, Salesforce) & BigTech
+│   │   ├── hirist.py                  # Hirist 30-40 LPA filter
+│   │   ├── naukri.py                  # Naukri 30-40 Lacs filter
+│   │   └── linkedin.py                # LinkedIn senior roles
+│   ├── forms/
+│   │   ├── workday.py                 # Workday multi-step enterprise automation
+│   │   ├── greenhouse.py              # Greenhouse ATS automation
+│   │   ├── lever.py                   # Lever ATS automation
+│   │   ├── ashby.py                   # Ashby ATS automation
+│   │   └── generic.py                 # Fallback heuristic form filler
+│   ├── ats_pdf.py                     # Zero-dependency ATS vector PDF compiler
+│   └── bot.py                         # Master browser automation runner
 ├── web/
-│   ├── app.py                         # Flask Web Dashboard backend
-│   └── templates/index.html           # Modern 3-tab UI with customization modal & bulk apply
+│   ├── app.py                         # Flask Web Dashboard backend (Port 5050)
+│   └── templates/index.html           # 3-Tab UI with customization modal & bulk apply
 ├── config/
-│   ├── master_profile.json            # Contact details, screening Q&A (work auth, notice period)
-│   └── settings.json                  # CTC brackets (40-50 LPA), locations, and thresholds
-└── cli.py                             # Unified Command-Line Interface
+│   ├── master_profile.json            # Contact details, screening Q&A
+│   └── settings.json                  # CTC brackets (30-40 LPA), portals, thresholds
+└── cli.py                             # Unified CLI
 ```
 
 ---
 
-## 🚀 How to Run
+## 💻 How to Run
 
-### 1. Launch the Interactive Web Dashboard (Recommended)
+### Method 1: Interactive Web Dashboard (Recommended)
 Open your terminal and run:
 
 ```bash
 cd /Users/sakshimalik/Project/job-application-bot
 python3 cli.py ui
 ```
-Open **`http://127.0.0.1:5000`** in your browser to:
-1. **Scan Portals**: Discover fresh 40–50 LPA openings across Hirist, Naukri, LinkedIn, and Tier-1 Career Pages.
-2. **Customize & 1-Click Apply**: Click **"🎨 Customize & Apply"** on any job to edit the summary/bullets or switch resumes, then click **"⚡ 1-Click Apply Now"**.
-3. **Bulk Apply**: Select multiple job checkboxes and click **"⚡ Bulk Apply Selected"** to let the background worker apply to all of them.
-4. **Add Any Custom Job**: Click **"➕ Add Custom Job"** to paste any URL/JD.
+Navigate to **[http://127.0.0.1:5050](http://127.0.0.1:5050)** in Chrome / Safari.
+- Click **"🔍 Scan Portals"** to discover 30–40 LPA jobs across Instahyre, Wellfound, Workday, Hirist, Naukri, and LinkedIn.
+- Inspect the queue table to see which of the 4 resumes was matched.
+- Click **"🎨 Customize & Apply"** to tweak the resume or **"⚡ 1-Click Apply"** to apply directly.
+- Select checkboxes and click **"⚡ Bulk Apply Selected"** for batch applications.
 
 ---
 
-### 2. Command Line Interface (CLI)
+### Method 2: Command Line Interface (CLI)
 
-* **View your 5 loaded resumes**:
+* **View your 4 loaded resumes**:
   ```bash
   python3 cli.py resumes
   ```
 
-* **Scan portals for 40–50 LPA jobs**:
+* **Scan portals for 30–40 LPA jobs**:
   ```bash
-  python3 cli.py hunt --query "Backend" --loc "Bangalore"
+  python3 cli.py hunt --query "Full Stack" --loc "Bangalore"
   ```
 
 * **View the queued jobs and selected resumes**:
@@ -103,17 +131,12 @@ Open **`http://127.0.0.1:5000`** in your browser to:
   python3 cli.py queue
   ```
 
-* **Add a custom opening directly from terminal**:
-  ```bash
-  python3 cli.py add-job --company "Stripe" --title "Staff Distributed Systems Engineer" --url "https://stripe.com/jobs/search?query=software" --salary "50 - 70 LPA" --desc "Apache Kafka, Go, distributed transactions"
-  ```
-
 * **Apply to a specific queued job**:
   ```bash
   python3 cli.py apply --job-id <job_id>
   ```
 
-* **Run fully autonomous auto-apply for high-match jobs (≥80%)**:
+* **Bulk auto-apply to high-matching jobs (≥80%)**:
   ```bash
   python3 cli.py auto --min-score 80
   ```

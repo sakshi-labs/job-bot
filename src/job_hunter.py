@@ -17,6 +17,8 @@ from .scrapers.hirist import HiristScraper
 from .scrapers.naukri import NaukriScraper
 from .scrapers.linkedin import LinkedInScraper
 from .scrapers.career_pages import CareerPagesScraper
+from .scrapers.instahyre import InstahyreScraper
+from .scrapers.wellfound import WellfoundScraper
 
 class JobHunter:
     def __init__(self, root_dir: str):
@@ -34,8 +36,8 @@ class JobHunter:
                 self.settings = json.load(f)
 
         job_cfg = self.settings.get("job_search", {})
-        self.min_ctc = job_cfg.get("min_ctc_lakhs", 40)
-        self.max_ctc = job_cfg.get("max_ctc_lakhs", 50)
+        self.min_ctc = job_cfg.get("min_ctc_lakhs", 30)
+        self.max_ctc = job_cfg.get("max_ctc_lakhs", 40)
 
         # Initialize engines
         self.jd_parser = JDParser()
@@ -45,7 +47,9 @@ class JobHunter:
         )
         self.selector = ProfileSelector(self.resume_bank)
 
-        # Scrapers
+        # Scrapers for 30-40L tech platforms & Workday
+        self.instahyre = InstahyreScraper(self.min_ctc, self.max_ctc)
+        self.wellfound = WellfoundScraper(self.min_ctc, self.max_ctc)
         self.hirist = HiristScraper(self.min_ctc, self.max_ctc)
         self.naukri = NaukriScraper(self.min_ctc, self.max_ctc)
         self.linkedin = LinkedInScraper(self.min_ctc, self.max_ctc)
@@ -67,9 +71,11 @@ class JobHunter:
         print(f"[*] Target Compensation: {self.min_ctc} - {self.max_ctc} LPA")
 
         all_raw_jobs = []
+        all_raw_jobs.extend(self.instahyre.search_jobs(query, location, limit=limit_per_portal))
+        all_raw_jobs.extend(self.wellfound.search_jobs(query, location, limit=limit_per_portal))
         all_raw_jobs.extend(self.hirist.search_jobs(query, location, limit=limit_per_portal))
         all_raw_jobs.extend(self.naukri.search_jobs(query, location, limit=limit_per_portal))
-        all_raw_jobs.extend(self.linkedin.search_jobs(f"Staff {query} Engineer", location, limit=limit_per_portal))
+        all_raw_jobs.extend(self.linkedin.search_jobs(f"Senior {query} Engineer", location, limit=limit_per_portal))
         all_raw_jobs.extend(self.career_pages.search_jobs(query, location, limit=limit_per_portal))
 
         processed_queue = self.load_queue()

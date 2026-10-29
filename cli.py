@@ -24,13 +24,13 @@ def main():
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
     # Command: hunt
-    hunt_parser = subparsers.add_parser("hunt", help="Autonomously scan Hirist, Naukri, LinkedIn & Career Pages for 40-50 LPA jobs")
-    hunt_parser.add_argument("--query", default="Backend", help="Target skill/role query (default: 'Backend')")
+    hunt_parser = subparsers.add_parser("hunt", help="Autonomously scan Instahyre, Wellfound, Workday, Hirist, Naukri & LinkedIn for 30-40 LPA jobs")
+    hunt_parser.add_argument("--query", default="Full Stack", help="Target skill/role query (default: 'Full Stack')")
     hunt_parser.add_argument("--loc", default="Bangalore", help="Target location (default: 'Bangalore')")
     hunt_parser.add_argument("--limit", type=int, default=3, help="Max jobs per portal to discover")
 
     # Command: queue
-    subparsers.add_parser("queue", help="Display discovered 40-50 LPA jobs and their matched resumes")
+    subparsers.add_parser("queue", help="Display discovered 30-40 LPA jobs and their matched resumes")
 
     # Command: resumes
     subparsers.add_parser("resumes", help="List all resumes in the resume bank and their core skills")

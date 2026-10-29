@@ -1,1 +1,1418 @@
-[]
+[
+  {
+    "id": "job_1793296713845_1",
+    "portal": "LinkedIn",
+    "company": "SAP Fioneer",
+    "title": "Senior Cloud Modernization Java Full stack engineer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-cloud-modernization-java-full-stack-engineer-at-sap-fioneer-4483295041?position=2&pageNum=0&refId=du3UdnnDKWulEdjuigfXOQ%3D%3D&trackingId=lOPVc8dHAG4XAp3EMLu1OQ%3D%3D",
+    "description": "Staff level role for Senior Cloud Modernization Java Full stack engineer at SAP Fioneer. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_Backend.pdf",
+    "selected_profile_name": "Sakshi_Resume_Backend",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Cloud Modernization Java Full stack engineer position at SAP Fioneer. Brings deep expertise in java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed an automated scoring microservice in Java and Spring Boot for open-ended assessment",
+      "Designed a high-throughput candidate percentile computation engine processing hundreds of thousands of assessment",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production over gRPC and REST",
+      "Implemented event-driven message pipelines using Apache Kafka to decouple assessment submission, scoring"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 96.2
+      },
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 80.5
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 35.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:28:33"
+  },
+  {
+    "id": "job_1793296667881_1",
+    "portal": "LinkedIn",
+    "company": "SAP Fioneer",
+    "title": "Senior Cloud Modernization Java Full stack engineer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-cloud-modernization-java-full-stack-engineer-at-sap-fioneer-4483295041?position=2&pageNum=0&refId=HVCCeNKvmPaqiL6isZTvEQ%3D%3D&trackingId=tuz9jb0CqwQkzrp5wZnYFg%3D%3D",
+    "description": "Staff level role for Senior Cloud Modernization Java Full stack engineer at SAP Fioneer. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Cloud Modernization Java Full stack engineer position at SAP Fioneer. Brings deep expertise in java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 96.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 35.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:47"
+  },
+  {
+    "id": "job_1793296666596_1",
+    "portal": "LinkedIn",
+    "company": "SAP Fioneer",
+    "title": "Senior Cloud Modernization Java Full stack engineer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-cloud-modernization-java-full-stack-engineer-at-sap-fioneer-4483295041?position=2&pageNum=0&refId=1hwqy9OSAqvRuzTisiCv3w%3D%3D&trackingId=%2Bc0UsBfjo3ArQwzsL3j6tg%3D%3D",
+    "description": "Staff level role for Senior Cloud Modernization Java Full stack engineer at SAP Fioneer. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Cloud Modernization Java Full stack engineer position at SAP Fioneer. Brings deep expertise in java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 96.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 35.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:46"
+  },
+  {
+    "id": "job_1793296665266_1",
+    "portal": "LinkedIn",
+    "company": "SAP Fioneer",
+    "title": "Senior Cloud Modernization Java Full stack engineer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-cloud-modernization-java-full-stack-engineer-at-sap-fioneer-4483295041?position=2&pageNum=0&refId=Kr0UwdAsDl8b4VyXNslgZQ%3D%3D&trackingId=ZBSkbUAxATDYvfFZM9OeGw%3D%3D",
+    "description": "Staff level role for Senior Cloud Modernization Java Full stack engineer at SAP Fioneer. High-scale systems and architectural leadership.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Cloud Modernization Java Full stack engineer position at SAP Fioneer. Brings deep expertise in java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 96.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 35.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 35.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:45"
+  },
+  {
+    "id": "job_1793276247541_1",
+    "portal": "Instahyre",
+    "company": "Postman",
+    "title": "Senior Full Stack Developer",
+    "salary": "30 - 40 LPA",
+    "location": "Bangalore / Remote",
+    "url": "https://www.postman.com/company/careers/",
+    "description": "Build next-gen API workflow tools. React, TypeScript, Node.js, distributed backend systems, developer tooling.",
+    "selected_resume_file": "frontend_engineering.txt",
+    "selected_profile_name": "frontend_engineering",
+    "detected_title": "Senior Frontend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "node.js",
+      "react",
+      "typescript"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: node.js, react, typescript.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full Stack Developer position at Postman. Brings deep expertise in node.js, react, typescript, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Spearheaded the frontend redesign of customer analytics portal using Next.js 14, React, and TypeScript, serving 400K+ monthly active users.",
+      "Optimized Core Web Vitals across 80+ dynamic web pages, reducing Largest Contentful Paint (LCP) from 3.8s to 1.1s and boosting Lighthouse score from 58 to 96.",
+      "Architected a unified, accessible Design System component library using Tailwind CSS and Radix UI adopted by 4 distinct engineering squads.",
+      "Migrated client-side Redux store to Zustand and TanStack Query, reducing frontend boilerplate code by 42% and eliminating unnecessary component re-renders."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 96.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 80.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 80.5
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 35.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247552_3",
+    "portal": "Wellfound",
+    "company": "Langflow AI",
+    "title": "Full Stack AI & LLM Systems Engineer",
+    "salary": "30 - 40+ LPA ($60k - $85k)",
+    "location": "Remote / Bangalore",
+    "url": "https://wellfound.com/jobs",
+    "description": "Build next-generation visual GenAI application builders. LangChain, LlamaIndex, Python (FastAPI), React, Next.js, Vector DBs (Chroma, Pinecone).",
+    "selected_resume_file": "fullstack_llm_ai_development.txt",
+    "selected_profile_name": "fullstack_llm_ai_development",
+    "detected_title": "Senior Full Stack AI & LLM Systems Engineer",
+    "match_score": 91.8,
+    "matched_skills": [
+      "llamaindex",
+      "chroma",
+      "next.js",
+      "llm",
+      "python",
+      "pinecone",
+      "langchain",
+      "fastapi",
+      "react"
+    ],
+    "missing_skills": [
+      "genai"
+    ],
+    "selection_reason": "Aligned with score 91.8% based on high overlap in: llamaindex, chroma, next.js, llm.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Full Stack AI & LLM Systems Engineer position at Langflow AI. Brings deep expertise in llamaindex, chroma, next.js, llm, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed enterprise-grade RAG platform using LangChain, Next.js, and Pinecone, enabling 80K+ enterprise users to query 10M+ internal documents with sub-2s latency.",
+      "Built low-latency generative chat interface in Next.js 14 utilizing the Vercel AI SDK and Server-Sent Events (SSE) for token-by-token streaming responses.",
+      "Engineered hybrid retrieval pipeline combining BM25 keyword search with dense vector embeddings and Cohere cross-encoder reranking, improving RAG answer accuracy from 71% to 94%.",
+      "Developed autonomous multi-agent research workflow using LangGraph and tool calling to synthesize automated market intelligence reports."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 91.8
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 53.5
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 44.5
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 44.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247557_4",
+    "portal": "Hirist",
+    "company": "Zepto",
+    "title": "Staff Full Stack Infrastructure Engineer",
+    "salary": "45 - 55 LPA",
+    "location": "Bangalore",
+    "url": "https://jobs.ashbyhq.com/zepto",
+    "description": "Looking for a Staff Backend Engineer to own distributed checkout infrastructure processing 1M orders/day. Must have deep Kafka, Go/Java, Redis, and high-throughput microservices experience.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "redis",
+      "microservices",
+      "java",
+      "kafka",
+      "go"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: redis, microservices, java, kafka.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Staff Full Stack Infrastructure Engineer position at Zepto. Brings deep expertise in redis, microservices, java, kafka, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 57.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 48.5
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247561_5",
+    "portal": "Hirist",
+    "company": "Razorpay",
+    "title": "Lead Full Stack Platform Engineer",
+    "salary": "42 - 50 LPA",
+    "location": "Bangalore / Hybrid",
+    "url": "https://jobs.lever.co/razorpay",
+    "description": "Lead Platform Engineer to drive core payments routing engine. Deep knowledge of concurrency, low latency, distributed transactions, PostgreSQL, and AWS.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "concurrency",
+      "low latency",
+      "aws",
+      "postgresql"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: concurrency, low latency, aws, postgresql.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Lead Full Stack Platform Engineer position at Razorpay. Brings deep expertise in concurrency, low latency, aws, postgresql, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 53.0
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 53.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247565_6",
+    "portal": "Hirist",
+    "company": "PhonePe",
+    "title": "Senior Staff Full Stack Systems Engineer",
+    "salary": "48 - 60 LPA",
+    "location": "Bangalore",
+    "url": "https://www.phonepe.com/careers/job-openings/",
+    "description": "Architect high-scale event streaming pipelines for UPI payments. Apache Kafka, Java, HBase, Redis, multi-datacenter active-active setup.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "redis",
+      "apache kafka",
+      "kafka",
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: redis, apache kafka, kafka, java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Staff Full Stack Systems Engineer position at PhonePe. Brings deep expertise in redis, apache kafka, kafka, java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 41.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 41.8
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247570_7",
+    "portal": "Naukri",
+    "company": "Swiggy",
+    "title": "Principal Full Stack Engineer (Distributed Systems)",
+    "salary": "45 - 52 Lacs P.A.",
+    "location": "Bangalore / Remote",
+    "url": "https://careers.swiggy.com",
+    "description": "Architect core order routing & delivery dispatch engine. High-throughput distributed systems in Java/Go, Kafka, Redis, low latency microservices.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "redis",
+      "low latency",
+      "microservices",
+      "java",
+      "distributed systems",
+      "kafka",
+      "go"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: redis, low latency, microservices, java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Principal Full Stack Engineer (Distributed Systems) position at Swiggy. Brings deep expertise in redis, low latency, microservices, java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 49.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 43.4
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247573_8",
+    "portal": "Naukri",
+    "company": "Cred",
+    "title": "Staff Full Stack Architect",
+    "salary": "48 - 60 Lacs P.A.",
+    "location": "Bangalore",
+    "url": "https://cred.club/careers",
+    "description": "Lead the financial backend core platforms. Strong distributed systems design, gRPC, Kafka, AWS, DynamoDB, resilient microservices.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "microservices",
+      "dynamodb",
+      "distributed systems",
+      "kafka",
+      "aws",
+      "grpc"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: microservices, dynamodb, distributed systems, kafka.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Staff Full Stack Architect position at Cred. Brings deep expertise in microservices, dynamodb, distributed systems, kafka, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 53.0
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 53.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247576_9",
+    "portal": "Naukri",
+    "company": "InMobi",
+    "title": "Lead Full Stack Infrastructure Engineer",
+    "salary": "40 - 50 Lacs P.A.",
+    "location": "Bangalore",
+    "url": "https://www.inmobi.com/company/careers",
+    "description": "Scale ad-serving bidding engine serving 500K QPS with sub-10ms latency. C++, Java, distributed caching, Kafka, and Linux kernel optimization.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 91.2,
+    "matched_skills": [
+      "kafka",
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 91.2% based on high overlap in: kafka, java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Lead Full Stack Infrastructure Engineer position at InMobi. Brings deep expertise in kafka, java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 91.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 30.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247588_13",
+    "portal": "Workday (Walmart)",
+    "company": "Walmart Global Tech",
+    "title": "Senior Full Stack Engineer (Enterprise Cloud Platforms)",
+    "salary": "30 - 40 LPA",
+    "location": "Bengaluru / Chennai",
+    "url": "https://walmart.wd5.myworkdayjobs.com/en-US/WalmartExternal",
+    "description": "Build high-scale retail platforms and supply chain automation. Java, React, Python, Kafka, microservices, cloud systems. Compensation band: 30-40 LPA.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 87.2,
+    "matched_skills": [
+      "microservices",
+      "java",
+      "kafka",
+      "python"
+    ],
+    "missing_skills": [
+      "react"
+    ],
+    "selection_reason": "Aligned with score 87.2% based on high overlap in: microservices, java, kafka, python.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full Stack Engineer (Enterprise Cloud Platforms) position at Walmart Global Tech. Brings deep expertise in microservices, java, kafka, python, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 87.2
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 62.5
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 62.5
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 44.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247591_14",
+    "portal": "Workday (Adobe)",
+    "company": "Adobe",
+    "title": "Computer Scientist / Senior Full Stack Engineer",
+    "salary": "30 - 40+ LPA",
+    "location": "Noida / Bengaluru",
+    "url": "https://adobe.myworkdayjobs.com/en-US/external_experienced",
+    "description": "Drive Adobe Creative Cloud and Document Cloud web applications. React, TypeScript, C++, WebAssembly, low latency streaming, modern UI/UX.",
+    "selected_resume_file": "frontend_engineering.txt",
+    "selected_profile_name": "frontend_engineering",
+    "detected_title": "Senior Frontend Engineer",
+    "match_score": 85.0,
+    "matched_skills": [
+      "ui/ux",
+      "react",
+      "typescript"
+    ],
+    "missing_skills": [
+      "low latency"
+    ],
+    "selection_reason": "Aligned with score 85.0% based on high overlap in: ui/ux, react, typescript.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Computer Scientist / Senior Full Stack Engineer position at Adobe. Brings deep expertise in ui/ux, react, typescript, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Spearheaded the frontend redesign of customer analytics portal using Next.js 14, React, and TypeScript, serving 400K+ monthly active users.",
+      "Optimized Core Web Vitals across 80+ dynamic web pages, reducing Largest Contentful Paint (LCP) from 3.8s to 1.1s and boosting Lighthouse score from 58 to 96.",
+      "Architected a unified, accessible Design System component library using Tailwind CSS and Radix UI adopted by 4 distinct engineering squads.",
+      "Migrated client-side Redux store to Zustand and TanStack Query, reducing frontend boilerplate code by 42% and eliminating unnecessary component re-renders."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 85.0
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 46.8
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793296667876_0",
+    "portal": "LinkedIn",
+    "company": "4flow",
+    "title": "(Senior) Software Engineer (Fullstack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-4flow-4467702783?position=1&pageNum=0&refId=HVCCeNKvmPaqiL6isZTvEQ%3D%3D&trackingId=apSbOv53zwmKtSulSoHu5g%3D%3D",
+    "description": "Staff level role for (Senior) Software Engineer (Fullstack) at 4flow. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the (Senior) Software Engineer (Fullstack) position at 4flow. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:47"
+  },
+  {
+    "id": "job_1793296667884_2",
+    "portal": "LinkedIn",
+    "company": "Hinge Health",
+    "title": "Senior Software Engineer-Fullstack",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-hinge-health-4464225697?position=3&pageNum=0&refId=HVCCeNKvmPaqiL6isZTvEQ%3D%3D&trackingId=CU%2Bo0tvKTGJ4V7OtLBiFHQ%3D%3D",
+    "description": "Staff level role for Senior Software Engineer-Fullstack at Hinge Health. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Software Engineer-Fullstack position at Hinge Health. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:47"
+  },
+  {
+    "id": "job_1793296666591_0",
+    "portal": "LinkedIn",
+    "company": "4flow",
+    "title": "(Senior) Software Engineer (Fullstack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-4flow-4467702783?position=1&pageNum=0&refId=1hwqy9OSAqvRuzTisiCv3w%3D%3D&trackingId=0xZ3kqn4Leb4bVlOizjHrQ%3D%3D",
+    "description": "Staff level role for (Senior) Software Engineer (Fullstack) at 4flow. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the (Senior) Software Engineer (Fullstack) position at 4flow. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:46"
+  },
+  {
+    "id": "job_1793296666604_2",
+    "portal": "LinkedIn",
+    "company": "Hinge Health",
+    "title": "Senior Software Engineer-Fullstack",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-hinge-health-4464225697?position=3&pageNum=0&refId=1hwqy9OSAqvRuzTisiCv3w%3D%3D&trackingId=Jl%2F8QSsDbOiHmsBiICytmQ%3D%3D",
+    "description": "Staff level role for Senior Software Engineer-Fullstack at Hinge Health. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Software Engineer-Fullstack position at Hinge Health. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:46"
+  },
+  {
+    "id": "job_1793296665262_0",
+    "portal": "LinkedIn",
+    "company": "4flow",
+    "title": "(Senior) Software Engineer (Fullstack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-4flow-4467702783?position=1&pageNum=0&refId=Kr0UwdAsDl8b4VyXNslgZQ%3D%3D&trackingId=ndcEk%2F7xK1%2BWcEN%2B8lrkFA%3D%3D",
+    "description": "Staff level role for (Senior) Software Engineer (Fullstack) at 4flow. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the (Senior) Software Engineer (Fullstack) position at 4flow. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:45"
+  },
+  {
+    "id": "job_1793296665268_2",
+    "portal": "LinkedIn",
+    "company": "Hinge Health",
+    "title": "Senior Software Engineer-Fullstack",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-hinge-health-4464225697?position=3&pageNum=0&refId=Kr0UwdAsDl8b4VyXNslgZQ%3D%3D&trackingId=B4UokmA3zTWRvHL06C2UKA%3D%3D",
+    "description": "Staff level role for Senior Software Engineer-Fullstack at Hinge Health. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Software Engineer-Fullstack position at Hinge Health. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:27:45"
+  },
+  {
+    "id": "job_1793276247538_0",
+    "portal": "Instahyre",
+    "company": "BrowserStack",
+    "title": "Senior Full Stack Engineer (Core Platform)",
+    "salary": "30 - 40 LPA",
+    "location": "Mumbai / Remote",
+    "url": "https://www.browserstack.com/careers",
+    "description": "Seeking a Senior Full Stack Engineer to build developer infrastructure. High performance, React, Node.js/Java/Go, cloud scalability.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 73.8,
+    "matched_skills": [
+      "go",
+      "java"
+    ],
+    "missing_skills": [
+      "node.js",
+      "react"
+    ],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: go, java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full Stack Engineer (Core Platform) position at BrowserStack. Brings deep expertise in go, java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 69.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247579_10",
+    "portal": "LinkedIn",
+    "company": "Incedo Inc.",
+    "title": "Senior Full stack Developer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Gurugram, Haryana, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-full-stack-developer-at-incedo-inc-4484424619?position=1&pageNum=0&refId=Ud43iDBkTBVy5WnDzjlmAA%3D%3D&trackingId=2pAcxGc2fW%2FMu%2FlDGRbYCw%3D%3D",
+    "description": "Staff level role for Senior Full stack Developer at Incedo Inc.. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full stack Developer position at Incedo Inc.. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247581_11",
+    "portal": "LinkedIn",
+    "company": "Mobility Global",
+    "title": "Senior Software Engineer (Full Stack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Gurugram, Haryana, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-full-stack-at-mobility-global-4482275562?position=2&pageNum=0&refId=Ud43iDBkTBVy5WnDzjlmAA%3D%3D&trackingId=fKF%2BiEgqWWsXIcsgPaOZlg%3D%3D",
+    "description": "Staff level role for Senior Software Engineer (Full Stack) at Mobility Global. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Software Engineer (Full Stack) position at Mobility Global. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247583_12",
+    "portal": "LinkedIn",
+    "company": "AgileEngine",
+    "title": "Senior Full Stack Engineer ID85606",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "New Delhi, Delhi, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-full-stack-engineer-id85606-at-agileengine-4483885593?position=3&pageNum=0&refId=Ud43iDBkTBVy5WnDzjlmAA%3D%3D&trackingId=VPmdj9wbcX02Xg3r%2BpfiJg%3D%3D",
+    "description": "Staff level role for Senior Full Stack Engineer ID85606 at AgileEngine. High-scale systems and architectural leadership.",
+    "selected_resume_file": "fullstack_development.txt",
+    "selected_profile_name": "fullstack_development",
+    "detected_title": "Senior Full Stack Engineer",
+    "match_score": 73.8,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 73.8% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full Stack Engineer ID85606 position at AgileEngine. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Led end-to-end development of enterprise B2B SaaS portal serving 150,000+ monthly active business users.",
+      "Built high-performance server-side rendered web applications using Next.js 14 and React Server Components with Tailwind CSS.",
+      "Architected scalable GraphQL and REST APIs backed by Node.js, TypeScript, and PostgreSQL with Prisma ORM.",
+      "Engineered distributed caching strategy using Redis and SWR, cutting API response times by 62%."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 73.8
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 70.2
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 58.0
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793296713841_0",
+    "portal": "LinkedIn",
+    "company": "4flow",
+    "title": "(Senior) Software Engineer (Fullstack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-4flow-4467702783?position=1&pageNum=0&refId=du3UdnnDKWulEdjuigfXOQ%3D%3D&trackingId=fBeny5C5ATHqAoc2Ynehiw%3D%3D",
+    "description": "Staff level role for (Senior) Software Engineer (Fullstack) at 4flow. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_FullStack.pdf",
+    "selected_profile_name": "Sakshi_Resume_FullStack",
+    "detected_title": "Senior Full Stack AI & LLM Systems Engineer",
+    "match_score": 70.2,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 70.2% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the (Senior) Software Engineer (Fullstack) position at 4flow. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architectedandlaunchedanend-to-endAI-drivenevaluationengineforopen-endedcandidateassessments, automating",
+      "Engineered full-stack capabilities for the Smart Interview platform, integrating real-time video streaming with",
+      "Developed a full-stack candidate analytics platform using React, TypeScript, and Spring Boot, processing 100K+",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production REST and gRPC"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 70.2
+      },
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 58.0
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:28:33"
+  },
+  {
+    "id": "job_1793296713848_2",
+    "portal": "LinkedIn",
+    "company": "Hinge Health",
+    "title": "Senior Software Engineer-Fullstack",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-hinge-health-4464225697?position=3&pageNum=0&refId=du3UdnnDKWulEdjuigfXOQ%3D%3D&trackingId=W8PctM6Uo0IFMiICx138CQ%3D%3D",
+    "description": "Staff level role for Senior Software Engineer-Fullstack at Hinge Health. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_FullStack.pdf",
+    "selected_profile_name": "Sakshi_Resume_FullStack",
+    "detected_title": "Senior Full Stack AI & LLM Systems Engineer",
+    "match_score": 70.2,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 70.2% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Software Engineer-Fullstack position at Hinge Health. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architectedandlaunchedanend-to-endAI-drivenevaluationengineforopen-endedcandidateassessments, automating",
+      "Engineered full-stack capabilities for the Smart Interview platform, integrating real-time video streaming with",
+      "Developed a full-stack candidate analytics platform using React, TypeScript, and Spring Boot, processing 100K+",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production REST and gRPC"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 70.2
+      },
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 58.0
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 23:28:33"
+  },
+  {
+    "id": "job_1793276247595_15",
+    "portal": "Workday (Salesforce)",
+    "company": "Salesforce",
+    "title": "Lead Full Stack Engineer (AI & Core Platform)",
+    "salary": "30 - 40+ LPA",
+    "location": "Bengaluru / Hyderabad",
+    "url": "https://salesforce.wd1.myworkdayjobs.com/External_Career_Site",
+    "description": "Architect multi-tenant cloud CRM platforms, Einstein GenAI assistants, LLM integration, Java, React, and distributed storage.",
+    "selected_resume_file": "fullstack_llm_ai_development.txt",
+    "selected_profile_name": "fullstack_llm_ai_development",
+    "detected_title": "Senior Full Stack AI & LLM Systems Engineer",
+    "match_score": 68.8,
+    "matched_skills": [
+      "react",
+      "llm"
+    ],
+    "missing_skills": [
+      "java",
+      "genai"
+    ],
+    "selection_reason": "Aligned with score 68.8% based on high overlap in: react, llm.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Lead Full Stack Engineer (AI & Core Platform) position at Salesforce. Brings deep expertise in react, llm, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed enterprise-grade RAG platform using LangChain, Next.js, and Pinecone, enabling 80K+ enterprise users to query 10M+ internal documents with sub-2s latency.",
+      "Built low-latency generative chat interface in Next.js 14 utilizing the Vercel AI SDK and Server-Sent Events (SSE) for token-by-token streaming responses.",
+      "Engineered hybrid retrieval pipeline combining BM25 keyword search with dense vector embeddings and Cohere cross-encoder reranking, improving RAG answer accuracy from 71% to 94%.",
+      "Developed autonomous multi-agent research workflow using LangGraph and tool calling to synthesize automated market intelligence reports."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 68.8
+      },
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 41.8
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 41.8
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 41.8
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793276247545_2",
+    "portal": "Instahyre",
+    "company": "Groww",
+    "title": "Lead Full Stack AI Application Engineer",
+    "salary": "30 - 40+ LPA",
+    "location": "Bangalore",
+    "url": "https://groww.in/careers",
+    "description": "Develop customer-facing wealth platforms integrating GenAI assistant workflows, high concurrency, and real-time APIs.",
+    "selected_resume_file": "backend_development.txt",
+    "selected_profile_name": "backend_development",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 53.0,
+    "matched_skills": [
+      "concurrency"
+    ],
+    "missing_skills": [
+      "genai"
+    ],
+    "selection_reason": "Aligned with score 53.0% based on high overlap in: concurrency.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Lead Full Stack AI Application Engineer position at Groww. Brings deep expertise in concurrency, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
+      "Engineered Go-based microservices using gRPC, slashing p99 latency from 320ms to 42ms for transaction ingestion.",
+      "Designed distributed caching layer with Redis Cluster, offloading PostgreSQL database reads by 68% during peak load spikes.",
+      "Led zero-downtime database partitioning across 12 distributed shards on AWS RDS PostgreSQL with zero data loss."
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "backend_development",
+        "file_name": "backend_development.txt",
+        "score": 53.0
+      },
+      {
+        "name": "fullstack_llm_ai_development",
+        "file_name": "fullstack_llm_ai_development.txt",
+        "score": 46.2
+      },
+      {
+        "name": "frontend_engineering",
+        "file_name": "frontend_engineering.txt",
+        "score": 30.5
+      },
+      {
+        "name": "fullstack_development",
+        "file_name": "fullstack_development.txt",
+        "score": 30.5
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-29 17:47:27"
+  }
+]

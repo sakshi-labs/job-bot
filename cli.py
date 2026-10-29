@@ -19,7 +19,7 @@ from src.resume_bank import ResumeBank
 def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser(
-        description="Automated Job Application Bot: Multi-Resume Selector & 30-40 LPA Autonomous Job Hunter"
+        description="Automated Job Application Bot: Multi-Resume Selector & Autonomous Job Hunter"
     )
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
@@ -30,7 +30,7 @@ def main():
     hunt_parser.add_argument("--limit", type=int, default=3, help="Max jobs per portal to discover")
 
     # Command: queue
-    subparsers.add_parser("queue", help="Display discovered 30-40 LPA jobs and their matched resumes")
+    subparsers.add_parser("queue", help="Display discovered jobs and their matched resumes")
 
     # Command: resumes
     subparsers.add_parser("resumes", help="List all resumes in the resume bank and their core skills")

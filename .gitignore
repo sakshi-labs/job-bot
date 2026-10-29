@@ -47,3 +47,6 @@ output/*.html
 output/applied_jobs.json
 output/job_queue.json
 logs/
+
+resumes/*
+config/*

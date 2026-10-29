@@ -266,7 +266,14 @@ class JobHunter:
         return queue_item
 
     def apply_single_job(self, job_id: str, review_mode: bool = False, interactive: bool = False) -> Dict[str, Any]:
-        """Applies to a specific job from the queue using its customized selected resume."""
+        """
+        Applies to a specific job from the queue using its customized selected resume.
+
+        Status rules:
+          "applied"     → form was confirmed submitted (auto_submit=true or user confirmed)
+          "not_applied" → pre-fill done but awaiting manual submit, login wall, expired, or error
+          "error"       → unexpected exception before form could be filled at all
+        """
         queue = self.load_queue()
         target = None
         for item in queue:
@@ -277,39 +284,94 @@ class JobHunter:
         if not target:
             raise ValueError(f"Job ID '{job_id}' not found in queue.")
 
+        # ── Guard: already applied ──────────────────────────────────────────────
+        if target.get("status") == "applied":
+            print(f"[⚠] Job '{job_id}' is already marked as applied — skipping.")
+            return {
+                "status": "not_applied",
+                "error_reason": "Already applied to this opening.",
+                "fields_filled": [],
+                "job_url": target.get("url"),
+                "duplicate": True,
+            }
+
         from .bot import JobApplicationBot
         bot = JobApplicationBot(config_dir=self.config_dir)
 
-        # Retrieve selected base profile
         selected_prof = self.resume_bank.get_profile_by_name(target.get("selected_resume_file", ""))
-        
-        # Prepare custom inputs if modified by user
+
         customizations = {
             "summary": target.get("custom_summary"),
             "bullets": target.get("custom_bullets"),
             "role": target["title"],
-            "company": target["company"]
+            "company": target["company"],
         }
 
-        print(f"\n[*] Applying to '{target['title']}' at '{target['company']}' ({target.get('portal', '')})")
-        print(f"[*] Base Resume: {target.get('selected_resume_file')} | Target URL: {target['url']}")
+        print(f"\n{'─'*60}")
+        print(f"[→] Applying to: {target['title']} @ {target['company']}")
+        print(f"[→] Portal:      {target.get('portal', 'Unknown')}")
+        print(f"[→] URL:         {target['url']}")
+        print(f"[→] Resume:      {target.get('selected_resume_file', 'master')}")
+        print(f"{'─'*60}")
 
-        # Compile customized tailored resume
-        tailored = bot.process_and_tailor(
-            jd_input=target.get("description", "") + " " + target["title"],
-            profile=selected_prof,
-            customizations=customizations
+        # Step 1 — Tailor resume
+        print("[1/3] Tailoring resume and generating ATS PDF...")
+        try:
+            tailored = bot.process_and_tailor(
+                jd_input=target.get("description", "") + " " + target["title"],
+                profile=selected_prof,
+                customizations=customizations,
+            )
+            tailored.target_role = target["title"]
+            tailored.target_company = target["company"]
+        except Exception as tailor_err:
+            print(f"[✗] Tailoring failed: {tailor_err}")
+            target["status"] = "error"
+            target["error_reason"] = f"Resume tailoring failed: {tailor_err}"
+            target["attempted_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+            self.save_queue(queue)
+            return {
+                "status": "error",
+                "error_reason": str(tailor_err),
+                "fields_filled": [],
+                "job_url": target.get("url"),
+            }
+
+        # Step 2 — Open browser tab and fill form
+        print("[2/3] Opening browser tab and filling application form...")
+        report = bot.apply_to_job(
+            job_url=target["url"],
+            tailored_resume=tailored,
+            job_id=job_id,
+            review_mode=review_mode,
+            interactive=interactive,
         )
-        tailored.target_role = target["title"]
-        tailored.target_company = target["company"]
 
-        # Run form automation without hanging
-        report = bot.apply_to_job(target["url"], tailored, review_mode=review_mode, interactive=interactive)
-        
-        target["status"] = "applied" if report.get("status") == "success" else "attempted"
-        target["applied_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
-        target["last_report"] = report
+        # Step 3 — Persist accurate status
+        print("[3/3] Saving application status to queue...")
+        final_status = report.get("status", "not_applied")   # "applied" | "not_applied" | "error"
+        error_reason = report.get("error_reason")
+
+        target["status"] = final_status
+        target["error_reason"] = error_reason
+        target["attempted_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        if final_status == "applied":
+            target["applied_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+        target["last_report"] = {
+            "status": final_status,
+            "error_reason": error_reason,
+            "fields_filled": report.get("fields_filled", []),
+            "unhandled_questions": report.get("unhandled_questions", []),
+        }
+
         self.save_queue(queue)
+
+        # Console summary
+        if final_status == "applied":
+            print(f"[✓] STATUS: APPLIED   — {target['company']} / {target['title']}")
+        else:
+            print(f"[✗] STATUS: NOT APPLIED — {error_reason or 'Unknown reason'}")
+
         return report
 
     def trigger_bulk_apply_async(self, job_ids: List[str]):
@@ -333,21 +395,37 @@ class JobHunter:
                     if not job:
                         continue
                     self.bulk_state["current_company"] = job.get("company", "Company")
+                    print(f"\n[BULK] Processing {self.bulk_state['completed']+1}/{self.bulk_state['total']}: "
+                          f"{job.get('company')} — {job.get('title')}")
                     try:
                         rep = self.apply_single_job(jid, review_mode=False, interactive=False)
+                        final_status = rep.get("status", "not_applied")
                         self.bulk_state["results"].append({
                             "id": jid,
                             "company": job.get("company"),
-                            "status": rep.get("status", "success"),
-                            "message": rep.get("message", "Applied successfully")
+                            "title": job.get("title"),
+                            "status": final_status,
+                            "error_reason": rep.get("error_reason"),
+                            "fields_filled": rep.get("fields_filled", []),
                         })
                     except Exception as err:
                         self.bulk_state["results"].append({
                             "id": jid,
                             "company": job.get("company"),
+                            "title": job.get("title"),
                             "status": "error",
-                            "message": str(err)
+                            "error_reason": str(err),
+                            "fields_filled": [],
                         })
+                        # Also persist error into queue
+                        queue = self.load_queue()
+                        for item in queue:
+                            if item.get("id") == jid:
+                                item["status"] = "error"
+                                item["error_reason"] = str(err)
+                                item["attempted_at"] = time.strftime("%Y-%m-%d %H:%M:%S")
+                                break
+                        self.save_queue(queue)
                     self.bulk_state["completed"] += 1
                     time.sleep(2)
             except Exception as e:
@@ -355,6 +433,25 @@ class JobHunter:
             finally:
                 self.bulk_state["is_running"] = False
                 self.bulk_state["current_company"] = ""
+                # Print final summary
+                results = self.bulk_state.get("results", [])
+                applied = [r for r in results if r["status"] == "applied"]
+                not_applied = [r for r in results if r["status"] == "not_applied"]
+                errors = [r for r in results if r["status"] == "error"]
+                print(f"\n{'='*60}")
+                print(f"[BULK APPLY COMPLETE]")
+                print(f"  ✓ Applied:     {len(applied)}")
+                print(f"  ~ Not Applied: {len(not_applied)}")
+                print(f"  ✗ Errors:      {len(errors)}")
+                if not_applied:
+                    print(f"\n  Not Applied (reason):")
+                    for r in not_applied:
+                        print(f"    • {r['company']}: {r.get('error_reason', 'Pre-fill only — manual submit needed')}")
+                if errors:
+                    print(f"\n  Errors:")
+                    for r in errors:
+                        print(f"    • {r['company']}: {r.get('error_reason', 'Unknown error')}")
+                print(f"{'='*60}\n")
 
         t = threading.Thread(target=worker, daemon=True)
         t.start()

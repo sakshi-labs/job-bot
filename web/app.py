@@ -118,11 +118,17 @@ def api_apply_job():
         return jsonify({"error": "job_id is required"}), 400
 
     try:
-        # Single click apply uses review_mode=False in web mode so it doesn't hang!
         report = hunter.apply_single_job(job_id, review_mode=False, interactive=False)
-        return jsonify({"success": True, "report": report})
+        final_status = report.get("status", "not_applied")   # "applied" | "not_applied" | "error"
+        return jsonify({
+            "success": final_status == "applied",
+            "status": final_status,
+            "error_reason": report.get("error_reason"),
+            "fields_filled": report.get("fields_filled", []),
+            "report": report,
+        })
     except Exception as e:
-        return jsonify({"error": str(e)}), 500
+        return jsonify({"error": str(e), "status": "error"}), 500
 
 @app.route("/api/hunter/bulk-apply", methods=["POST"])
 def api_bulk_apply():
@@ -142,6 +148,41 @@ def api_bulk_apply():
 @app.route("/api/hunter/bulk-status", methods=["GET"])
 def api_bulk_status():
     return jsonify(hunter.bulk_state)
+
+
+@app.route("/api/launch-chrome", methods=["POST"])
+def api_launch_chrome():
+    """Launches Chrome with remote-debugging so the bot can reuse the existing window."""
+    try:
+        from src.chrome_session import ChromeSessionManager
+        ChromeSessionManager.launch_debug_chrome()
+        return jsonify({
+            "success": True,
+            "message": "Chrome launched with remote-debugging on port 9222. "
+                       "Please log into LinkedIn, Naukri, and any other portals in that window, "
+                       "then come back and click Apply."
+        })
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/hunter/reset-queue", methods=["POST"])
+def api_reset_queue():
+    """Resets stale 'applied' statuses back to 'queued' for re-processing."""
+    data = request.json or {}
+    reset_all = data.get("reset_all", False)
+    queue = hunter.load_queue()
+    count = 0
+    for j in queue:
+        if reset_all or j.get("status") in ("applied", "attempted", "error"):
+            j["status"] = "queued"
+            j.pop("error_reason", None)
+            j.pop("applied_at", None)
+            j.pop("attempted_at", None)
+            j.pop("last_report", None)
+            count += 1
+    hunter.save_queue(queue)
+    return jsonify({"success": True, "reset_count": count})
 
 @app.route("/api/tailor", methods=["POST"])
 def api_tailor():

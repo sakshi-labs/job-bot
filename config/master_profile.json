@@ -1,113 +1,276 @@
 {
   "personal": {
-    "first_name": "Alex",
-    "last_name": "Morgan",
-    "full_name": "Alex Morgan",
-    "email": "alex.morgan.dev@example.com",
-    "phone": "+1 (555) 234-5678",
-    "location": "San Francisco, CA",
-    "city": "San Francisco",
-    "state": "CA",
-    "country": "United States",
-    "postal_code": "94107",
-    "linkedin": "https://linkedin.com/in/alexmorgan-dev",
-    "github": "https://github.com/alexmorgan-dev",
-    "portfolio": "https://alexmorgandev.io"
+    "first_name": "Sakshi",
+    "last_name": "Malik",
+    "full_name": "Sakshi Malik",
+    "email": "mail.sakshimalik@gmail.com",
+    "phone": "+91-7017088496",
+    "location": "Meerut, Uttar Pradesh, India",
+    "city": "Meerut",
+    "state": "Uttar Pradesh",
+    "country": "India",
+    "postal_code": "250004",
+    "linkedin": "https://linkedin.com/in/sakshiimalik",
+    "github": "https://github.com/sakshi-labs",
+    "portfolio": "https://sakshi-labs.github.io/Portfolio/"
   },
-  "headline": "Senior Software Engineer | Distributed Systems & Backend Infrastructure",
-  "base_summary": "Results-driven Software Engineer with 5+ years of experience designing, scaling, and maintaining low-latency distributed systems, microservices, and event-driven data pipelines. Expert in Java, Python, Go, and cloud-native architecture.",
+  "headline": "Senior Full Stack AI Engineer | LLM Systems & AI Agents | React/Next.js, Python & Distributed Systems",
+  "title": "Senior Full Stack AI Engineer",
+  "base_summary": "Full Stack Engineer with 6 years of software engineering experience, including deep specialization in architecting end-to-end Generative AI products, LLM pipelines, and resilient distributed web applications. Expert in bridging modern frontend experiences (Next.js 14, React 19, TypeScript, Vercel AI SDK) with production-grade backend microservices (Python FastAPI, Java Spring Boot, Node.js) and AI infrastructure (LangChain, LlamaIndex, Pinecone, pgvector, Redis Semantic Caching). Proven track record delivering low-latency AI workflows (p99 latency <200ms, sub-2s generation), slashing LLM API unit economics by 35%, and scaling systems serving 1M+ daily transactions. Targeted for high-scale, product-driven engineering organizations like Stripe, Booking.com, and Airbnb.",
   "master_skills": {
-    "Languages": ["Java", "Python", "Go", "SQL", "TypeScript", "Bash"],
-    "Distributed Systems & Messaging": ["Apache Kafka", "gRPC", "RabbitMQ", "Redis", "Event-Driven Architecture", "Microservices"],
-    "Cloud & Infrastructure": ["AWS (EC2, S3, ECS, Lambda)", "Kubernetes", "Docker", "Terraform", "CI/CD (GitHub Actions)"],
-    "Databases & Storage": ["PostgreSQL", "MySQL", "MongoDB", "DynamoDB", "Elasticsearch"],
-    "Engineering Practices": ["System Design", "REST APIs", "Unit/Integration Testing", "Distributed Tracing", "Agile/Scrum"]
+    "Generative AI & LLM Systems": [
+      "Large Language Models (GPT-4o, Claude 3.5, LLaMA 3)",
+      "Retrieval-Augmented Generation (RAG)",
+      "LangChain",
+      "LangGraph",
+      "LlamaIndex",
+      "Function Calling / Tool Use",
+      "ReAct Agent Workflows",
+      "Prompt Optimization",
+      "NeMo Guardrails",
+      "Ragas Evaluation"
+    ],
+    "Vector Databases & Search": [
+      "Pinecone",
+      "ChromaDB",
+      "PostgreSQL (pgvector)",
+      "Milvus",
+      "Redis (Vector Cache)",
+      "Dense & Sparse Embeddings",
+      "Hybrid Search (BM25 + Dense)",
+      "Cohere Reranking"
+    ],
+    "Frontend Engineering": [
+      "React.js",
+      "Next.js (App Router, Server Actions)",
+      "TypeScript",
+      "JavaScript (ES6+)",
+      "Vercel AI SDK",
+      "Streaming UI (Server-Sent Events)",
+      "Tailwind CSS",
+      "Radix UI",
+      "TanStack Query",
+      "Zustand"
+    ],
+    "Backend & Distributed Systems": [
+      "Python (FastAPI, Asyncio)",
+      "Java (Spring Boot)",
+      "Node.js",
+      "Express",
+      "RESTful APIs",
+      "GraphQL",
+      "gRPC",
+      "Apache Kafka",
+      "RabbitMQ",
+      "Microservices Architecture",
+      "Event-Driven Systems"
+    ],
+    "Databases & Caching": [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis Cluster",
+      "Connection Pooling",
+      "Query Optimization",
+      "Semantic Response Caching"
+    ],
+    "Cloud, DevOps & Observability": [
+      "AWS (EC2, S3, Bedrock, Lambda)",
+      "Docker",
+      "Kubernetes",
+      "CI/CD (GitHub Actions)",
+      "Jenkins",
+      "Git",
+      "OpenTelemetry",
+      "Prometheus",
+      "Grafana",
+      "OWASP Application Security"
+    ]
   },
   "master_experiences": [
     {
-      "company": "Nexus Cloud Technologies",
-      "role": "Senior Software Engineer",
-      "location": "San Francisco, CA (Remote)",
-      "start_date": "Jan 2022",
+      "company": "SHL",
+      "role": "Software Engineer (Full Stack AI & Platform)",
+      "location": "Hybrid, India",
+      "start_date": "May 2024",
       "end_date": "Present",
       "is_current": true,
       "bullets": [
-        "Architected and deployed a multi-tenant event streaming pipeline using Apache Kafka processing 450M+ events/day with 99.99% availability.",
-        "Refactored monolithic ingestion service into Go-based microservices, slashing p99 API response latencies from 320ms to 42ms.",
-        "Engineered distributed caching layer with Redis Cluster, reducing RDS database read loads by 68% during peak traffic spikes.",
-        "Led team of 5 engineers in migrating core Kubernetes services across AWS regions using Terraform and zero-downtime blue/green deployments.",
-        "Designed comprehensive observability stack using OpenTelemetry, Prometheus, and Grafana, reducing Mean Time to Detection (MTTD) by 40%."
+        "Architected and launched an end-to-end AI-driven evaluation engine for open-ended candidate assessments, automating 60% of manual grading while achieving >95% scoring alignment with human evaluation rubrics.",
+        "Engineered full-stack capabilities for the Smart Interview platform, integrating real-time video streaming with dynamic LLM interview question generation, maintaining sub-2-second question generation latency under concurrent enterprise loads.",
+        "Developed a full-stack candidate analytics platform using React, TypeScript, and Spring Boot, processing 100K+ assessment responses daily to deliver percentile distributions and competency heatmaps.",
+        "Collaborated with ML scientists to deploy transformer-based scoring models into production REST and gRPC microservices, maintaining a p99 response time under 200ms during peak concurrent enterprise evaluation sessions.",
+        "Implemented Apache Kafka event streams to asynchronously decouple candidate submissions, scoring inference, and enterprise ATS webhook notifications, preventing downstream backpressure."
       ],
-      "keywords": ["kafka", "go", "microservices", "kubernetes", "aws", "redis", "terraform", "distributed systems", "opentelemetry", "sql"]
+      "keywords": [
+        "llm",
+        "generative ai",
+        "react",
+        "typescript",
+        "spring boot",
+        "java",
+        "kafka",
+        "grpc",
+        "rest api",
+        "transformers",
+        "microservices",
+        "streaming",
+        "smart interview"
+      ]
     },
     {
-      "company": "Stratum Data Solutions",
+      "company": "Quantumics.ai",
+      "role": "Full Stack Developer (Generative AI)",
+      "location": "Remote",
+      "start_date": "Sep 2023",
+      "end_date": "Jan 2024",
+      "is_current": false,
+      "bullets": [
+        "Built core full-stack workflows for a no-code data engineering automation platform using Next.js 14 and Python FastAPI, reducing customer pipeline onboarding time by 40%.",
+        "Optimized a LLaMA 2 inference pipeline using dynamic request batching, prompt caching, and Redis semantic vector search, reducing median query latency by 35% and lowering third-party model inference costs by 30%.",
+        "Architected a resilient Server-Sent Events (SSE) token-streaming pipeline with React streaming UI components, delivering seamless, token-by-token generative feedback with zero client-side UI thread freezing.",
+        "Engineered drag-and-drop workflow canvases with real-time graph validation, enabling enterprise analysts to execute complex multi-step data pipelines against heterogeneous enterprise data lakes."
+      ],
+      "keywords": [
+        "next.js",
+        "react",
+        "fastapi",
+        "python",
+        "llama 2",
+        "llm",
+        "redis",
+        "vector search",
+        "sse",
+        "streaming",
+        "caching",
+        "etl",
+        "data engineering"
+      ]
+    },
+    {
+      "company": "Algoworks",
       "role": "Software Engineer",
-      "location": "Austin, TX",
-      "start_date": "Jun 2019",
+      "location": "Remote",
+      "start_date": "Dec 2021",
+      "end_date": "Aug 2023",
+      "is_current": false,
+      "bullets": [
+        "Engineered an enterprise distributed inventory tracking platform utilizing Hyperledger Fabric chaincode, Node.js middleware, and responsive React interfaces, improving tracking accuracy by 30% and cutting reconciliation time by 25%.",
+        "Built RESTful middleware connecting distributed ledger audit trails with legacy ERP systems, supporting over 500 active enterprise warehouse operators across continuous scanning workflows.",
+        "Optimized PostgreSQL database queries, implementing composite indexing, partition pruning, and connection pooling that accelerated high-throughput inventory reads by 45%.",
+        "Conducted application security audits adhering to OWASP standards, identifying and remediating 3 critical authentication and data integrity vulnerabilities prior to enterprise production sign-off."
+      ],
+      "keywords": [
+        "react",
+        "node.js",
+        "hyperledger fabric",
+        "blockchain",
+        "postgresql",
+        "rest api",
+        "owasp",
+        "security",
+        "database indexing",
+        "middleware"
+      ]
+    },
+    {
+      "company": "Knoldus Inc.",
+      "role": "Software Consultant",
+      "location": "Remote",
+      "start_date": "Apr 2021",
       "end_date": "Dec 2021",
       "is_current": false,
       "bullets": [
-        "Developed high-throughput REST and gRPC microservices in Java and Spring Boot for financial fraud detection pipelines.",
-        "Optimized complex PostgreSQL query execution plans and partitioned database tables, decreasing batch processing times by 55%.",
-        "Automated CI/CD workflows using GitHub Actions and Docker, reducing team deployment cycle duration from 2 hours to 15 minutes.",
-        "Implemented real-time transaction validation system with 99.95% accuracy using Apache Flink and Kafka Streams."
+        "Developed mission-critical RESTful microservices and admin user interfaces in Java, Spring Web MVC, and Node.js, supporting 1,000,000+ daily transactions at 99.9% uptime reliability.",
+        "Implemented an event-driven pub/sub messaging abstraction layer integrating Apache Kafka and RabbitMQ with automatic retry semantics and dead-letter queues across 8 distinct microservices.",
+        "Built an automated service health monitoring daemon and alerting system, reducing operational Mean Time to Resolution (MTTR) by 40%."
       ],
-      "keywords": ["java", "spring boot", "grpc", "postgresql", "docker", "ci/cd", "rest api", "kafka streams", "flink"]
-    },
-    {
-      "company": "Apex Fintech Labs",
-      "role": "Associate Software Engineer",
-      "location": "Austin, TX",
-      "start_date": "Jul 2018",
-      "end_date": "May 2019",
-      "is_current": false,
-      "bullets": [
-        "Built internal developer portal and API monitoring dashboards using Python (Flask) and React.",
-        "Created end-to-end integration and load testing suites with Locust and PyTest, discovering critical concurrency bottlenecks before production.",
-        "Collaborated with cross-functional product and security teams to resolve OWASP Top 10 vulnerabilities across legacy web applications."
-      ],
-      "keywords": ["python", "flask", "react", "pytest", "rest", "api", "security", "testing"]
+      "keywords": [
+        "java",
+        "spring mvc",
+        "node.js",
+        "kafka",
+        "rabbitmq",
+        "microservices",
+        "event-driven",
+        "monitoring",
+        "rest api",
+        "telemetry"
+      ]
     }
   ],
   "education": [
     {
-      "institution": "University of Texas at Austin",
-      "degree": "B.S. in Computer Science",
-      "location": "Austin, TX",
-      "graduation_date": "May 2018",
-      "gpa": "3.8/4.0",
-      "highlights": "Dean's Honor List, Distributed Systems Lab"
+      "institution": "SCRIET, Chaudhary Charan Singh University, Meerut",
+      "degree": "B.Tech in Computer Science",
+      "location": "Meerut, Uttar Pradesh, India",
+      "graduation_date": "June 2020",
+      "gpa": "7.45/10",
+      "highlights": "Computer Science & Engineering, Distributed Systems, Software Engineering"
     }
   ],
   "projects": [
     {
-      "name": "Distributed Key-Value Store (Raft)",
-      "description": "Implemented a fault-tolerant, replicated key-value storage engine in Go using the Raft consensus algorithm with log compaction and snapshotting.",
-      "technologies": ["Go", "Raft", "Distributed Consensus", "gRPC"],
-      "link": "https://github.com/alexmorgan-dev/raft-kv"
+      "name": "Production RAG & Financial Portfolio Intelligence Copilot",
+      "description": "Architected an end-to-end Generative AI platform in Next.js 14, Python FastAPI, and LangChain that combines quantitative risk analysis with LLM-assisted investment explanations across SEC filings. Features hybrid retrieval (BM25 + dense vector embeddings with Cohere reranking), Redis semantic caching cutting API calls by 42%, and Vercel AI SDK token streaming.",
+      "technologies": [
+        "Next.js 14",
+        "Python (FastAPI)",
+        "LangChain",
+        "Pinecone",
+        "pgvector",
+        "Cohere",
+        "Redis Vector Cache",
+        "Vercel AI SDK",
+        "Tailwind CSS"
+      ],
+      "link": "https://github.com/sakshi-labs/"
     },
     {
-      "name": "High-Throughput Log Aggregator",
-      "description": "Built an asynchronous log aggregation agent in Rust and Kafka delivering sub-second log indexing into Elasticsearch.",
-      "technologies": ["Kafka", "Rust", "Elasticsearch", "Docker"],
-      "link": "https://github.com/alexmorgan-dev/log-sink"
+      "name": "Enterprise LLM Guardrail & Active Telemetry Platform",
+      "description": "Developed a full-stack AI safety and monitoring platform based on ICLR 2026 agent research, featuring an active circuit-breaker interceptor, an interactive Gradio sandbox, and a Chart.js telemetry console with defensive trace sanitization preserving >0.88 ROC-AUC under simulated adversarial jailbreak attacks.",
+      "technologies": [
+        "Python",
+        "FastAPI",
+        "Gradio",
+        "Chart.js",
+        "LLM Guardrails",
+        "ROC-AUC Evaluation",
+        "Adversarial Defense",
+        "Circuit Breakers"
+      ],
+      "link": "https://huggingface.co/spaces/Sakshiii/"
+    },
+    {
+      "name": "Multilingual Real-Time Voice & Web Accessibility Copilot",
+      "description": "Developed a browser-integrated accessibility extension using TypeScript, Web Audio APIs, and OpenAI Whisper transcription endpoints, providing real-time text-to-speech synthesis across 12+ languages with local audio buffer caching for instantaneous playback.",
+      "technologies": [
+        "TypeScript",
+        "JavaScript (Manifest V3)",
+        "Web Audio API",
+        "Web Speech API",
+        "OpenAI Whisper",
+        "Audio Caching",
+        "Accessibility"
+      ],
+      "link": "https://github.com/sakshi-labs/textToSpeech"
     }
   ],
   "certifications": [
-    "AWS Certified Solutions Architect – Associate",
-    "Certified Kubernetes Application Developer (CKAD)"
+    "Google ML Bootcamp Graduate",
+    "Udemy Certified Web Developer",
+    "CodeChef Global Rank 222 (July Lunchtime)"
   ],
   "screening_answers": {
     "authorized_to_work": "Yes",
     "require_sponsorship": "No",
     "future_sponsorship": "No",
-    "notice_period": "2 weeks",
+    "notice_period": "30 days",
     "years_of_experience": "6",
-    "desired_salary": "175,000",
-    "currency": "USD",
+    "desired_salary": "35,00,000",
+    "currency": "INR",
     "gender": "Prefer not to disclose",
-    "race_ethnicity": "Prefer not to disclose",
+    "race_ethnicity": "Asian / Indian",
     "veteran_status": "Not a veteran",
     "disability_status": "No",
     "hear_about_us": "Company Careers Page / Professional Network"

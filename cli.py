@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 CLI entry point for the Automated Job Application & Resume Tailoring Bot.
-Enhanced with Multi-Resume Bank, Profile Selector, and 40-50 LPA Autonomous Job Hunter.
+Enhanced with Multi-Resume Bank, Profile Selector, and 30-40 LPA Autonomous Job Hunter.
 """
 import sys
 import os
@@ -19,7 +19,7 @@ from src.resume_bank import ResumeBank
 def main():
     root_dir = os.path.dirname(os.path.abspath(__file__))
     parser = argparse.ArgumentParser(
-        description="Automated Job Application Bot: Multi-Resume Selector & 40-50 LPA Autonomous Job Hunter"
+        description="Automated Job Application Bot: Multi-Resume Selector & 30-40 LPA Autonomous Job Hunter"
     )
     subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
 
@@ -51,7 +51,7 @@ def main():
     apply_parser.add_argument("--no-review", action="store_true", help="Disable pause for human verification")
 
     # Command: add-job
-    add_parser = subparsers.add_parser("add-job", help="Add a custom job opening to the 40-50L queue")
+    add_parser = subparsers.add_parser("add-job", help="Add a custom job opening to the 30-40L queue")
     add_parser.add_argument("--company", required=True, help="Company name")
     add_parser.add_argument("--title", required=True, help="Job title")
     add_parser.add_argument("--url", required=True, help="Application or career URL")
@@ -89,7 +89,7 @@ def main():
 
     elif args.command == "hunt":
         jobs = hunter.hunt_jobs(query=args.query, location=args.loc, limit_per_portal=args.limit)
-        print(f"\nDiscovered {len(jobs)} jobs in 40-50 LPA band. Run `python cli.py queue` to view.")
+        print(f"\nDiscovered {len(jobs)} jobs in 30-40 LPA band. Run `python cli.py queue` to view.")
 
     elif args.command == "queue":
         queue = hunter.load_queue()

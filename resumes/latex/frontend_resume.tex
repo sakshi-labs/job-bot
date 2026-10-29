@@ -1,0 +1,228 @@
+\documentclass[10pt,a4paper]{article}
+
+% =========================================================
+% ATS-FRIENDLY RESUME - FRONTEND DEVELOPMENT
+% Single column, conventional headings, selectable text
+% Compile with pdfLaTeX in Overleaf.
+% =========================================================
+
+\usepackage[
+  top=1.25cm,
+  bottom=1.25cm,
+  left=1.45cm,
+  right=1.45cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{headingcolor}{HTML}{222222}
+\definecolor{linkcolor}{HTML}{222222}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  pdfauthor={Sakshi Malik},
+  pdftitle={Sakshi Malik - Senior Frontend Engineer}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\titleformat{\section}
+  {\large\bfseries\color{headingcolor}}
+  {}{0em}{}[\titlerule]
+
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=2.5pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\jobheading}[4]{
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\[-2pt]
+}
+
+\newcommand{\projectheading}[3]{
+  \textbf{#1} \hfill
+  \href{#2}{#3}\\[-2pt]
+}
+
+\begin{document}
+
+% ================= HEADER =================
+
+\begin{center}
+  {\LARGE\textbf{SAKSHI MALIK}}\\[3pt]
+  {\normalsize
+  Senior Frontend Engineer \quad|\quad
+  React \& Next.js Architecture \quad|\quad
+  UI Performance \& Design Systems}\\[5pt]
+
+  Meerut, Uttar Pradesh, India
+  \quad|\quad
+  \href{mailto:mail.sakshimalik@gmail.com}{mail.sakshimalik@gmail.com}
+  \quad|\quad
+  +91-7017088496\\[2pt]
+
+  \href{https://github.com/sakshi-labs}{GitHub}
+  \quad|\quad
+  \href{https://linkedin.com/in/sakshiimalik}{LinkedIn}
+  \quad|\quad
+  \href{https://sakshi-labs.github.io/Portfolio/}{Portfolio}
+\end{center}
+
+% ================= SUMMARY =================
+
+\section{Professional Summary}
+
+Senior Frontend Engineer with 6 years of experience architecting high-performance, accessible, and data-intensive enterprise web applications. Specialized in modern React (v18/v19), Next.js (App Router, Server Components), TypeScript, design systems, and state orchestration. Proven track record of optimizing Core Web Vitals (slashing LCP by 45\%), building real-time streaming interfaces (WebRTC, SSE, WebSockets), and engineering modular micro-frontends. Deep experience partnering with product designers and backend engineers to transform complex user workflows into intuitive, sub-second interactive client experiences.
+
+% ================= SKILLS =================
+
+\section{Technical Skills}
+
+\textbf{Programming Languages:}
+TypeScript, JavaScript (ES6+), HTML5, CSS3/SCSS, SQL, Python
+
+\textbf{Frontend Architecture \& Frameworks:}
+React.js, Next.js (App Router, SSR, SSG), Server-Sent Events (SSE), WebRTC, Micro-Frontends, Module Federation, Core Web Vitals (LCP, FID, CLS), Single Page Applications (SPA)
+
+\textbf{UI Engineering \& Design Systems:}
+Tailwind CSS, Radix UI, Shadcn/UI, CSS Modules, Styled Components, Framer Motion, Responsive Web Design, WCAG 2.1 AA Accessibility, Atomic Design
+
+\textbf{State Management \& Data Fetching:}
+Redux Toolkit, Zustand, React Query (TanStack Query), Context API, SWR, GraphQL (Apollo Client), RESTful APIs, WebSockets
+
+\textbf{Testing \& Code Quality:}
+Jest, React Testing Library, Cypress, Playwright, Storybook, ESLint, Prettier, PostCSS
+
+\textbf{Build Tooling \& Cloud:}
+Vite, Webpack, Turbopack, npm/pnpm, AWS (S3, CloudFront), Docker, GitHub Actions, CI/CD, Git
+
+% ================= EXPERIENCE =================
+
+\section{Professional Experience}
+
+\jobheading
+  {SHL}
+  {May 2024 -- Present}
+  {Software Engineer (Frontend Lead)}
+  {Hybrid, India}
+
+\begin{itemize}
+  \item Architected and delivered the client-side infrastructure for the Smart Interview platform, integrating low-latency live video streaming (WebRTC) and dynamic interview evaluation flows for 100K+ enterprise users.
+  \item Engineered dynamic assessment dashboards using React, TypeScript, and TanStack Query, rendering complex candidate percentile heatmaps and multi-competency scoring visualizations with sub-second paint times.
+  \item Optimized Core Web Vitals across assessment portals, reducing Largest Contentful Paint (LCP) from 3.4s to 1.8s (a 47\% reduction) and eliminating First Input Delay (FID) bottlenecks during high-concurrency evaluations.
+  \item Built and maintained an accessible, reusable Design System library using Tailwind CSS and Radix UI adopted across 4 distributed engineering squads, reducing cross-team UI development cycle time by 35\%.
+  \item Collaborated with ML scientists and backend engineers to integrate streaming inference endpoints using Server-Sent Events (SSE), delivering incremental evaluation feedback with zero UI thread stutter.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Quantumics.ai}
+  {September 2023 -- January 2024}
+  {Full Stack Developer (Frontend Focused)}
+  {Remote}
+
+\begin{itemize}
+  \item Spearheaded frontend development of a no-code data engineering automation platform using Next.js 14 and TypeScript, cutting complex ETL workflow configuration time for enterprise users by 40\%.
+  \item Designed a responsive, interactive drag-and-drop canvas interface enabling business analysts to construct heterogeneous data pipelines with real-time dependency validation.
+  \item Implemented real-time token streaming visualization using Server-Sent Events (SSE) and WebSocket clients, providing sub-50ms rendered latency for generative model outputs.
+  \item Migrated legacy Redux global state to Zustand and TanStack Query, pruning client-side boilerplate code by 42\% and eliminating redundant component re-renders across deep DOM trees.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Algoworks}
+  {December 2021 -- August 2023}
+  {Software Engineer}
+  {Remote}
+
+\begin{itemize}
+  \item Engineered enterprise web portals in React and TypeScript for a blockchain-based inventory tracking system, serving 500+ active enterprise warehouse operators across multiple distribution hubs.
+  \item Implemented virtualized data table components (TanStack Virtual) capable of smoothly rendering 50,000+ real-time inventory records with 60 FPS scrolling and zero frame drops.
+  \item Established end-to-end component testing suites using Jest and React Testing Library, boosting code coverage from 55\% to 88\% across critical purchase and reconciliation user flows.
+  \item Hardened frontend security against XSS and CSRF vulnerabilities, aligning client code with OWASP guidelines and passing enterprise security compliance reviews.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Knoldus Inc.}
+  {April 2021 -- December 2021}
+  {Software Consultant}
+  {Remote}
+
+\begin{itemize}
+  \item Built responsive Single Page Applications (SPAs) and real-time operational monitoring dashboards using React, Redux, and modern CSS, monitoring services handling 1M+ daily transactions.
+  \item Implemented optimistic UI updates and resilient React Error Boundary cascades, reducing user-facing error incidence and cutting operational Mean Time to Resolution (MTTR) by 40\%.
+  \item Standardized modular CSS architecture and reusable form validation utilities, accelerating sprint feature delivery by 25\%.
+\end{itemize}
+
+% ================= PROJECTS =================
+
+\section{Projects}
+
+\projectheading
+  {AI-Powered Investment Portfolio Analytics Dashboard}
+  {https://github.com/sakshi-labs/}
+  {GitHub}
+
+\begin{itemize}
+  \item Built a high-performance financial dashboard in Next.js 14 (App Router), TypeScript, and Tailwind CSS that visualizes quantitative portfolio metrics, risk drawdowns, and automated asset allocation models.
+  \item Engineered interactive financial charting components using Recharts and D3.js with responsive viewports, supporting dynamic scenario simulations and multi-asset comparisons.
+  \item Implemented token-streamed AI explanation dialogs via Server-Sent Events (SSE), delivering contextual risk commentary without blocking client rendering threads.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {Enterprise AI Guardrail \& Telemetry Console}
+  {https://huggingface.co/spaces/Sakshiii/}
+  {Hugging Face Demo}
+
+\begin{itemize}
+  \item Developed an interactive telemetry console based on ICLR 2026 agent safety research, combining active interceptor metrics with an interactive Gradio sandbox and Chart.js telemetry dashboard.
+  \item Built real-time visual monitors tracking adversarial prompt injection attacks, displaying rolling ROC-AUC metrics and anomaly detection distributions above 0.88 ROC-AUC.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {Multilingual Real-Time Voice \& Web Accessibility Extension}
+  {https://github.com/sakshi-labs/textToSpeech}
+  {GitHub}
+
+\begin{itemize}
+  \item Created a high-utility browser extension in TypeScript and vanilla JavaScript (Manifest V3) delivering accessible, voice-synthesized web page reading across 12+ international languages.
+  \item Built lightweight floating UI controls with native Web Speech API synthesis, contextual text highlighting, and real-time speed/pitch modulation controls.
+\end{itemize}
+
+% ================= EDUCATION =================
+
+\section{Education}
+
+\textbf{B.Tech in Computer Science}\\
+SCRIET, Chaudhary Charan Singh University, Meerut
+\hfill June 2020\\
+CGPA: 7.45/10
+
+\end{document}

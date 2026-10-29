@@ -1,0 +1,229 @@
+\documentclass[10pt,a4paper]{article}
+
+% =========================================================
+% ATS-FRIENDLY RESUME - BACKEND DEVELOPMENT
+% Single column, conventional headings, selectable text
+% Compile with pdfLaTeX in Overleaf.
+% =========================================================
+
+\usepackage[
+  top=1.25cm,
+  bottom=1.25cm,
+  left=1.45cm,
+  right=1.45cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{headingcolor}{HTML}{222222}
+\definecolor{linkcolor}{HTML}{222222}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  pdfauthor={Sakshi Malik},
+  pdftitle={Sakshi Malik - Senior Backend Engineer}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\titleformat{\section}
+  {\large\bfseries\color{headingcolor}}
+  {}{0em}{}[\titlerule]
+
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=2.5pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\jobheading}[4]{
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\[-2pt]
+}
+
+\newcommand{\projectheading}[3]{
+  \textbf{#1} \hfill
+  \href{#2}{#3}\\[-2pt]
+}
+
+\begin{document}
+
+% ================= HEADER =================
+
+\begin{center}
+  {\LARGE\textbf{SAKSHI MALIK}}\\[3pt]
+  {\normalsize
+  Senior Backend Engineer \quad|\quad
+  Distributed Systems \& Microservices \quad|\quad
+  Java, Spring Boot \& Apache Kafka}\\[5pt]
+
+  Meerut, Uttar Pradesh, India
+  \quad|\quad
+  \href{mailto:mail.sakshimalik@gmail.com}{mail.sakshimalik@gmail.com}
+  \quad|\quad
+  +91-7017088496\\[2pt]
+
+  \href{https://github.com/sakshi-labs}{GitHub}
+  \quad|\quad
+  \href{https://linkedin.com/in/sakshiimalik}{LinkedIn}
+  \quad|\quad
+  \href{https://sakshi-labs.github.io/Portfolio/}{Portfolio}
+\end{center}
+
+% ================= SUMMARY =================
+
+\section{Professional Summary}
+
+Senior Backend Engineer with 6 years of experience designing, scaling, and operating high-throughput distributed microservices, event-driven streaming pipelines, and fault-tolerant APIs. Deep expertise across Java (11/17/21), Spring Boot, Apache Kafka, PostgreSQL, Redis, and gRPC. Proven track record of lowering p99 API latencies to under 200ms, handling 1M+ daily transactions with 99.9\% uptime, and architecting asynchronous messaging infrastructure with strict delivery semantics. Experienced in collaborating with machine learning and infrastructure teams to deploy low-latency inference services and robust transactional data layers.
+
+% ================= SKILLS =================
+
+\section{Technical Skills}
+
+\textbf{Programming Languages:}
+Java (8/11/17/21), SQL, Python, Go (Golang), JavaScript (ES6+), Bash
+
+\textbf{Backend Architecture \& Frameworks:}
+Spring Boot, Spring MVC, Spring Cloud, Hibernate/JPA, Node.js, Express, RESTful APIs, gRPC, GraphQL, OAuth 2.0, JWT, Circuit Breakers (Resilience4j)
+
+\textbf{Distributed Systems \& Messaging:}
+Microservices Architecture, Apache Kafka, RabbitMQ, Event-Driven Architecture, Distributed Caching (Redis Cluster), Asynchronous Processing, Idempotency, Dead-Letter Queues
+
+\textbf{Databases \& Storage:}
+PostgreSQL, MySQL, MongoDB, Redis, Connection Pooling (HikariCP), Query Optimization, Indexing Strategies, Transaction Management (ACID)
+
+\textbf{Concurrency \& Reliability:}
+Multithreading, Concurrency Utilities, Low-Latency Optimization, System Design, Zero-Downtime Deployment, OWASP Security Hardening
+
+\textbf{Cloud, DevOps \& Observability:}
+AWS (EC2, S3, RDS, Lambda), Docker, Kubernetes, Jenkins, Maven, Gradle, Git, GitHub Actions, OpenTelemetry, Prometheus, Grafana, Log4j2
+
+% ================= EXPERIENCE =================
+
+\section{Professional Experience}
+
+\jobheading
+  {SHL}
+  {May 2024 -- Present}
+  {Software Engineer (Backend \& Distributed Systems)}
+  {Hybrid, India}
+
+\begin{itemize}
+  \item Architected and deployed an automated scoring microservice in Java and Spring Boot for open-ended assessment responses, cutting manual grading latency by 60\% and guaranteeing scoring consistency across enterprise evaluations.
+  \item Designed a high-throughput candidate percentile computation engine processing hundreds of thousands of assessment records daily, utilizing batch partitioning and PostgreSQL indexing to maintain sub-50ms query execution times.
+  \item Collaborated with ML scientists to deploy transformer-based scoring models into production over gRPC and REST APIs, sustaining p99 response times below 200ms under heavy concurrent test-taking loads.
+  \item Implemented event-driven message pipelines using Apache Kafka to decouple assessment submission, scoring calculations, and audit-logging services, eliminating synchronous bottlenecks.
+  \item Built resilient error recovery mechanisms using dead-letter topics and automated retries, ensuring zero data loss across critical assessment evaluation workflows.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Quantumics.ai}
+  {September 2023 -- January 2024}
+  {Full Stack Developer (Backend \& Infrastructure)}
+  {Remote}
+
+\begin{itemize}
+  \item Engineered high-performance backend ingestion services in Node.js and Python for a no-code data engineering platform, cutting ETL pipeline configuration time for enterprise clients by 40\%.
+  \item Optimized a LLaMA 2 model inference backend by implementing dynamic request batching, prompt template caching, and Redis vector caches, reducing average query response time by 35\%.
+  \item Architected a fault-tolerant Server-Sent Events (SSE) streaming infrastructure with Redis Pub/Sub backplane, supporting concurrent, non-blocking token delivery to hundreds of simultaneous clients.
+  \item Designed RESTful API specifications and schema validations with strict input sanitization, preventing unauthorized model prompt injection attempts.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Algoworks}
+  {December 2021 -- August 2023}
+  {Software Engineer}
+  {Remote}
+
+\begin{itemize}
+  \item Developed enterprise distributed inventory services utilizing Hyperledger Fabric chaincode and Node.js middleware, improving supply chain tracking accuracy by 30\% and slashing reconciliation time by 25\%.
+  \item Engineered transactional data models on PostgreSQL, implementing database indexing, partition pruning, and HikariCP connection pooling that improved database query throughput by 45\%.
+  \item Integrated legacy enterprise ERP systems with modern REST APIs, supporting continuous inventory sync operations for more than 500 active warehouse operators.
+  \item Conducted rigorous security audits and OWASP compliance evaluations, identifying and resolving 3 critical authentication and access-control vulnerabilities prior to production deployment.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Knoldus Inc.}
+  {April 2021 -- December 2021}
+  {Software Consultant}
+  {Remote}
+
+\begin{itemize}
+  \item Developed scalable RESTful services using Java, Spring Web MVC, and JPA/Hibernate, sustaining workloads exceeding 1,000,000 requests per day with 99.9\% uptime reliability.
+  \item Designed a unified messaging abstraction layer supporting Apache Kafka and RabbitMQ with consumer acknowledgment handling, powering decoupled communication across 8 core microservices.
+  \item Built an automated service health monitoring daemon and alerting pipeline with Slack/email webhooks, reducing operational Mean Time to Resolution (MTTR) by 40\%.
+  \item Engineered robust database migration scripts using Flyway and Liquibase, enabling seamless zero-downtime database schema evolutions.
+\end{itemize}
+
+% ================= PROJECTS =================
+
+\section{Projects}
+
+\projectheading
+  {Distributed Financial Risk Engine \& Portfolio Service}
+  {https://github.com/sakshi-labs/}
+  {GitHub}
+
+\begin{itemize}
+  \item Designed a high-throughput portfolio analytics microservice in Java 17 and Spring Boot capable of ingesting financial transactions and computing Value-at-Risk (VaR) scenarios in real-time.
+  \item Engineered an event-driven ingestion pipeline with Apache Kafka and Redis Cluster, offloading database read pressure by 65\% during simulated market volatility spikes.
+  \item Built clean modular service boundaries with Docker containerization, comprehensive JUnit 5 integration tests, and PostgreSQL transactional persistence.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {Enterprise LLM Guardrail \& Circuit-Breaker Interceptor}
+  {https://huggingface.co/spaces/Sakshiii/}
+  {Hugging Face Demo}
+
+\begin{itemize}
+  \item Developed an asynchronous reverse-proxy interceptor based on ICLR 2026 agent safety research, evaluating token streams for prompt injections and malicious tool-use exploits with sub-15ms latency overhead.
+  \item Implemented defensive trace sanitization maintaining guardrail reliability above 0.88 ROC-AUC under simulated adversarial jailbreak attacks.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {High-Throughput Asynchronous Messaging Broker \& Webhook Dispatcher}
+  {https://github.com/sakshi-labs/textToSpeech}
+  {GitHub}
+
+\begin{itemize}
+  \item Engineered a scalable event dispatcher in Java, Spring Boot, and RabbitMQ featuring backpressure regulation, exponential backoff retries, and dead-letter queue routing.
+  \item Handled concurrent HTTP callback deliveries to distributed client webhooks with guaranteed delivery semantics and comprehensive Prometheus telemetry.
+\end{itemize}
+
+% ================= EDUCATION =================
+
+\section{Education}
+
+\textbf{B.Tech in Computer Science}\\
+SCRIET, Chaudhary Charan Singh University, Meerut
+\hfill June 2020\\
+CGPA: 7.45/10
+
+\end{document}

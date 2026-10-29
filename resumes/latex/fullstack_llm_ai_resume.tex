@@ -1,0 +1,230 @@
+\documentclass[10pt,a4paper]{article}
+
+% =========================================================
+% ATS-FRIENDLY RESUME - FULL STACK AI & LLM SYSTEMS
+% Tailored for Tier-1 Tech (Stripe, Booking.com, Airbnb)
+% Single column, conventional headings, selectable text
+% Compile with pdfLaTeX in Overleaf.
+% =========================================================
+
+\usepackage[
+  top=1.25cm,
+  bottom=1.25cm,
+  left=1.45cm,
+  right=1.45cm
+]{geometry}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{headingcolor}{HTML}{222222}
+\definecolor{linkcolor}{HTML}{222222}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor,
+  pdfauthor={Sakshi Malik},
+  pdftitle={Sakshi Malik - Senior Full Stack AI Engineer}
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{2em}
+\urlstyle{same}
+
+\titleformat{\section}
+  {\large\bfseries\color{headingcolor}}
+  {}{0em}{}[\titlerule]
+
+\titlespacing*{\section}{0pt}{9pt}{4pt}
+
+\setlist[itemize]{
+  leftmargin=1.25em,
+  itemsep=2.5pt,
+  topsep=2pt,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\newcommand{\jobheading}[4]{
+  \textbf{#1} \hfill #2\\
+  \textit{#3} \hfill \textit{#4}\\[-2pt]
+}
+
+\newcommand{\projectheading}[3]{
+  \textbf{#1} \hfill
+  \href{#2}{#3}\\[-2pt]
+}
+
+\begin{document}
+
+% ================= HEADER =================
+
+\begin{center}
+  {\LARGE\textbf{SAKSHI MALIK}}\\[3pt]
+  {\normalsize
+  Senior Full Stack AI Engineer \quad|\quad
+  LLM Systems \& AI Agents \quad|\quad
+  React/Next.js, Python \& Distributed Systems}\\[5pt]
+
+  Meerut, Uttar Pradesh, India
+  \quad|\quad
+  \href{mailto:mail.sakshimalik@gmail.com}{mail.sakshimalik@gmail.com}
+  \quad|\quad
+  +91-7017088496\\[2pt]
+
+  \href{https://github.com/sakshi-labs}{GitHub}
+  \quad|\quad
+  \href{https://linkedin.com/in/sakshiimalik}{LinkedIn}
+  \quad|\quad
+  \href{https://sakshi-labs.github.io/Portfolio/}{Portfolio}
+\end{center}
+
+% ================= SUMMARY =================
+
+\section{Professional Summary}
+
+Senior Full Stack Engineer with 6 years of software engineering experience, including deep specialization in architecting end-to-end Generative AI products, LLM pipelines, and resilient distributed web applications. Expert in bridging modern frontend experiences (Next.js 14, React 19, TypeScript, Vercel AI SDK) with production-grade backend microservices (Python FastAPI, Java Spring Boot, Node.js) and AI infrastructure (LangChain, LlamaIndex, Pinecone, pgvector, Redis Semantic Caching). Proven track record delivering low-latency AI workflows (p99 latency $<$200ms, sub-2s generation), slashing LLM API unit economics by 35\%, and scaling systems serving 1M+ daily transactions. Targeted for high-scale, product-driven engineering organizations like Stripe, Booking.com, and Airbnb.
+
+% ================= SKILLS =================
+
+\section{Technical Skills}
+
+\textbf{Generative AI \& LLM Systems:}
+Large Language Models (GPT-4o, Claude 3.5, LLaMA 3), Retrieval-Augmented Generation (RAG), LangChain, LangGraph, LlamaIndex, Function Calling / Tool Use, ReAct Agent Workflows, Prompt Optimization, NeMo Guardrails, Ragas Evaluation
+
+\textbf{Vector Databases \& Search:}
+Pinecone, ChromaDB, PostgreSQL (pgvector), Milvus, Redis (Vector Cache), Dense \& Sparse Embeddings, Hybrid Search (BM25 + Dense), Cohere Reranking
+
+\textbf{Frontend Engineering:}
+React.js, Next.js (App Router, Server Actions), TypeScript, JavaScript (ES6+), Vercel AI SDK, Streaming UI (Server-Sent Events), Tailwind CSS, Radix UI, TanStack Query, Zustand
+
+\textbf{Backend \& Distributed Systems:}
+Python (FastAPI, Asyncio), Java (Spring Boot), Node.js, Express, RESTful APIs, GraphQL, gRPC, Apache Kafka, RabbitMQ, Microservices Architecture, Event-Driven Systems
+
+\textbf{Databases \& Caching:}
+PostgreSQL, MySQL, MongoDB, Redis Cluster, Connection Pooling, Query Optimization, Semantic Response Caching
+
+\textbf{Cloud, DevOps \& Observability:}
+AWS (EC2, S3, Bedrock, Lambda), Docker, Kubernetes, CI/CD (GitHub Actions), Jenkins, Git, OpenTelemetry, Prometheus, Grafana, OWASP Application Security
+
+% ================= EXPERIENCE =================
+
+\section{Professional Experience}
+
+\jobheading
+  {SHL}
+  {May 2024 -- Present}
+  {Software Engineer (Full Stack AI \& Platform)}
+  {Hybrid, India}
+
+\begin{itemize}
+  \item Architected and launched an end-to-end AI-driven evaluation engine for open-ended candidate assessments, automating 60\% of manual grading while achieving $>$95\% scoring alignment with human evaluation rubrics.
+  \item Engineered full-stack capabilities for the Smart Interview platform, integrating real-time video streaming with dynamic LLM interview question generation, maintaining sub-2-second question generation latency under concurrent enterprise loads.
+  \item Developed a full-stack candidate analytics platform using React, TypeScript, and Spring Boot, processing 100K+ assessment responses daily to deliver percentile distributions and competency heatmaps.
+  \item Collaborated with ML scientists to deploy transformer-based scoring models into production REST and gRPC microservices, maintaining a p99 response time under 200ms during peak concurrent enterprise evaluation sessions.
+  \item Implemented Apache Kafka event streams to asynchronously decouple candidate submissions, scoring inference, and enterprise ATS webhook notifications, preventing downstream backpressure.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Quantumics.ai}
+  {September 2023 -- January 2024}
+  {Full Stack Developer (Generative AI)}
+  {Remote}
+
+\begin{itemize}
+  \item Built core full-stack workflows for a no-code data engineering automation platform using Next.js 14 and Python FastAPI, reducing customer pipeline onboarding time by 40\%.
+  \item Optimized a LLaMA 2 inference pipeline using dynamic request batching, prompt caching, and Redis semantic vector search, reducing median query latency by 35\% and lowering third-party model inference costs by 30\%.
+  \item Architected a resilient Server-Sent Events (SSE) token-streaming pipeline with React streaming UI components, delivering seamless, token-by-token generative feedback with zero client-side UI thread freezing.
+  \item Engineered drag-and-drop workflow canvases with real-time graph validation, enabling enterprise analysts to execute complex multi-step data pipelines against heterogeneous enterprise data lakes.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Algoworks}
+  {December 2021 -- August 2023}
+  {Software Engineer}
+  {Remote}
+
+\begin{itemize}
+  \item Engineered an enterprise distributed inventory tracking platform utilizing Hyperledger Fabric chaincode, Node.js middleware, and responsive React interfaces, improving tracking accuracy by 30\% and cutting reconciliation time by 25\%.
+  \item Built RESTful middleware connecting distributed ledger audit trails with legacy ERP systems, supporting over 500 active enterprise warehouse operators across continuous scanning workflows.
+  \item Optimized PostgreSQL database queries, implementing composite indexing, partition pruning, and connection pooling that accelerated high-throughput inventory reads by 45\%.
+  \item Conducted application security audits adhering to OWASP standards, identifying and remediating 3 critical authentication and data integrity vulnerabilities prior to enterprise production sign-off.
+\end{itemize}
+
+\medskip
+
+\jobheading
+  {Knoldus Inc.}
+  {April 2021 -- December 2021}
+  {Software Consultant}
+  {Remote}
+
+\begin{itemize}
+  \item Developed mission-critical RESTful microservices and admin user interfaces in Java, Spring Web MVC, and Node.js, supporting 1,000,000+ daily transactions at 99.9\% uptime reliability.
+  \item Implemented an event-driven pub/sub messaging abstraction layer integrating Apache Kafka and RabbitMQ with automatic retry semantics and dead-letter queues across 8 distinct microservices.
+  \item Built an automated service health monitoring daemon and alerting system, reducing operational Mean Time to Resolution (MTTR) by 40\%.
+\end{itemize}
+
+% ================= PROJECTS =================
+
+\section{Projects}
+
+\projectheading
+  {Production RAG \& Financial Portfolio Intelligence Copilot}
+  {https://github.com/sakshi-labs/}
+  {GitHub}
+
+\begin{itemize}
+  \item Architected an end-to-end Generative AI platform in Next.js 14, Python FastAPI, and LangChain that combines quantitative risk analysis with LLM-assisted investment explanations across SEC filings.
+  \item Engineered a hybrid retrieval pipeline pairing BM25 keyword search with dense vector embeddings (Pinecone and pgvector) and Cohere cross-encoder reranking, elevating contextual retrieval precision from 72\% to 94\%.
+  \item Implemented semantic response caching using Redis Vector Store, cutting redundant LLM API calls by 42\% while serving cached investor queries in under 60ms.
+  \item Built streaming UI components using the Vercel AI SDK and Server-Sent Events (SSE) for conversational multi-turn dialogues with dynamic citation attribution.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {Enterprise LLM Guardrail \& Active Telemetry Platform}
+  {https://huggingface.co/spaces/Sakshiii/}
+  {Hugging Face Demo}
+
+\begin{itemize}
+  \item Developed a full-stack AI safety and monitoring platform based on ICLR 2026 agent research, featuring an active circuit-breaker interceptor, an interactive Gradio sandbox, and a Chart.js telemetry console.
+  \item Deployed defensive trace sanitization to prevent in-context prompt injection (Monitor Hijacking), preserving guardrail reliability above 0.88 ROC-AUC under simulated adversarial jailbreak attacks.
+\end{itemize}
+
+\medskip
+
+\projectheading
+  {Multilingual Real-Time Voice \& Web Accessibility Copilot}
+  {https://github.com/sakshi-labs/textToSpeech}
+  {GitHub}
+
+\begin{itemize}
+  \item Developed a browser-integrated accessibility extension using TypeScript, Web Audio APIs, and OpenAI Whisper transcription endpoints, providing real-time text-to-speech synthesis across 12+ languages.
+  \item Designed a low-overhead client architecture with local audio buffer caching, delivering instantaneous speech synthesis without blocking web page interaction.
+\end{itemize}
+
+% ================= EDUCATION =================
+
+\section{Education}
+
+\textbf{B.Tech in Computer Science}\\
+SCRIET, Chaudhary Charan Singh University, Meerut
+\hfill June 2020\\
+CGPA: 7.45/10
+
+\end{document}

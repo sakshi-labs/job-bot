@@ -228,16 +228,20 @@
                             <td style="white-space:nowrap;">
                                 {% if j.status == 'applied' %}
                                 <span style="color:#34d399; font-size:12px; font-weight:700; margin-right:6px;">&#10003; Applied</span>
+                                {% elif j.status == 'prefilled' %}
+                                <span style="color:#60a5fa; font-size:11px; font-weight:600; margin-right:6px;" title="{{ j.error_reason or 'Tab open in Chrome — review and submit manually' }}">&#9997; Pre-filled</span>
                                 {% elif j.status == 'not_applied' %}
-                                <span style="color:#fbbf24; font-size:11px; font-weight:600; margin-right:6px;" title="{{ j.error_reason or 'Pre-filled — submit manually in browser' }}">&#9888; Pre-filled</span>
+                                <span style="color:#fbbf24; font-size:11px; font-weight:600; margin-right:6px;" title="{{ j.error_reason or 'Not applied yet' }}">&#9888; Not Applied</span>
                                 {% elif j.status == 'error' %}
                                 <span style="color:#f87171; font-size:11px; font-weight:600; margin-right:6px;" title="{{ j.error_reason or 'Error during apply' }}">&#10007; Error</span>
                                 {% endif %}
                                 <button class="btn btn-sm btn-secondary" onclick="openCustomizeModal('{{ j.id }}')">&#127912; Customize &amp; Apply</button>
-                                {% if j.status != 'applied' %}
-                                <button class="btn btn-sm btn-success" onclick="singleClickApply('{{ j.id }}')">&#9889; 1-Click Apply</button>
-                                {% else %}
+                                {% if j.status == 'applied' %}
                                 <button class="btn btn-sm" style="background:#1e293b;color:#64748b;cursor:not-allowed;" disabled title="Already applied">&#10003; Done</button>
+                                {% elif j.status == 'prefilled' %}
+                                <button class="btn btn-sm" style="background:#10b981;" onclick="markAsApplied('{{ j.id }}')" title="I submitted this application manually in the browser">&#10003; Mark as Applied</button>
+                                {% else %}
+                                <button class="btn btn-sm btn-success" onclick="singleClickApply('{{ j.id }}')">&#9889; 1-Click Apply</button>
                                 {% endif %}
                                 {% if j.error_reason %}
                                 <div style="font-size:10px;color:#f87171;margin-top:3px;max-width:240px;word-break:break-word;">{{ j.error_reason[:90] }}{% if j.error_reason|length > 90 %}...{% endif %}</div>
@@ -503,25 +507,48 @@ async function singleClickApply(jobId) {
         if (data.status === "applied") {
             statusEl.innerHTML = `<span style='color:var(--success); font-weight:700;'>&#10003; Confirmed Applied! ${data.fields_filled?.length || 0} fields auto-filled.</span>`;
             setTimeout(() => { window.location.reload(); }, 1500);
+        } else if (data.status === "prefilled") {
+            statusEl.innerHTML = `<span style='color:#60a5fa; font-weight:600;'>&#9997; Form pre-filled! Chrome tab is open — review, submit, then click "✓ Mark as Applied" in the row.</span>`;
+            setTimeout(() => { window.location.reload(); }, 2000);
         } else if (data.status === "not_applied") {
-            const reason = data.error_reason || "Form pre-filled — please submit manually in the browser tab that opened.";
+            const reason = data.error_reason || "Could not apply — see error reason.";
             if (data.duplicate) {
                 statusEl.innerHTML = `<span style='color:#fbbf24;'>&#8505; Skipped — already applied to this opening.</span>`;
             } else {
-                statusEl.innerHTML = `<span style='color:#fbbf24;'>&#9888; Form pre-filled but NOT yet submitted. Reason: ${reason}</span>`;
+                statusEl.innerHTML = `<span style='color:#fbbf24;'>&#9888; Not Applied. Reason: ${reason}</span>`;
             }
-            setTimeout(() => { window.location.reload(); }, 2500);
+            setTimeout(() => { window.location.reload(); }, 3000);
         } else if (data.status === "error" || data.error) {
             const msg = data.error_reason || data.error || "Unknown error";
-            statusEl.innerHTML = `<span style='color:var(--danger);'>&#10007; Not Applied. Error: ${msg}</span>`;
-            setTimeout(() => { window.location.reload(); }, 2500);
+            statusEl.innerHTML = `<span style='color:var(--danger);'>&#10007; Error: ${msg}</span>`;
+            setTimeout(() => { window.location.reload(); }, 3000);
         } else {
-            // Fallback
             statusEl.innerHTML = `<span style='color:#94a3b8;'>Status: ${data.status} — ${data.error_reason || ''}</span>`;
             setTimeout(() => { window.location.reload(); }, 2000);
         }
     } catch(e) {
         statusEl.innerHTML = `<span style='color:var(--danger);'>&#10007; Network error: ${e.message}</span>`;
+    }
+}
+
+/* Mark a pre-filled job as Applied after user manually submitted in browser */
+async function markAsApplied(jobId) {
+    if (!confirm("Confirm: you have manually submitted this application in the browser?")) return;
+
+    const statusEl = document.getElementById("hunt-status");
+    statusEl.innerHTML = `<span style='color:#60a5fa;'>&#9203; Marking job ${jobId} as Applied...</span>`;
+
+    try {
+        const resp = await fetch(`/api/hunter/mark-applied/${jobId}`, {method: "POST"});
+        const data = await resp.json();
+        if (data.success) {
+            statusEl.innerHTML = `<span style='color:var(--success); font-weight:700;'>&#10003; Marked as Applied! Great work.</span>`;
+            setTimeout(() => { window.location.reload(); }, 1200);
+        } else {
+            statusEl.innerHTML = `<span style='color:var(--danger);'>Error: ${data.error}</span>`;
+        }
+    } catch(e) {
+        statusEl.innerHTML = `<span style='color:var(--danger);'>Network error: ${e.message}</span>`;
     }
 }
 
@@ -664,7 +691,7 @@ async function triggerHunt() {
     const loc = document.getElementById("hunt-loc").value.trim();
     const status = document.getElementById("hunt-status");
 
-    status.innerHTML = "<span style='color:#60a5fa;'>⏳ Scanning Hirist, Naukri, LinkedIn, and Tier-1 Career Portals for 40-50 LPA openings...</span>";
+    status.innerHTML = "<span style='color:#60a5fa;'>⏳ Scanning Hirist, Naukri, LinkedIn, and Tier-1 Career Portals for 30-40 LPA openings...</span>";
 
     try {
         const resp = await fetch("/api/hunter/hunt", {
@@ -724,7 +751,7 @@ async function tailorManual() {
 /* Launch persistent Chrome debug session */
 async function launchChrome() {
     const statusEl = document.getElementById("hunt-status");
-    statusEl.innerHTML = "<span style='color:#60a5fa;'>&#9203; Launching Chrome with remote-debugging (port 9222)...</span>";
+    statusEl.innerHTML = "<span style='color:#60a5fa;'>&#9203; Starting Chrome bot session — this may take 5-10 seconds on first run...</span>";
     try {
         const resp = await fetch("/api/launch-chrome", {method: "POST"});
         const data = await resp.json();

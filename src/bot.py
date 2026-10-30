@@ -1,22 +1,29 @@
 """
-Master Application Bot Orchestrator.
+Master Application Bot Orchestrator (v3).
+=========================================
 Coordinates JD parsing, resume tailoring, ATS PDF generation, and automated form filling.
 
-KEY FIXES (v2):
-  1. Uses ChromeSessionManager.get_driver() — attaches to the EXISTING Chrome window
-     via CDP remote-debugging port 9222 instead of spawning a new browser process.
-  2. Every application opens in a NEW TAB, keeping login sessions intact.
-  3. Status is ONLY set to 'applied' when the form was actually submitted successfully.
-     All failures → 'not_applied' with a human-readable error_reason field.
-  4. Applied job URLs are tracked in output/applied_jobs.json to prevent duplicate
-     applications across sessions.
-  5. Console progress is printed STEP-BY-STEP so you can see what is happening in real time.
+KEY FIXES IN v3:
+  1. HTTP HEAD pre-check before launching browser — dead 404/expired links are
+     instantly skipped with clear error_reason. No wasted browser time.
+  2. ChromeSessionManager is a true singleton: ONE Chrome window opens per bot
+     session, not per application. Each job gets a new TAB, not a new window.
+  3. webdriver-manager auto-installs the correct ChromeDriver for Chrome 156.
+     The user does NOT need to manually install chromedriver or pre-launch Chrome.
+  4. Status is ONLY "applied" when the form was CONFIRMED submitted.
+     All other outcomes → "not_applied" with a human-readable error_reason.
+  5. After form pre-fill the tab stays OPEN so you can review and manually
+     submit. An /api/hunter/mark-applied/<job_id> endpoint lets you confirm.
+  6. Applied job URLs tracked in output/applied_registry.json (dedup).
 """
+
 import os
 import re
 import json
 import time
 from typing import Optional, Dict, Any
+
+import requests as http_requests  # renamed to avoid collision with flask's request
 
 from .models import JobDescription, TailoredResume
 from .jd_parser import JDParser
@@ -32,6 +39,7 @@ from .forms.generic import GenericFormFiller
 
 
 # ─── Applied Job Registry ────────────────────────────────────────────────────
+
 def _load_applied_registry(registry_path: str) -> set:
     """Loads the set of URLs/IDs we have already successfully applied to."""
     if os.path.exists(registry_path):
@@ -49,7 +57,40 @@ def _save_applied_registry(registry_path: str, registry: set) -> None:
         json.dump(sorted(list(registry)), f, indent=2)
 
 
+# ─── HTTP URL validator ──────────────────────────────────────────────────────
+
+def _is_url_alive(url: str, timeout: int = 8) -> tuple[bool, int]:
+    """
+    Does a lightweight HEAD request to check if the URL is accessible.
+    Returns (is_alive, http_status_code).
+    """
+    try:
+        resp = http_requests.head(
+            url,
+            allow_redirects=True,
+            timeout=timeout,
+            headers={
+                "User-Agent": (
+                    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+                    "AppleWebKit/537.36 (KHTML, like Gecko) "
+                    "Chrome/156.0.0.0 Safari/537.36"
+                )
+            },
+        )
+        # Some servers redirect HEAD to a login page — treat 200/201/301/302 as alive
+        if resp.status_code in (200, 201, 301, 302, 303):
+            return True, resp.status_code
+        if resp.status_code in (404, 410, 400):
+            return False, resp.status_code
+        # For anything else (403, 429, 500…) assume alive — let browser decide
+        return True, resp.status_code
+    except Exception:
+        # Network error, timeout, SSL error → assume alive (browser will show real error)
+        return True, 0
+
+
 # ─── Bot ─────────────────────────────────────────────────────────────────────
+
 class JobApplicationBot:
     def __init__(self, config_dir: str = "config"):
         self.config_dir = config_dir
@@ -73,8 +114,9 @@ class JobApplicationBot:
         # Registry of successfully applied job URLs — prevents re-applying
         output_dir = self.settings.get("output_dir", "output")
         os.makedirs(output_dir, exist_ok=True)
-        self._registry_path = os.path.join(config_dir, "..", output_dir, "applied_registry.json")
-        self._registry_path = os.path.abspath(self._registry_path)
+        self._registry_path = os.path.abspath(
+            os.path.join(config_dir, "..", output_dir, "applied_registry.json")
+        )
         self.applied_registry: set = _load_applied_registry(self._registry_path)
 
     # ── Tailoring ─────────────────────────────────────────────────────────────
@@ -133,31 +175,30 @@ class JobApplicationBot:
         interactive: bool = False,
     ) -> Dict[str, Any]:
         """
-        Opens job_url in a NEW TAB of the existing Chrome window, detects ATS,
-        fills the form, and returns an accurate status report.
+        Opens job_url in a NEW TAB of the shared Chrome window, detects the ATS,
+        fills the application form, and returns an accurate status report.
 
-        Returns
-        -------
-        {
-          "status":       "applied" | "not_applied" | "error",
-          "error_reason": "..." or None,
-          "fields_filled": [...],
-          "job_url": "...",
-        }
+        Status values
+        -------------
+        "applied"     → Confirmed submitted (auto_submit=true and submit button clicked)
+        "prefilled"   → Form fields filled, tab left open for manual review + submit
+        "not_applied" → Login wall / expired link / URL dead / duplicate / error
         """
-        # ── Guard: validate URL ────────────────────────────────────────────────
-        if not job_url or not (job_url.startswith("http://") or job_url.startswith("https://")):
+        # ── Guard: URL format ────────────────────────────────────────────────
+        if not job_url or not (
+            job_url.startswith("http://") or job_url.startswith("https://")
+        ):
             return {
                 "status": "not_applied",
-                "error_reason": f"Invalid or missing URL: '{job_url}'",
+                "error_reason": f"Invalid URL: '{job_url}'",
                 "fields_filled": [],
                 "job_url": job_url,
             }
 
-        # ── Guard: duplicate-application check ────────────────────────────────
+        # ── Guard: duplicate ─────────────────────────────────────────────────
         dedup_key = job_id or job_url
         if dedup_key in self.applied_registry:
-            print(f"[⚠] Already applied to {dedup_key} — skipping to prevent duplicate.")
+            print(f"[⚠] Already applied to {dedup_key} — skipping duplicate.")
             return {
                 "status": "not_applied",
                 "error_reason": "Already applied to this opening in a previous session.",
@@ -166,41 +207,59 @@ class JobApplicationBot:
                 "duplicate": True,
             }
 
-        # ── Acquire driver (existing Chrome tab or new window) ─────────────────
-        print(f"\n[→] Opening new tab for: {job_url}")
-        headless = (
-            not review_mode
-            and self.settings.get("browser", {}).get("headless", False)
-        )
-
-        try:
-            driver = ChromeSessionManager.get_driver(headless=headless)
-        except Exception as e:
-            print(f"[✗] Browser could not start: {e}")
+        # ── Guard: HTTP pre-check (fast dead-link detection) ─────────────────
+        print(f"[*] Pre-checking URL reachability: {job_url[:80]}")
+        alive, http_status = _is_url_alive(job_url)
+        if not alive:
+            reason = (
+                f"Job posting no longer available — server returned HTTP {http_status}. "
+                "The listing was probably removed by the recruiter."
+            )
+            print(f"[✗] {reason}")
             return {
                 "status": "not_applied",
-                "error_reason": f"Browser launch failed: {e}",
+                "error_reason": reason,
                 "fields_filled": [],
                 "job_url": job_url,
             }
 
-        original_handle = driver.current_window_handle if driver.window_handles else None
+        # ── Acquire shared Chrome driver ─────────────────────────────────────
+        headless = (
+            not review_mode
+            and self.settings.get("browser", {}).get("headless", False)
+        )
+        try:
+            driver = ChromeSessionManager.get_driver(headless=headless)
+        except Exception as e:
+            print(f"[✗] Could not start Chrome: {e}")
+            return {
+                "status": "not_applied",
+                "error_reason": (
+                    f"Chrome could not start: {e}. "
+                    "Make sure Google Chrome is installed at "
+                    "/Applications/Google Chrome.app and try again."
+                ),
+                "fields_filled": [],
+                "job_url": job_url,
+            }
+
+        original_handle = driver.window_handles[0] if driver.window_handles else None
         new_tab_handle = None
         report: Dict[str, Any] = {"fields_filled": [], "job_url": job_url}
 
         try:
-            # ── Open job URL in a new tab ──────────────────────────────────────
+            # ── Open job URL in a new tab ─────────────────────────────────────
             new_tab_handle = ChromeSessionManager.open_new_tab(driver, job_url)
 
-            timeout = self.settings.get("browser", {}).get("timeout_ms", 30000) / 1000
-            driver.set_page_load_timeout(timeout)
-            time.sleep(2)
+            timeout_s = self.settings.get("browser", {}).get("timeout_ms", 30000) / 1000
+            driver.set_page_load_timeout(timeout_s)
+            time.sleep(2.5)  # let JS-rendered pages settle
 
-            page_source = driver.page_source
+            page_source = driver.page_source.lower()
             current_url = driver.current_url
-            print(f"[*] Page loaded: {current_url}")
+            print(f"[*] Page loaded → {current_url[:80]}")
 
-            # ── Detect login-wall / no-access pages ───────────────────────────
+            # ── Detect login walls ────────────────────────────────────────────
             login_signals = [
                 "sign in to apply",
                 "log in to apply",
@@ -211,54 +270,59 @@ class JobApplicationBot:
                 "sign up to apply",
                 "join linkedin",
                 "authwall",
+                "sign in to continue",
             ]
-            page_lower = page_source.lower()
-            if any(sig in page_lower for sig in login_signals):
+            if any(sig in page_source for sig in login_signals):
                 reason = (
-                    "Login wall detected — please log into this portal in the existing "
-                    "Chrome window before running the bot. The bot uses your existing "
-                    "browser session so your credentials are never stored."
+                    "Login wall detected. Please open the browser that the bot launched "
+                    "(~/.job_bot_chrome_selenium_profile), log into this portal manually, "
+                    "then click 1-Click Apply again. The bot will reuse your session."
                 )
-                print(f"[⚠] {reason}")
+                print(f"[⚠] Login wall — {current_url[:60]}")
                 report["status"] = "not_applied"
                 report["error_reason"] = reason
                 return report
 
-            # ── Detect 404 / expired pages ────────────────────────────────────
+            # ── Detect expired / removed postings ────────────────────────────
             expired_signals = [
                 "job no longer available",
                 "this job has expired",
                 "position has been filled",
                 "job not found",
+                "this position has been closed",
+                "no longer accepting applications",
                 "404",
                 "page not found",
+                "page doesn't exist",
+                "sorry, we couldn't find that page",
             ]
-            if any(sig in page_lower for sig in expired_signals):
-                reason = "Job posting is no longer available or has expired."
-                print(f"[⚠] {reason}")
+            if any(sig in page_source for sig in expired_signals):
+                reason = "Job posting is expired or has been removed by the recruiter."
+                print(f"[⚠] Expired posting — {current_url[:60]}")
                 report["status"] = "not_applied"
                 report["error_reason"] = reason
                 return report
 
             # ── ATS Detection ─────────────────────────────────────────────────
             filler = None
-            if WorkdayFormFiller.is_match(current_url, page_source):
-                print("[*] Detected: Workday Enterprise ATS")
+            raw_source = driver.page_source  # original-case for filler.is_match
+            if WorkdayFormFiller.is_match(current_url, raw_source):
+                print("[*] ATS detected: Workday")
                 filler = WorkdayFormFiller()
-            elif GreenhouseFormFiller.is_match(current_url, page_source):
-                print("[*] Detected: Greenhouse ATS")
+            elif GreenhouseFormFiller.is_match(current_url, raw_source):
+                print("[*] ATS detected: Greenhouse")
                 filler = GreenhouseFormFiller()
-            elif LeverFormFiller.is_match(current_url, page_source):
-                print("[*] Detected: Lever ATS")
+            elif LeverFormFiller.is_match(current_url, raw_source):
+                print("[*] ATS detected: Lever")
                 filler = LeverFormFiller()
-            elif AshbyFormFiller.is_match(current_url, page_source):
-                print("[*] Detected: Ashby ATS")
+            elif AshbyFormFiller.is_match(current_url, raw_source):
+                print("[*] ATS detected: Ashby")
                 filler = AshbyFormFiller()
             else:
-                print("[*] Detected: Generic / Custom ATS")
+                print("[*] ATS detected: Generic / Custom Career Page")
                 filler = GenericFormFiller()
 
-            # ── Fill Form ─────────────────────────────────────────────────────
+            # ── Fill form ─────────────────────────────────────────────────────
             print("[*] Filling form fields...")
             fill_result = filler.fill(driver, self.profile, tailored_resume.pdf_path)
 
@@ -269,97 +333,135 @@ class JobApplicationBot:
 
             if filled:
                 print(f"[+] Fields pre-filled: {', '.join(filled)}")
+            else:
+                print("[~] No standard fields detected — tab is open for manual fill")
             if unhandled:
-                print(f"[~] Unhandled questions: {'; '.join(str(u) for u in unhandled)}")
+                print(f"[~] Unhandled questions require manual input: {'; '.join(str(u) for u in unhandled)}")
 
-            # ── Human-in-the-loop review ──────────────────────────────────────
+            # ── Submission logic ──────────────────────────────────────────────
+            auto_submit = self.settings.get("browser", {}).get("auto_submit", False)
+
             if review_mode and interactive:
+                # CLI review: user presses Enter after manual submit
                 print("\n" + "=" * 65)
-                print(">>> HUMAN-IN-THE-LOOP REVIEW MODE <<<")
-                print("Pre-fill complete. Review and manually SUBMIT the form in Chrome.")
-                print("Press [ENTER] here once you have submitted (or to skip)...")
+                print(">>> REVIEW MODE — FORM PRE-FILLED <<<")
+                print("Review and SUBMIT in the Chrome window, then press [ENTER].")
+                print("Type 'skip' to skip this application.")
                 print("=" * 65)
                 try:
-                    submitted = input().strip().lower()
-                    # If user typed 'skip' or 'no', mark not applied
-                    if submitted in ("skip", "no", "n"):
+                    user_input = input().strip().lower()
+                    if user_input in ("skip", "no", "n"):
                         report["status"] = "not_applied"
-                        report["error_reason"] = "User skipped submission during review."
+                        report["error_reason"] = "Skipped by user during review."
                         return report
                 except Exception:
                     pass
                 report["status"] = "applied"
                 report["error_reason"] = None
 
-            elif self.settings.get("browser", {}).get("auto_submit", False):
-                # Auto-submit mode: attempt to find and click submit button
+            elif auto_submit:
+                # Fully automatic: click Submit if detected
                 submitted = self._attempt_submit(driver)
                 if submitted:
-                    print("[+] Form submitted automatically.")
+                    print("[+] Form submitted automatically ✓")
                     report["status"] = "applied"
                     report["error_reason"] = None
                 else:
-                    report["status"] = "not_applied"
+                    report["status"] = "prefilled"
                     report["error_reason"] = (
-                        "auto_submit=true but could not locate a Submit button. "
-                        "Form was pre-filled — open the tab manually to complete."
+                        "auto_submit=true but no Submit button was found. "
+                        "Form is pre-filled — open the tab and submit manually."
                     )
+
             else:
-                # Default: form is pre-filled, browser tab remains open for YOU to review + submit
-                print("[ℹ] Form pre-filled. Tab left open — please review and submit manually.")
-                report["status"] = "not_applied"
+                # Default safe mode: pre-fill and leave tab open for human review
+                print(
+                    "[ℹ] Form pre-filled. Tab is OPEN in Chrome — "
+                    "please review and click Submit manually. "
+                    "Then click '✓ Mark as Applied' in the dashboard."
+                )
+                report["status"] = "prefilled"
                 report["error_reason"] = (
-                    "Form pre-filled. Awaiting manual submission. "
-                    "Set 'auto_submit: true' in config/settings.json for fully automated submission."
+                    "Form pre-filled — please review in Chrome and submit manually. "
+                    "Click '✓ Mark as Applied' in the dashboard after submitting."
                 )
 
-            # ── Register as applied only on confirmed submission ───────────────
+            # ── Register confirmed submissions ────────────────────────────────
             if report.get("status") == "applied":
                 self.applied_registry.add(dedup_key)
                 _save_applied_registry(self._registry_path, self.applied_registry)
-                print(f"[✓] Marked '{dedup_key}' as applied in registry.")
+                print(f"[✓] '{dedup_key}' added to applied registry.")
 
             return report
 
         except Exception as e:
-            print(f"[✗] Error during automation: {e}")
+            print(f"[✗] Automation error: {e}")
             return {
                 "status": "not_applied",
-                "error_reason": str(e),
+                "error_reason": f"Automation error: {e}",
                 "fields_filled": report.get("fields_filled", []),
                 "job_url": job_url,
             }
         finally:
-            # Close the tab we opened ONLY if we are NOT in interactive review mode
-            if new_tab_handle and not (review_mode and interactive):
-                try:
-                    ChromeSessionManager.close_tab(driver, new_tab_handle, original_handle)
-                    print(f"[*] Closed automation tab {new_tab_handle}.")
-                except Exception:
-                    pass
-            # NEVER quit the driver — it belongs to the shared persistent Chrome session
+            # Keep tab open when pre-filled (for manual review).
+            # Close ONLY if definitely not applied or if auto-submitted.
+            if new_tab_handle:
+                status = report.get("status", "")
+                if status in ("applied", "not_applied"):
+                    # Confirmed done or hard error — close tab
+                    try:
+                        ChromeSessionManager.close_tab(driver, new_tab_handle, original_handle)
+                        print(f"[*] Closed automation tab.")
+                    except Exception:
+                        pass
+                else:
+                    # "prefilled" — leave tab open for user to review
+                    print("[ℹ] Tab left open in Chrome for manual review.")
+
+    # ── Manual mark-as-applied ────────────────────────────────────────────────
+
+    def mark_as_applied(self, job_id: str, job_url: str = "") -> None:
+        """
+        Called when the user manually confirms they submitted the application.
+        Adds job_id (and optionally job_url) to the applied registry.
+        """
+        dedup_key = job_id or job_url
+        if dedup_key:
+            self.applied_registry.add(dedup_key)
+            _save_applied_registry(self._registry_path, self.applied_registry)
+            print(f"[✓] '{dedup_key}' manually marked as applied in registry.")
+
+    # ── Submit button detection ───────────────────────────────────────────────
 
     def _attempt_submit(self, driver) -> bool:
         """
-        Tries common submit button selectors. Returns True if a button was clicked.
+        Tries common submit button CSS selectors.
+        Returns True if a visible, enabled submit button was clicked.
         """
         from selenium.webdriver.common.by import By
+
         selectors = [
+            # Workday
+            "button[data-automation-id='bottom-navigation-next-button']",
+            "button[data-automation-id='bottom-navigation-done-button']",
+            # Generic
             "button[type='submit']",
             "input[type='submit']",
-            "button[data-automation-id='bottom-navigation-next-button']",
             "button#submit-app",
             "button.submit",
             "button[aria-label*='submit' i]",
-            "button[aria-label*='apply' i]",
+            "button[aria-label*='apply now' i]",
+            "button[aria-label*='submit application' i]",
+            # Greenhouse
+            "#submit_app",
+            "input#submit",
         ]
         for sel in selectors:
-            elems = driver.find_elements(By.CSS_SELECTOR, sel)
-            for el in elems:
+            for el in driver.find_elements(By.CSS_SELECTOR, sel):
                 try:
                     if el.is_displayed() and el.is_enabled():
                         el.click()
-                        time.sleep(1)
+                        time.sleep(1.5)
                         return True
                 except Exception:
                     continue

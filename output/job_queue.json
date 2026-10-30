@@ -1,5 +1,58 @@
 [
   {
+    "id": "job_1793345174590_1",
+    "portal": "LinkedIn",
+    "company": "SAP Fioneer",
+    "title": "Senior Cloud Modernization Java Full stack engineer",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-cloud-modernization-java-full-stack-engineer-at-sap-fioneer-4483295041?position=2&pageNum=0&refId=AEsivk5lQ93M5S4HnHI88A%3D%3D&trackingId=zs9%2FP4GBnFn2vgrAcVkxzg%3D%3D",
+    "description": "Staff level role for Senior Cloud Modernization Java Full stack engineer at SAP Fioneer. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_Backend.pdf",
+    "selected_profile_name": "Sakshi_Resume_Backend",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 96.2,
+    "matched_skills": [
+      "java"
+    ],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 96.2% based on high overlap in: java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Cloud Modernization Java Full stack engineer position at SAP Fioneer. Brings deep expertise in java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed an automated scoring microservice in Java and Spring Boot for open-ended assessment",
+      "Designed a high-throughput candidate percentile computation engine processing hundreds of thousands of assessment",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production over gRPC and REST",
+      "Implemented event-driven message pipelines using Apache Kafka to decouple assessment submission, scoring"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 96.2
+      },
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 80.5
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 35.5
+      }
+    ],
+    "status": "not_applied",
+    "discovered_at": "2026-10-30 12:56:14",
+    "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000100423f44 chromedriver + 3063620\n1   chromedriver                        0x000000010077b2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001007a364c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001007a1830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x00000001007d691c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x00000001007d64ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010076093c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001007a9c98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x00000001003f317c chromedriver + 2863484\n9   chromedriver                        0x00000001003f646c chromedriver + 2876524\n10  chromedriver                        0x00000001003dcdd8 chromedriver + 2772440\n11  chromedriver                        0x00000001003f6d2c chromedriver + 2878764\n12  chromedriver                        0x00000001003d0840 chromedriver + 2721856\n13  chromedriver                        0x0000000100412918 chromedriver + 2992408\n14  chromedriver                        0x0000000100412a78 chromedriver + 2992760\n15  chromedriver                        0x0000000100423c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+    "attempted_at": "2026-10-30 12:57:34",
+    "last_report": {
+      "status": "not_applied",
+      "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000100423f44 chromedriver + 3063620\n1   chromedriver                        0x000000010077b2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001007a364c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001007a1830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x00000001007d691c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x00000001007d64ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010076093c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001007a9c98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x00000001003f317c chromedriver + 2863484\n9   chromedriver                        0x00000001003f646c chromedriver + 2876524\n10  chromedriver                        0x00000001003dcdd8 chromedriver + 2772440\n11  chromedriver                        0x00000001003f6d2c chromedriver + 2878764\n12  chromedriver                        0x00000001003d0840 chromedriver + 2721856\n13  chromedriver                        0x0000000100412918 chromedriver + 2992408\n14  chromedriver                        0x0000000100412a78 chromedriver + 2992760\n15  chromedriver                        0x0000000100423c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+      "fields_filled": [],
+      "unhandled_questions": []
+    }
+  },
+  {
     "id": "job_1793296713845_1",
     "portal": "LinkedIn",
     "company": "SAP Fioneer",
@@ -680,8 +733,67 @@
         "score": 44.5
       }
     ],
-    "status": "queued",
-    "discovered_at": "2026-10-29 17:47:27"
+    "status": "not_applied",
+    "discovered_at": "2026-10-29 17:47:27",
+    "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000101137f44 chromedriver + 3063620\n1   chromedriver                        0x000000010148f2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001014b764c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001014b5830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x00000001014ea91c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x00000001014ea4ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010147493c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001014bdc98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x000000010110717c chromedriver + 2863484\n9   chromedriver                        0x000000010110a46c chromedriver + 2876524\n10  chromedriver                        0x00000001010f0dd8 chromedriver + 2772440\n11  chromedriver                        0x000000010110ad2c chromedriver + 2878764\n12  chromedriver                        0x00000001010e4840 chromedriver + 2721856\n13  chromedriver                        0x0000000101126918 chromedriver + 2992408\n14  chromedriver                        0x0000000101126a78 chromedriver + 2992760\n15  chromedriver                        0x0000000101137c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+    "attempted_at": "2026-10-30 16:53:13",
+    "last_report": {
+      "status": "not_applied",
+      "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000101137f44 chromedriver + 3063620\n1   chromedriver                        0x000000010148f2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001014b764c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001014b5830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x00000001014ea91c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x00000001014ea4ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010147493c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001014bdc98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x000000010110717c chromedriver + 2863484\n9   chromedriver                        0x000000010110a46c chromedriver + 2876524\n10  chromedriver                        0x00000001010f0dd8 chromedriver + 2772440\n11  chromedriver                        0x000000010110ad2c chromedriver + 2878764\n12  chromedriver                        0x00000001010e4840 chromedriver + 2721856\n13  chromedriver                        0x0000000101126918 chromedriver + 2992408\n14  chromedriver                        0x0000000101126a78 chromedriver + 2992760\n15  chromedriver                        0x0000000101137c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+      "fields_filled": [],
+      "unhandled_questions": []
+    }
+  },
+  {
+    "id": "job_1793345174595_2",
+    "portal": "LinkedIn",
+    "company": "Hash Connect Integrated Services Pvt. Ltd.",
+    "title": "Senior Full Stack Developer (Java, Spring Boot, Angular)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-full-stack-developer-java-spring-boot-angular-at-hash-connect-integrated-services-pvt-ltd-4484802938?position=3&pageNum=0&refId=AEsivk5lQ93M5S4HnHI88A%3D%3D&trackingId=9s4KvEwvsL%2BXrC%2BkgSZJ9A%3D%3D",
+    "description": "Staff level role for Senior Full Stack Developer (Java, Spring Boot, Angular) at Hash Connect Integrated Services Pvt. Ltd.. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_Backend.pdf",
+    "selected_profile_name": "Sakshi_Resume_Backend",
+    "detected_title": "Senior Backend Engineer",
+    "match_score": 85.0,
+    "matched_skills": [
+      "spring boot",
+      "spring",
+      "java"
+    ],
+    "missing_skills": [
+      "angular"
+    ],
+    "selection_reason": "Aligned with score 85.0% based on high overlap in: spring boot, spring, java.",
+    "custom_summary": "Results-driven Senior Engineer targeting the Senior Full Stack Developer (Java, Spring Boot, Angular) position at Hash Connect Integrated Services Pvt. Ltd.. Brings deep expertise in spring boot, spring, java, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architected and deployed an automated scoring microservice in Java and Spring Boot for open-ended assessment",
+      "Designed a high-throughput candidate percentile computation engine processing hundreds of thousands of assessment",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production over gRPC and REST",
+      "Implemented event-driven message pipelines using Apache Kafka to decouple assessment submission, scoring"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 85.0
+      },
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 69.2
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 35.5
+      }
+    ],
+    "status": "error",
+    "discovered_at": "2026-10-30 12:56:14",
+    "error_reason": "Resume tailoring failed: [Errno 63] File name too long: '/Users/sakshimalik/Project/job-application-bot/output/resume_hiring_company_staff_level_role_for_senior_full_stack_developer__java__spring_boot__angular__at_hash_connect_integrated_services_pvt__ltd___high_scale_systems_and_architectural_leadership__senior_full_stack_developer__java__spring_boot__angular.html'",
+    "attempted_at": "2026-10-30 16:53:37"
   },
   {
     "id": "job_1793276247591_14",
@@ -734,8 +846,16 @@
         "score": 46.8
       }
     ],
-    "status": "queued",
-    "discovered_at": "2026-10-29 17:47:27"
+    "status": "not_applied",
+    "discovered_at": "2026-10-29 17:47:27",
+    "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000102d57f44 chromedriver + 3063620\n1   chromedriver                        0x00000001030af2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001030d764c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001030d5830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x000000010310a91c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x000000010310a4ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010309493c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001030ddc98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x0000000102d2717c chromedriver + 2863484\n9   chromedriver                        0x0000000102d2a46c chromedriver + 2876524\n10  chromedriver                        0x0000000102d10dd8 chromedriver + 2772440\n11  chromedriver                        0x0000000102d2ad2c chromedriver + 2878764\n12  chromedriver                        0x0000000102d04840 chromedriver + 2721856\n13  chromedriver                        0x0000000102d46918 chromedriver + 2992408\n14  chromedriver                        0x0000000102d46a78 chromedriver + 2992760\n15  chromedriver                        0x0000000102d57c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+    "attempted_at": "2026-10-30 16:53:46",
+    "last_report": {
+      "status": "not_applied",
+      "error_reason": "Browser launch failed: Message: session not created: Chrome instance exited. Examine ChromeDriver verbose log to determine the cause.; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#sessionnotcreatedexception\nStacktrace:\n0   chromedriver                        0x0000000102d57f44 chromedriver + 3063620\n1   chromedriver                        0x00000001030af2f0 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 153544\n2   chromedriver                        0x00000001030d764c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 318244\n3   chromedriver                        0x00000001030d5830 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 310536\n4   chromedriver                        0x000000010310a91c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 527860\n5   chromedriver                        0x000000010310a4ac __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 526724\n6   chromedriver                        0x000000010309493c __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 44564\n7   chromedriver                        0x00000001030ddc98 __crubit_thunk_f2134de3d97b69f__uRNvYINtNtCshWKCNEi6jdz_u5alloc3vec3VecNtNtCs1ixaWZjKKKx_u16web_upackage_urust5types18SectionOffsetEntryENtNtNtCs7g9ANUVeamz_u4core3ops4drop4Drop4dropBD_u + 344432\n8   chromedriver                        0x0000000102d2717c chromedriver + 2863484\n9   chromedriver                        0x0000000102d2a46c chromedriver + 2876524\n10  chromedriver                        0x0000000102d10dd8 chromedriver + 2772440\n11  chromedriver                        0x0000000102d2ad2c chromedriver + 2878764\n12  chromedriver                        0x0000000102d04840 chromedriver + 2721856\n13  chromedriver                        0x0000000102d46918 chromedriver + 2992408\n14  chromedriver                        0x0000000102d46a78 chromedriver + 2992760\n15  chromedriver                        0x0000000102d57c14 chromedriver + 3062804\n16  libsystem_pthread.dylib             0x0000000186625c54 _pthread_start + 132\n17  libsystem_pthread.dylib             0x0000000186620c18 thread_start + 4\n",
+      "fields_filled": [],
+      "unhandled_questions": []
+    }
   },
   {
     "id": "job_1793296667876_0",
@@ -1222,6 +1342,49 @@
     ],
     "status": "queued",
     "discovered_at": "2026-10-29 17:47:27"
+  },
+  {
+    "id": "job_1793345174586_0",
+    "portal": "LinkedIn",
+    "company": "4flow",
+    "title": "(Senior) Software Engineer (Fullstack)",
+    "salary": "30 - 40+ LPA (Staff/Lead Band)",
+    "location": "Bengaluru, Karnataka, India",
+    "url": "https://in.linkedin.com/jobs/view/senior-software-engineer-fullstack-at-4flow-4467702783?position=1&pageNum=0&refId=AEsivk5lQ93M5S4HnHI88A%3D%3D&trackingId=ScCHzyfVfUXiERVCAiJT1g%3D%3D",
+    "description": "Staff level role for (Senior) Software Engineer (Fullstack) at 4flow. High-scale systems and architectural leadership.",
+    "selected_resume_file": "Sakshi_Resume_FullStack.pdf",
+    "selected_profile_name": "Sakshi_Resume_FullStack",
+    "detected_title": "Senior Full Stack AI & LLM Systems Engineer",
+    "match_score": 70.2,
+    "matched_skills": [],
+    "missing_skills": [],
+    "selection_reason": "Aligned with score 70.2% based on high overlap in: general engineering principles.",
+    "custom_summary": "Results-driven Senior Engineer targeting the (Senior) Software Engineer (Fullstack) position at 4flow. Brings deep expertise in distributed systems, scaling high-throughput infrastructure, and delivering resilient microservices.",
+    "custom_bullets": [
+      "Architectedandlaunchedanend-to-endAI-drivenevaluationengineforopen-endedcandidateassessments, automating",
+      "Engineered full-stack capabilities for the Smart Interview platform, integrating real-time video streaming with",
+      "Developed a full-stack candidate analytics platform using React, TypeScript, and Spring Boot, processing 100K+",
+      "Collaborated with ML scientists to deploy transformer-based scoring models into production REST and gRPC"
+    ],
+    "all_evaluations_summary": [
+      {
+        "name": "Sakshi_Resume_FullStack",
+        "file_name": "Sakshi_Resume_FullStack.pdf",
+        "score": 70.2
+      },
+      {
+        "name": "Sakshi_Resume_Backend",
+        "file_name": "Sakshi_Resume_Backend.pdf",
+        "score": 58.0
+      },
+      {
+        "name": "Sakshi_Resume_Frontend",
+        "file_name": "Sakshi_Resume_Frontend.pdf",
+        "score": 58.0
+      }
+    ],
+    "status": "queued",
+    "discovered_at": "2026-10-30 12:56:14"
   },
   {
     "id": "job_1793296713841_0",

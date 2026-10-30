@@ -152,18 +152,53 @@ def api_bulk_status():
 
 @app.route("/api/launch-chrome", methods=["POST"])
 def api_launch_chrome():
-    """Launches Chrome with remote-debugging so the bot can reuse the existing window."""
+    """
+    Pre-warms the shared Chrome session so the user can log into job portals
+    before clicking Apply. The bot will reuse the same browser window/profile.
+    """
     try:
         from src.chrome_session import ChromeSessionManager
-        ChromeSessionManager.launch_debug_chrome()
+        driver = ChromeSessionManager.get_driver(headless=False)
+        # Navigate to a neutral page so the user can see the window is ready
+        if len(driver.window_handles) == 1:
+            driver.get("https://www.google.com")
         return jsonify({
             "success": True,
-            "message": "Chrome launched with remote-debugging on port 9222. "
-                       "Please log into LinkedIn, Naukri, and any other portals in that window, "
-                       "then come back and click Apply."
+            "message": (
+                "Chrome is ready! A browser window has opened. "
+                "Please log into LinkedIn, Naukri, Instahyre, and any other portals. "
+                "The bot will reuse your login session when you click Apply."
+            )
         })
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+
+@app.route("/api/hunter/mark-applied/<job_id>", methods=["POST"])
+def api_mark_applied(job_id):
+    """
+    Manually marks a job as 'applied' when the user has submitted the form in the
+    browser tab that the bot left open. Updates the queue and the applied registry.
+    """
+    queue = hunter.load_queue()
+    target = None
+    for item in queue:
+        if item.get("id") == job_id or item.get("url") == job_id:
+            target = item
+            break
+
+    if not target:
+        return jsonify({"error": f"Job ID '{job_id}' not found."}), 404
+
+    target["status"] = "applied"
+    target["applied_at"] = __import__("time").strftime("%Y-%m-%d %H:%M:%S")
+    target.pop("error_reason", None)
+    hunter.save_queue(queue)
+
+    # Also add to the bot's applied registry so it won't re-apply
+    bot.mark_as_applied(job_id=job_id, job_url=target.get("url", ""))
+
+    return jsonify({"success": True, "job_id": job_id, "status": "applied"})
 
 
 @app.route("/api/hunter/reset-queue", methods=["POST"])

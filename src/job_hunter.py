@@ -349,7 +349,11 @@ class JobHunter:
 
         # Step 3 — Persist accurate status
         print("[3/3] Saving application status to queue...")
-        final_status = report.get("status", "not_applied")   # "applied" | "not_applied" | "error"
+        # Possible statuses from bot.apply_to_job:
+        #   "applied"     → auto-submitted or user-confirmed in CLI review
+        #   "prefilled"   → tab left open, needs manual submit + UI mark
+        #   "not_applied" → login wall / expired / dead URL / duplicate / error
+        final_status = report.get("status", "not_applied")
         error_reason = report.get("error_reason")
 
         target["status"] = final_status
@@ -368,7 +372,9 @@ class JobHunter:
 
         # Console summary
         if final_status == "applied":
-            print(f"[✓] STATUS: APPLIED   — {target['company']} / {target['title']}")
+            print(f"[✓] STATUS: APPLIED    — {target['company']} / {target['title']}")
+        elif final_status == "prefilled":
+            print(f"[~] STATUS: PRE-FILLED — Tab open in Chrome. Review and submit, then mark Applied in dashboard.")
         else:
             print(f"[✗] STATUS: NOT APPLIED — {error_reason or 'Unknown reason'}")
 

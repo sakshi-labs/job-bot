@@ -79,12 +79,21 @@ class JobHunter:
         all_raw_jobs.extend(self.career_pages.search_jobs(query, location, limit=limit_per_portal))
 
         processed_queue = self.load_queue()
-        existing_urls = set(item.get("url") for item in processed_queue)
+
+        def _normalize_key(u):
+            if not u:
+                return ""
+            import re
+            m = re.search(r'linkedin\.com/jobs/view/.*?(\d{9,12})', u)
+            return f"linkedin_{m.group(1)}" if m else u.split("?")[0]
+
+        existing_keys = set(_normalize_key(item.get("url")) for item in processed_queue)
 
         new_items = []
         for raw in all_raw_jobs:
             url = raw.get("url", "")
-            if url in existing_urls:
+            key = _normalize_key(url)
+            if key in existing_keys:
                 continue
 
             jd_obj = self.jd_parser.parse_from_text(
@@ -135,7 +144,7 @@ class JobHunter:
                 "discovered_at": time.strftime("%Y-%m-%d %H:%M:%S")
             }
             new_items.append(queue_item)
-            existing_urls.add(url)
+            existing_keys.add(key)
 
         total_queue = new_items + processed_queue
         total_queue.sort(key=lambda x: x.get("match_score", 0), reverse=True)

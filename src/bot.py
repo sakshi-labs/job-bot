@@ -36,6 +36,7 @@ from .forms.lever import LeverFormFiller
 from .forms.ashby import AshbyFormFiller
 from .forms.workday import WorkdayFormFiller
 from .forms.generic import GenericFormFiller
+from .forms.linkedin import LinkedInFormFiller
 
 
 # ─── Applied Job Registry ────────────────────────────────────────────────────
@@ -149,8 +150,8 @@ class JobApplicationBot:
         tailored = self.tailor.tailor(jd, profile=active_prof, customizations=customizations)
         print(f"[+] Tailoring complete! ATS Match Score: {tailored.ats_score}%")
 
-        safe_company = re.sub(r"[^a-zA-Z0-9]", "_", tailored.target_company.lower()).strip("_")
-        safe_role = re.sub(r"[^a-zA-Z0-9]", "_", tailored.target_role.lower()).strip("_")
+        safe_company = re.sub(r"[^a-zA-Z0-9]", "_", tailored.target_company.lower()).strip("_")[:30]
+        safe_role = re.sub(r"[^a-zA-Z0-9]", "_", tailored.target_role.lower()).strip("_")[:40]
         out_dir = self.settings.get("output_dir", "output")
         os.makedirs(out_dir, exist_ok=True)
 
@@ -259,7 +260,34 @@ class JobApplicationBot:
             current_url = driver.current_url
             print(f"[*] Page loaded → {current_url[:80]}")
 
-            # ── Detect login walls ────────────────────────────────────────────
+            # ── Special LinkedIn Login Handling ──────────────────────────────
+            is_linkedin_job = "linkedin.com" in job_url or "linkedin.com" in current_url
+            if is_linkedin_job:
+                # Check if we landed on login / signup / authwall or cold-join
+                linkedin_auth_required = any(
+                    sig in current_url or sig in page_source
+                    for sig in ["login", "signup", "cold-join", "authwall", "sign in to apply"]
+                )
+                if linkedin_auth_required:
+                    logged_in = self._ensure_linkedin_logged_in(driver)
+                    if logged_in:
+                        # Reload the actual target job posting now that we have an active session
+                        driver.get(job_url)
+                        time.sleep(3)
+                        page_source = driver.page_source.lower()
+                        current_url = driver.current_url
+                        print(f"[*] Reloaded job posting with active session → {current_url[:80]}")
+                    else:
+                        reason = (
+                            "LinkedIn login required. Please sign into LinkedIn in the open Chrome window. "
+                            "Once signed in, click Apply again to submit your application."
+                        )
+                        print(f"[⚠] {reason}")
+                        report["status"] = "not_applied"
+                        report["error_reason"] = reason
+                        return report
+
+            # ── Detect login walls for other portals ──────────────────────────
             login_signals = [
                 "sign in to apply",
                 "log in to apply",
@@ -268,11 +296,10 @@ class JobApplicationBot:
                 "please log in",
                 "login required",
                 "sign up to apply",
-                "join linkedin",
                 "authwall",
                 "sign in to continue",
             ]
-            if any(sig in page_source for sig in login_signals):
+            if not is_linkedin_job and any(sig in page_source for sig in login_signals):
                 reason = (
                     "Login wall detected. Please open the browser that the bot launched "
                     "(~/.job_bot_chrome_selenium_profile), log into this portal manually, "
@@ -306,7 +333,10 @@ class JobApplicationBot:
             # ── ATS Detection ─────────────────────────────────────────────────
             filler = None
             raw_source = driver.page_source  # original-case for filler.is_match
-            if WorkdayFormFiller.is_match(current_url, raw_source):
+            if LinkedInFormFiller.is_match(current_url, raw_source):
+                print("[*] ATS detected: LinkedIn")
+                filler = LinkedInFormFiller()
+            elif WorkdayFormFiller.is_match(current_url, raw_source):
                 print("[*] ATS detected: Workday")
                 filler = WorkdayFormFiller()
             elif GreenhouseFormFiller.is_match(current_url, raw_source):
@@ -466,3 +496,33 @@ class JobApplicationBot:
                 except Exception:
                     continue
         return False
+
+    def _ensure_linkedin_logged_in(self, driver, timeout: int = 45) -> bool:
+        """
+        Ensures the user has an active LinkedIn session.
+        If not logged in, opens the LinkedIn login page in the Chrome window and waits
+        for the user to log in (or redirects).
+        """
+        current = driver.current_url.lower()
+        if any(k in current for k in ["feed", "jobs", "mynetwork"]) and "login" not in current:
+            return True
+
+        print("\n" + "=" * 65)
+        print(">>> ACTION NEEDED: LINKEDIN AUTHENTICATION <<<")
+        print("Opening LinkedIn in Chrome window...")
+        print("Please log into LinkedIn in the browser window.")
+        print("The bot will automatically resume as soon as you sign in.")
+        print("=" * 65 + "\n")
+
+        driver.get("https://www.linkedin.com/login")
+        start = time.time()
+        while time.time() - start < timeout:
+            time.sleep(2)
+            url = driver.current_url.lower()
+            if any(k in url for k in ["feed", "jobs", "mynetwork", "check/add-phone"]) and "login" not in url:
+                print("[✓] LinkedIn login successfully detected! Continuing automation...")
+                time.sleep(2)
+                return True
+        print("[!] LinkedIn login wait timed out.")
+        return False
+
